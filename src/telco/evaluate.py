@@ -3,7 +3,7 @@
 Usage:
     python3 -m telco.evaluate --questions data/validation_questions.json \
         --index data/mini_index.jsonl --out runs/baseline_v1 \
-        --generator openrouter   # or: lexical
+        --generator openrouter   # or: lexical, gemini
 """
 from __future__ import annotations
 
@@ -13,8 +13,11 @@ from pathlib import Path
 
 from .generate import (
     DEFAULT_FREE_MODEL,
+    DEFAULT_GEMINI_MODEL,
+    GeminiGenerator,
     LexicalAnswerer,
     OpenRouterGenerator,
+    load_gemini_key,
     load_openrouter_key,
 )
 from .prompt import MAX_PROMPT_TOKENS, build_prompt, build_prompt_budgeted
@@ -162,8 +165,8 @@ def main() -> int:
     ap.add_argument("--questions", required=True)
     ap.add_argument("--index", default=str(ROOT / "data/mini_index.jsonl"))
     ap.add_argument("--out", default=None)
-    ap.add_argument("--generator", choices=["openrouter", "lexical"], default="openrouter")
-    ap.add_argument("--model", default=DEFAULT_FREE_MODEL)
+    ap.add_argument("--generator", choices=["openrouter", "lexical", "gemini"],
+                    default="openrouter")
     ap.add_argument("--max-tokens", type=int, default=8,
                     help="generator max_tokens (8 = challenge profile; "
                     "raise for reasoning stand-ins, e.g. 512)")
@@ -174,8 +177,13 @@ def main() -> int:
                     "while their cumulative tokens stay within this budget "
                     "(overrides --rerank-top-k)")
     ap.add_argument("--key-name", default="key12",
-                    help="OpenRouter key name in openrouter-credentials.json "
-                    "(multi-key sweeps: one key per account, e.g. key2)")
+                    help="key name in the credentials file: OpenRouter key "
+                    "(openrouter-credentials.json, e.g. key2) or Gemini key "
+                    "(gemini-credentials.json, e.g. gemini_key_1)")
+    ap.add_argument("--model", default=None,
+                    help="generator model id; defaults to the stand-in for "
+                    "the chosen provider (nemotron for openrouter, "
+                    "gemma-4-26b-a4b-it for gemini)")
     ap.add_argument("--offset", type=int, default=0,
                     help="question slice start (0-based) for splitting a "
                     "run across several free-quota accounts")
@@ -192,9 +200,15 @@ def main() -> int:
     index = BM25Index.from_jsonl(args.index)
     if args.generator == "lexical":
         generator = LexicalAnswerer([])
+    elif args.generator == "gemini":
+        generator = GeminiGenerator(
+            model=args.model or DEFAULT_GEMINI_MODEL,
+            api_key=load_gemini_key(args.key_name),
+            max_tokens=args.max_tokens,
+        )
     else:
         generator = OpenRouterGenerator(
-            model=args.model,
+            model=args.model or DEFAULT_FREE_MODEL,
             api_key=load_openrouter_key(args.key_name),
             max_tokens=args.max_tokens,
         )

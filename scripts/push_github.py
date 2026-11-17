@@ -61,6 +61,15 @@ INCLUDE = [
     "data/validation_questions_v2.json",
     "data/validation_part_a.json",
     "data/validation_part_b.json",
+    # Phase 2 — Kaggle GPU run (real generator)
+    "phase2/README.md",
+    "phase2/build_notebook.py",
+    "phase2/convert_validation.py",
+    "phase2/my_hooks.py",
+    "phase2/validation.csv",
+    "phase2/validation_answers.csv",
+    "phase2/notebook.ipynb",
+    "phase2/kernel-metadata.json",
 ]
 
 
@@ -68,6 +77,10 @@ def run_files(root: Path) -> list[str]:
     files = list(INCLUDE)
     if (root / "runs/PHASE1.md").exists():
         files.append("runs/PHASE1.md")
+    if (root / "phase2/PHASE2.md").exists():
+        files.append("phase2/PHASE2.md")
+    if (root / "phase2/summary.json").exists():
+        files.append("phase2/summary.json")
     for run_dir in sorted((root / "runs").iterdir()):
         if not run_dir.is_dir():
             continue

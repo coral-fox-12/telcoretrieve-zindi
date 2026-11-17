@@ -74,6 +74,30 @@ reranker keeps 5, temperature 0, seed 1234, max prompt 4096, max_tokens 8.
 
 ## 5. Experiments to run (in order)
 
+**Phase 2 (Kaggle GPU, real generator) — kernel RUNNING 2026-11-17:**
+notebook `phase2/notebook.ipynb`, kernel `coralfox12/telcoretrieve-phase-2`
+(https://www.kaggle.com/code/coralfox12/telcoretrieve-phase-2), T4 x2,
+internet on, model attached from the Kaggle hub
+(`google/gemma-3n/transformers/gemma-3n-e4b-it/2`) — no HF token or
+license step needed. vLLM on :8000 (`--tensor-parallel-size 2 --dtype
+bfloat16 --gpu-memory-utilization 0.70 --max-model-len 8192
+--enforce-eager --served-model-name google/gemma-3n-E4B-it`). The 10 GB
+fixed index is pulled once per session (`pull-hf`, ~10.4 GB) and reused
+by all 3 variants. Validation: `phase2/validation.csv` +
+`phase2/validation_answers.csv` (converted from
+`data/validation_questions_v2.json` by `phase2/convert_validation.py`),
+scored with the official `challenge score`. Variants: **control**
+(official defaults), **b850** (defaults + `--prompt-builder
+my_hooks:budget850`, budgeted fill to 850 passage tokens), **k3**
+(defaults + `--rerank-top-k 3`). **256-token variant NOT reproducible
+on the fixed index:** the official collection is `text_baseline` with
+chunks ≤512 tokens (`bound_tokens 512`, verified from the ingest
+settings on HF) — there is no 256-token collection, so `k3` (fewer
+passages at the fixed 512-token chunk size) is the faithful analogue.
+Results land in `phase2/output/` + `phase2/PHASE2.md` when the kernel
+finishes. Budget: ≤6 GPU-h for this first pass (session wall time ≈
+GPU-hours; printed by the notebook).
+
 1. Baseline: official defaults, record accuracy proxy (see §6) + tokens.
 2. Lean prompts: `--rerank-top-k 3`, then `--top-k 5 --rerank-top-k 3`,
    then `--context-token-budget 850` (fill to the baseline budget).

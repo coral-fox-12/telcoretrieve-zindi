@@ -1,0 +1,207 @@
+ID,input_prompt,answer
+val-053,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+Table 12.4.1-1 illustrates the SEAL APIs for identity management.
+
+**Table 12.4.1-1: List of SEAL APIs for identity management**
+
+| API Name                    | API Operations        | Known Consumer(s) | Communication Type |
+|-----------------------------|-----------------------|-------------------|--------------------|
+| SS_ldmParameterProvisioning | Provide_Configuration | VAL server        | Request/Response   |
+|                             | Update_Configuration  |                   |                    |
+|                             | Get_Configuration     |                   |                    |
+|                             | Delete_Configuration  |                   |                    |
+
+### 12.4.3 SS\_ldmParameterProvisioning API
+
+#### 12.4.3.1 General
+
+**API description:** This API enables the VAL server to provision configuration for the VAL service to the SEAL IM-S.
+
+#### 12.4.3.2 Provide\_Configuration operation
+
+**API operation name:** Provide\_Configuration
+
+**Description:** Provisioning of VAL service configuration to IM-S.
+
+**Known Consumers:** VAL server.
+
+**Inputs:** See subclause 12.3.2.1
+
+**Outputs:** See subclause 12.3.2.2
+
+See subclause 12.3.4.2 for the details of usage of this API operation.
+
+#### 12.4.3.3 Update\_Configuration operation
+
+**API operation name:** Update\_Configuration
+
+**Description:** Updating the provisioning of VAL service configuration to IM-S.
+
+**Known Consumers:** VAL server.
+
+**Inputs:** See subclause 12.3.2.3
+
+**Outputs:** See subclause 12.3.2.4
+
+See subclause 12.3.4.3 for the details of usage of this API operation.
+
+#### 12.4.3.4 Get\_Configuration operation
+
+**API operation name:** Get\_Configuration
+
+**Description:** Get provisioning of VAL service configuration from IM-S.
+
+**Known Consumers:** VAL server.
+
+**Inputs:** See subclause 12.3.2.5
+
+**Outputs:** See subclause 12.3.2.6
+
+See subclause 12.3.4.4 for the details of usage of this API operation.
+
+#### 12.4.3.5 Delete\_Configuration operation
+
+**API operation name:** Delete\_Configuration
+
+**Description:** Deleting the provisioning of VAL service configuration on IM-S.
+
+**Known Consumers:** VAL server.
+
+**Inputs:** See subclause 12.3.
+
+[2] Spec: TS 23.434 | Release: 19
+ procedure of Geofencing UE(s) Information request/response                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0309 | 3 | B | Add procedure of querying for history location                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0310 | 2 | B | LMS reuse the stored UE location information                                           | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0311 | 2 | B | Exposure of value-added UE location information                                        | 19.3.0 |
+| 2024-09 | SA#105 | SP-241212 | 0312 | 1 | B | General description of application enablement of AIML services                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0313 | 3 | B | Dynamic geofencing                                                                     | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0314 | 3 | B | Target UE location provided by surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+[3] Spec: TS 23.434 | Release: 19
+The interactions related to key management functions between the VAL client(s) and the key management client within a VAL UE are supported by KM-C reference point.
+
+The interactions related to key management functions between the VAL server(s) and the key management server are supported by KM-S reference point. This reference point is an instance of CAPIF-2 reference point as specified in 3GPP TS 23.222 [8].
+
+KM-S reference point provides a means for the key management server to provide security related information (e.g. encryption keys) to the VAL server. The KM-S reference point shall use the HTTP-1 and HTTP-2 signalling control plane reference points for transport and routing of security related information to the VAL server.
+
+NOTE: KM-S is specified in subclause 5.1.1.4 of 3GPP TS 33.434 [29].
+
+The interactions related to key management functions between the key management servers in a distributed deployment are supported by KM-E reference point.
+
+#### 13.2.5.7 SEAL-X1
+
+NOTE: SEAL-X1 reference point between the key management server and the group management server is described in subclause 6.5.9.2.
+
+## 13.3 Procedures and information flows for key management
+
+NOTE: The procedure for key management is specified in subclause 5.3 of 3GPP TS 33.434 [29].
+
+### 13.3.1 Information flows
+
+### 13.3.2 VAL server provisioning for key management service
+
+#### 13.3.2.1 General
+
+The high level procedure for VAL server to provision required information to SEAL key management server in order to provide the format and content of a key management record is described in clause 5.8 of 3GPP TS 33.434 [29].
+
+## 13.4 SEAL APIs for key management
+
+Table 13.4.1-1 illustrates the SEAL APIs for key management.
+
+**Table 13.4.1-1: List of SEAL APIs for key management**
+
+| API Name                   | API Operations        | Known Consumer(s) | Communication Type |
+|----------------------------|-----------------------|-------------------|--------------------|
+| SS_KmParameterProvisioning | Provide_Configuration | VAL server        | Request /Response  |
+
+The other SEAL APIs for Key Management are specified in subclauses 5.7.1 and 7.6.1 of 3GPP TS 29.549 [30].
+
+# 14
+
+[4] Spec: TS 23.434 | Release: 19
+**Outputs:** See subclause 11.3.2.12
+
+See subclause 11.3.4.5 for the details of usage of this API operation.
+
+### 11.4.4 SS\_VALServiceData API
+
+#### 11.4.4.1 General
+
+**API description:** This API enables the group management server to communicate with the configuration management server for obtaining VAL service data over SEAL-X.
+
+#### 11.4.4.2 Obtain\_VAL\_Service\_Data operation
+
+**API operation name:** Obtain\_VAL\_Service\_Data
+
+**Description:** Obtaining VAL service data.
+
+**Known Consumers:** group management server.
+
+**Inputs:** See subclause 11.3.2.13
+
+**Outputs:** See subclause 11.3.2.14
+
+See subclause 11.3.5.2 for the details of usage of this API operation.
+
+# --- 12 Identity management
+
+The identity management is a SEAL service that offers the identity management related capabilities to one or more vertical applications.
+
+## 12.2 Functional model for identity management
+
+The functional model for the identity management is based on the generic functional model specified in clause 6. It is organized into functional entities to describe a functional architecture which addresses the support for identity management aspects for vertical applications. The on-network and off-network functional model is specified in this clause.
+
+### 12.2.2 On-network functional model description
+
+Figure 12.2.2-1 illustrates the generic on-network functional model for identity management.
+
+![Figure 12.2.2-1: On-network functional model for identity management. The diagram shows a User Equipment (UE) containing a VAL client(s) and an Identity management client (IM-C). The UE connects to a 3GPP network system via the VAL-UU and IM-UU reference points. The 3GPP network system connects to a VAL server(s) and an Identity management server (IM-S). The VAL client(s) and Identity management client are separated by a dashed line labeled SEAL. The VAL server(s) and Identity management server are also separated by a dashed line labeled SEAL.](33a8f3f01dfa8bce75d23017855a13c5_img.jpg)
+
+[5] Spec: TS 23.434 | Release: 19
+The functional entities for identity management SEAL service are described in the following subclauses.
+
+#### 12.2.4.2 Identity management client
+
+The identity management client functional entity acts as the application client for vertical applications layer user identity related transactions. The identity management client interacts with the identity management server. The identity management client also supports interactions with the corresponding identity management client between the two UEs.
+
+#### 12.2.4.3 Identity management server
+
+The identity management server is a functional entity that authenticates the vertical application layer user identity. The authentication is performed by verifying the credentials provided by the vertical applications' user. The identity management server acts as CAPIF's API exposing function as specified in 3GPP TS 23.222 [8]. The identity management server also supports interactions with the corresponding identity management server in distributed SEAL deployments.
+
+### 12.2.5 Reference points description
+
+#### 12.2.5.1 General
+
+The reference points for the functional model for identity management are described in the following subclauses.
+
+The interactions related to identity management functions between the identity management client and the identity management server are supported by IM-UU reference point. This reference point utilizes Uu reference point as described in 3GPP TS 23.401 [9] and 3GPP TS 23.501 [10].
+
+The interactions related to identity management functions between the identity management clients located in different VAL UEs are supported by IM-PC5 reference point. This reference point utilizes PC5 reference point as described in 3GPP TS 23.303 [12].
+
+The interactions related to identity management functions between the VAL client(s) and the identity management client within a VAL UE are supported by IM-C reference point.
+
+The interactions related to identity management functions between the VAL server(s) and the identity management server are supported by IM-S reference point. This reference point is an instance of CAPIF-2 reference point as specified in 3GPP TS 23.222 [8].
+
+The interactions related to identity management functions between the identity management servers in a distributed deployment are supported by IM-E reference point.
+
+## 12.3 Procedures and information flows for identity management
+
+The procedures related to the identity management are described in the following subclauses.
+
+### 12.3.2 Information flows
+
+NOTE: The procedure for identity management is specified in subclause 5.2.3 and 5.2.4 of 3GPP TS 33.434 [29
+
+Question: The SS_IdmParameterProvisioning API enables the VAL server to provision configuration for the VAL service to the SEAL IM-S. (according to 3GPP Rel-19, TS 23.434 v19.5.0)
+
+Answer with only TRUE or FALSE.",TRUE

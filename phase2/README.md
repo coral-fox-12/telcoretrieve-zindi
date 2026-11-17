@@ -57,6 +57,21 @@ python3 build_notebook.py            # rebuild notebook + metadata
 
 ## Status
 
-- 2026-11-17 ~09:35 +07: kernel v1 pushed, status RUNNING
-  (https://www.kaggle.com/code/coralfox12/telcoretrieve-phase-2).
-  Polling in the background; outputs + PHASE2.md on completion.
+- 2026-11-17 ~09:25 +07: kernel v1 pushed, status RUNNING, then **ERROR at
+  09:34 +07 (~9 min in)**. No logs survived (v1 only showed `tail -3` of
+  pip output in cell output, which Kaggle does not return via the API).
+  Partial outputs showed the index pull had started (3.3 GB downloaded).
+  Suspects: pip install of vLLM failing, or the index pull. Also the
+  download cache appeared under `runs/.cache` (double disk-use risk
+  against the 20 GB working quota).
+- 2026-11-17 ~12:15 +07: **BLOCKED on Gemma license.** v2's logs prove
+  install + index pull work; the vLLM cell failed instantly because the
+  model was never mounted (`/kaggle/input` empty). Verified: Kaggle API
+  returns HTTP 403 on the model's files — the coralfox12 account has not
+  accepted the Gemma license. Same on HF (token gets 403). The HF path
+  can't work anyway (31.5 GB fp32 weights > 20 GB working disk). **Needs:
+  sign in to Kaggle as coralfox12, accept the Gemma license at
+  https://www.kaggle.com/models/google/gemma-3n, then re-run.** Notebook
+  v3 built locally (explicit "MODEL NOT MOUNTED" error) but NOT pushed —
+  it would fail the same way. See `phase2/PHASE2.md` for the full
+  diagnosis. GPU used so far: ~0.7 GPU-h of the ~6 GPU-h budget.

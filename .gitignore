@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
+# Never commit credentials or competition test data.
+*credentials*.json
+*-keypair.json
+data/Test.csv

@@ -11,7 +11,12 @@ import argparse
 import json
 from pathlib import Path
 
-from .generate import DEFAULT_FREE_MODEL, LexicalAnswerer, OpenRouterGenerator
+from .generate import (
+    DEFAULT_FREE_MODEL,
+    LexicalAnswerer,
+    OpenRouterGenerator,
+    load_openrouter_key,
+)
 from .prompt import MAX_PROMPT_TOKENS, build_prompt, build_prompt_budgeted
 from .questions import ChallengeQuestion, load_test_csv, load_validation_json
 from .retrieval import BM25Index
@@ -168,14 +173,31 @@ def main() -> int:
                     help="budgeted context fill: keep top-ranked passages "
                     "while their cumulative tokens stay within this budget "
                     "(overrides --rerank-top-k)")
+    ap.add_argument("--key-name", default="key12",
+                    help="OpenRouter key name in openrouter-credentials.json "
+                    "(multi-key sweeps: one key per account, e.g. key2)")
+    ap.add_argument("--offset", type=int, default=0,
+                    help="question slice start (0-based) for splitting a "
+                    "run across several free-quota accounts")
+    ap.add_argument("--limit", type=int, default=None,
+                    help="question slice length; combine slices with "
+                    "scripts/merge_reports.py")
     args = ap.parse_args()
 
     questions = load_questions(Path(args.questions))
+    if args.offset or args.limit is not None:
+        end = None if args.limit is None else args.offset + args.limit
+        questions = questions[args.offset:end]
+        print(f"slice: questions[{args.offset}:{end}] -> {len(questions)} questions")
     index = BM25Index.from_jsonl(args.index)
     if args.generator == "lexical":
         generator = LexicalAnswerer([])
     else:
-        generator = OpenRouterGenerator(model=args.model, max_tokens=args.max_tokens)
+        generator = OpenRouterGenerator(
+            model=args.model,
+            api_key=load_openrouter_key(args.key_name),
+            max_tokens=args.max_tokens,
+        )
     report = run(
         questions,
         index,

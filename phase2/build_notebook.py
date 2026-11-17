@@ -77,11 +77,19 @@ print("WORK:", WORK)
 """
     ),
     code(
-        """# Install the official CLI (with local embedding) + vLLM. ~5-15 min.
-!pip install -q "open-telco-rag[local-embed] @ git+https://github.com/Znbne/telco-retrieve" vllm 2>&1 | tail -3
-!open-telco-rag challenge export --help | head -8
-!python3 -c "import vllm, torch; print('vllm', vllm.__version__, '| torch', torch.__version__)"
-!python3 -c "import sentence_transformers, chromadb, tiktoken; print('sentence-transformers', sentence_transformers.__version__)"
+        """# Install the official CLI (with local embedding) + vLLM.
+# v1 failed in the first ~7 min (pip install or index pull — cell output
+# was lost). v2 logs EVERYTHING to phase2/*.log so a failure is diagnosable
+# from the kernel outputs, and verifies each install before moving on.
+!echo "CELL install start $(date -u +%H:%M:%S)" >> /kaggle/working/phase2/run.log
+!pip install -q --no-cache-dir "open-telco-rag[local-embed] @ git+https://github.com/Znbne/telco-retrieve" > /kaggle/working/phase2/pip-otr.log 2>&1; echo "open-telco-rag pip exit: $?"
+!pip install -q --no-cache-dir vllm > /kaggle/working/phase2/pip-vllm.log 2>&1; echo "vllm pip exit: $?"
+!python3 -c "import open_telco_rag; print('open-telco-rag OK')" 2>&1 | tail -2
+!python3 -c "import vllm, torch; print('vllm', vllm.__version__, '| torch', torch.__version__, '| cuda', torch.cuda.is_available())" 2>&1 | tail -2
+!python3 -c "import sentence_transformers, chromadb, tiktoken; print('sentence-transformers', sentence_transformers.__version__)" 2>&1 | tail -2
+!pip list 2>/dev/null | grep -i -E "^(torch|transformers|vllm|sentence-transformers|chromadb|accelerate|numpy|pydantic) " | tee /kaggle/working/phase2/versions.txt
+!open-telco-rag challenge export --help | head -5
+!echo "CELL install done $(date -u +%H:%M:%S)" >> /kaggle/working/phase2/run.log
 """
     ),
     code(
@@ -101,17 +109,30 @@ for name, blob in FILES.items():
     ),
     code(
         """# Pull the fixed 10 GB index once (cached for all 3 variants in this session).
-!cd /kaggle/working && open-telco-rag pull-hf GSMA/telco-retrieve-chunks telcoretrievechallenge/fixed-grid/text_baseline/otel-0.6b --local-dir /kaggle/working/runs 2>&1 | tail -5
-!ls /kaggle/working/runs/telcoretrievechallenge/fixed-grid/text_baseline/otel-0.6b/db/
+# HF_HUB_CACHE is set explicitly: v1's download cache appeared under runs/
+# (risking double disk use against the 20 GB working quota).
+!echo "CELL pull-hf start $(date -u +%H:%M:%S)" >> /kaggle/working/phase2/run.log
 !df -h /kaggle/working | tail -1
+!cd /kaggle/working && HF_HUB_CACHE=/kaggle/working/hf-cache open-telco-rag pull-hf GSMA/telco-retrieve-chunks telcoretrievechallenge/fixed-grid/text_baseline/otel-0.6b --local-dir /kaggle/working/runs > /kaggle/working/phase2/pull.log 2>&1; echo "pull-hf exit: $?"; tail -5 /kaggle/working/phase2/pull.log
+!ls -la /kaggle/working/runs/telcoretrievechallenge/fixed-grid/text_baseline/otel-0.6b/db/ | head
+!du -sh /kaggle/working/runs /kaggle/working/hf-cache 2>/dev/null; df -h /kaggle/working | tail -1
+!echo "CELL pull-hf done $(date -u +%H:%M:%S)" >> /kaggle/working/phase2/run.log
 """
     ),
     code(
         """# Serve Gemma 3n E4B-it with vLLM (model attached from the Kaggle model hub).
 import glob, os, subprocess, time, urllib.request, json
+open("/kaggle/working/phase2/run.log", "a").write(f"CELL vllm start {time.strftime('%H:%M:%S', time.gmtime())} UTC\\n")
 cands = glob.glob("/kaggle/input/**/config.json", recursive=True)
 print("config.json candidates:", cands)
-MODEL_DIR = os.path.dirname([c for c in cands if "gemma-3n-e4b-it" in c][0])
+print("/kaggle/input contents:", subprocess.run(["ls", "-R", "/kaggle/input"], capture_output=True, text=True).stdout[:1000])
+matches = [c for c in cands if "gemma-3n-e4b-it" in c]
+if not matches:
+    raise SystemExit("MODEL NOT MOUNTED: /kaggle/input has no gemma-3n-e4b-it. "
+        "The Kaggle account must accept the Gemma license at "
+        "https://www.kaggle.com/models/google/gemma-3n first, then re-run. "
+        "(Kaggle returns 403 on the model's files until the license is accepted.)")
+MODEL_DIR = os.path.dirname(matches[0])
 print("MODEL_DIR:", MODEL_DIR)
 LOG = "/kaggle/working/phase2/vllm.log"
 cmd = ["python", "-m", "vllm.entrypoints.openai.api_server",
@@ -136,9 +157,12 @@ while time.time() < deadline:
     except Exception:
         time.sleep(15)
 if not up:
+    tail = "\\n".join(open(LOG).read().splitlines()[-100:])
     print("VLLM FAILED TO START — last 100 log lines:")
-    print("\\n".join(open(LOG).read().splitlines()[-100:]))
+    print(tail)
+    open("/kaggle/working/phase2/run.log", "a").write("CELL vllm FAILED\\n" + tail[-2000:] + "\\n")
     raise SystemExit("vLLM did not come up in 20 min")
+open("/kaggle/working/phase2/run.log", "a").write(f"CELL vllm done {time.strftime('%H:%M:%S', time.gmtime())} UTC\\n")
 """
     ),
     code(
@@ -157,17 +181,23 @@ print("smoke reply:", repr(out["choices"][0]["message"]["content"]))
     ),
     code(
         f"""# Variant 1/3 — control: official defaults (hybrid, top-k 10, rerank keeps 5).
-!cd /kaggle/working/phase2 && time LOCAL_LLM_BASE_URL=http://localhost:8000/v1 open-telco-rag challenge export --questions {Q} --out /kaggle/working/phase2/control/submission.csv --db-path {DB} --collection {COLL} --timeout 300 --resume
+!echo "CELL export-control start $(date -u +%H:%M:%S)" >> /kaggle/working/phase2/run.log
+!cd /kaggle/working/phase2 && time LOCAL_LLM_BASE_URL=http://localhost:8000/v1 open-telco-rag challenge export --questions {Q} --out /kaggle/working/phase2/control/submission.csv --db-path {DB} --collection {COLL} --timeout 300 --resume > /kaggle/working/phase2/export-control.log 2>&1; echo "export-control exit: $?"; tail -5 /kaggle/working/phase2/export-control.log
+!echo "CELL export-control done $(date -u +%H:%M:%S)" >> /kaggle/working/phase2/run.log
 """
     ),
     code(
         f"""# Variant 2/3 — b850: defaults + budgeted context fill to 850 passage tokens.
-!cd /kaggle/working/phase2 && time LOCAL_LLM_BASE_URL=http://localhost:8000/v1 open-telco-rag challenge export --questions {Q} --out /kaggle/working/phase2/b850/submission.csv --db-path {DB} --collection {COLL} --timeout 300 --resume --prompt-builder my_hooks:budget850
+!echo "CELL export-b850 start $(date -u +%H:%M:%S)" >> /kaggle/working/phase2/run.log
+!cd /kaggle/working/phase2 && time LOCAL_LLM_BASE_URL=http://localhost:8000/v1 open-telco-rag challenge export --questions {Q} --out /kaggle/working/phase2/b850/submission.csv --db-path {DB} --collection {COLL} --timeout 300 --resume --prompt-builder my_hooks:budget850 > /kaggle/working/phase2/export-b850.log 2>&1; echo "export-b850 exit: $?"; tail -5 /kaggle/working/phase2/export-b850.log
+!echo "CELL export-b850 done $(date -u +%H:%M:%S)" >> /kaggle/working/phase2/run.log
 """
     ),
     code(
         f"""# Variant 3/3 — k3: defaults + rerank keeps 3 (fewer passages, fixed 512-token chunks).
-!cd /kaggle/working/phase2 && time LOCAL_LLM_BASE_URL=http://localhost:8000/v1 open-telco-rag challenge export --questions {Q} --out /kaggle/working/phase2/k3/submission.csv --db-path {DB} --collection {COLL} --timeout 300 --resume --rerank-top-k 3
+!echo "CELL export-k3 start $(date -u +%H:%M:%S)" >> /kaggle/working/phase2/run.log
+!cd /kaggle/working/phase2 && time LOCAL_LLM_BASE_URL=http://localhost:8000/v1 open-telco-rag challenge export --questions {Q} --out /kaggle/working/phase2/k3/submission.csv --db-path {DB} --collection {COLL} --timeout 300 --resume --rerank-top-k 3 > /kaggle/working/phase2/export-k3.log 2>&1; echo "export-k3 exit: $?"; tail -5 /kaggle/working/phase2/export-k3.log
+!echo "CELL export-k3 done $(date -u +%H:%M:%S)" >> /kaggle/working/phase2/run.log
 """
     ),
     code(

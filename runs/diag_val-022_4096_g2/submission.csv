@@ -1,0 +1,28 @@
+ID,input_prompt,answer
+val-022,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+ procedure of Geofencing UE(s) Information request/response                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0309 | 3 | B | Add procedure of querying for history location                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0310 | 2 | B | LMS reuse the stored UE location information                                           | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0311 | 2 | B | Exposure of value-added UE location information                                        | 19.3.0 |
+| 2024-09 | SA#105 | SP-241212 | 0312 | 1 | B | General description of application enablement of AIML services                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0313 | 3 | B | Dynamic geofencing                                                                     | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0314 | 3 | B | Target UE location provided by surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+Question: Which CAPIF role does the group management server act as, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. CAPIF's API invoker
+B. CAPIF's API exposing function
+C. CAPIF's API consumer
+D. CAPIF's API publisher
+
+Answer with only the letter of the correct option.",

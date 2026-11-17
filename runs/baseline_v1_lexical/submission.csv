@@ -1,0 +1,1450 @@
+ID,input_prompt,answer
+val-001,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+# 3GPP TS 29.280 V19.0.0 (2025-10)
+
+Technical Specification
+
+## **3rd Generation Partnership Project; Technical Specification Group Core Network and Terminals; Evolved Packet System (EPS); 3GPP Sv interface (MME to MSC, and SGSN to MSC) for SRVCC (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G', and the word 'ADVANCED' in smaller letters to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'P' has a red signal wave icon at its base.
+
+The present document has been developed within the 3rd Generation Partnership Project (3GPP™) and may be further elaborated for the purposes of 3GPP. The present document has not been subject to any approval process by the 3GPP Organizational Partners and shall not be implemented. This Specification is provided for future development work within 3GPP only. The Organizational Partners accept no liability for any use of this Specification. Specifications and Reports for implementation of the 3GPP™ system should be obtained via the 3GPP Organizational Partners' Publications Offices.
+
+3GPP support office address
+
+650 Route des Lucioles - Sophia Antipolis  
+Valbonne - FRANCE  
+Tel.: +33 4 92 94 42 00 Fax: +33 4 93 65 47 16
+
+<http://www.3gpp.org>
+
+## --- **Copyright Notification** ---
+
+No part may be reproduced except as authorized by written permission.  
+The copyright and the foregoing restriction extend to reproduction in all media.
+
+© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  
+All rights reserved.
+
+[2] Spec: TS 29.280 | Release: 19
+3GPP TS 29.274 [3] specifies the detailed handling and information elements included in the Version Not Supported Indication message.
+
+## 5.4 Reliable Delivery of Signalling Messages
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.5 Error Handling
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.6 Restoration and Recovery
+
+This is performed as according to GTPv2 in 3GPP TS 23.007 [5].
+
+# --- 6 Sv Information Elements
+
+IE type value used in Sv Message is defined in TS 29.274 [3]. The IE format is coded as per GTP in TS 29.274 [3].
+
+Table 6.1 shows the IEs used for SRVCC. Within information elements, certain fields may be described as spare. These bits shall be transmitted with the value set to 0. To allow for future features, the receiver shall not evaluate these bits.
+
+**Table 6.1-1: Information Elements for SRVCC**
+
+[3] Spec: TS 29.280 | Release: 19
+| IE Type value (Decimal) | Information elements                            | Comment / Reference   | Number of Fixed Octets |
+|-------------------------|-------------------------------------------------|-----------------------|------------------------|
+| 0                       | Reserved                                        | 3GPP TS 29.274 [3]    | 3GPP TS 29.274 [3]     |
+| 1                       | International Mobile Subscriber Identity (IMSI) | 3GPP TS 29.274 [3]    | 3GPP TS 29.274 [3]     |
+| 2                       | Cause                                           | 3GPP TS 29.274 [3]    | 3GPP TS 29.274 [3]     |
+| 3                       | Recovery (Restart Counter)                      | 3GPP TS 29.274 [3]    | 3GPP TS 29.274 [3]     |
+| 4-34                    | Reserved for S101 interface                     | 3GPP TS 29.276 [17]   | 3GPP TS 29.276 [17]    |
+| 35-50                   | Reserved for S121 interface                     | 3GPP TS 29.276 [17]   | 3GPP TS 29.276 [17]    |
+| 51                      | STN-SR                                          | Variable Length / 6.2 | Not Applicable         |
+| 52                      | Source to Target Transparent Container          | Variable Length / 6.3 | Not Applicable         |
+| 53                      | Target to Source Transparent Container          | Variable Length / 6.4 | Not Applicable         |
+| 54                      | MM Context for E-UTRAN (v)SRVCC                 | Variable Length / 6.5 | Not Applicable         |
+| 55                      | MM Context for UTRAN SRVCC                      | Variable Length / 6.6 | Not Applicable         |
+| 56                      | SRVCC Cause                                     | Fixed Length / 6.7    | 1                      |
+| 57                      | Target RNC ID                                   | Variable Length / 6.8 | Not Applicable         |
+| 58                      | Target Global Cell ID                           | Variable Length / 6.9 | Not Applicable         |
+| 59                      | TEID-C                                          | Extendable / 6.10     | 4                      |
+| 60                      | Sv Flags
+
+[4] Spec: TS 29.280 | Release: 19
+Table 5.2.12 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.12: Information Elements in a SRVCC CS to PS Cancel Notification**
+
+| Information elements | P | Condition / Comment                                             | IE Type           | Ins. |
+|----------------------|---|-----------------------------------------------------------------|-------------------|------|
+| IMSI                 | C | The IMSI shall be included if available.                        | IMSI              | 0    |
+| Cancel Cause         | M | MSC Server shall indicate the reason for Handover cancellation. | SRVCC Cause       | 0    |
+| ME Identity (MEI)    | C | This IE shall be included if available.                         | MEI               | 0    |
+| Private Extension    | O | None                                                            | Private Extension | VS   |
+
+### 5.2.13 SRVCC CS to PS Cancel Acknowledge
+
+A SRVCC CS to PS Cancel Acknowledge message shall be sent across Sv interface as a response to SRVCC CS to PS Cancel Notification.
+
+Table 5.2.13 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.13: Information Elements in a SRVCC CS to PS Cancel Acknowledge**
+
+| Information elements | P | Condition / Comment | IE Type           | Ins. |
+|----------------------|---|---------------------|-------------------|------|
+| Cause                | M | None                | Cause             | 0    |
+| Private Extension    | O | None                | Private Extension | VS   |
+
+## 5.3 Path Management Messages
+
+### 5.3.1 Introduction
+
+The following GTPv2-C messages support path management for the Sv interface:
+
+- Echo Request
+- Echo Response
+- Version Not Supported Indication
+
+These messages are defined for GTPv2-C and the handling and definition shall also be as defined in GTPv2-C, see 3GPP TS 29.274 [3].
+
+### 5.3.2 Echo Request message
+
+3GPP TS 29.274 [3] specifies the information elements included in the Echo Request message.
+
+### 5.3.3 Echo Response message
+
+3GPP TS 29.274 [3] specifies the information elements included in the Echo Response message.
+
+### 5.3.4 Version Not Supported Indication message
+
+[5] Spec: TS 23.434 | Release: 19
+ procedure of Geofencing UE(s) Information request/response                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0309 | 3 | B | Add procedure of querying for history location                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0310 | 2 | B | LMS reuse the stored UE location information                                           | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0311 | 2 | B | Exposure of value-added UE location information                                        | 19.3.0 |
+| 2024-09 | SA#105 | SP-241212 | 0312 | 1 | B | General description of application enablement of AIML services                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0313 | 3 | B | Dynamic geofencing                                                                     | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0314 | 3 | B | Target UE location provided by surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+Question: According to 3GPP Rel-19, TS 29.280 v19.0.0, which entities does the Sv interface connect?
+
+Options:
+A. MME or SGSN and MSC server enhanced for SRVCC
+B. MME and HSS
+C. SGSN and GGSN
+D. MSC server and HLR
+
+Answer with only the letter of the correct option.",A
+val-002,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+3GPP TS 29.274 [3] specifies the detailed handling and information elements included in the Version Not Supported Indication message.
+
+## 5.4 Reliable Delivery of Signalling Messages
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.5 Error Handling
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.6 Restoration and Recovery
+
+This is performed as according to GTPv2 in 3GPP TS 23.007 [5].
+
+# --- 6 Sv Information Elements
+
+IE type value used in Sv Message is defined in TS 29.274 [3]. The IE format is coded as per GTP in TS 29.274 [3].
+
+Table 6.1 shows the IEs used for SRVCC. Within information elements, certain fields may be described as spare. These bits shall be transmitted with the value set to 0. To allow for future features, the receiver shall not evaluate these bits.
+
+**Table 6.1-1: Information Elements for SRVCC**
+
+[2] Spec: TS 29.280 | Release: 19
+For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].
+
+For the purposes of the present document, the following terms and definitions given in 3GPP TS 23.216 [2] apply:
+
+For the purposes of the present document, the following terms and definitions given in 3GPP TS 23.251 [16] apply:
+
+For the purposes of the present document, the following symbols apply:
+
+For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].
+
+|          |                                                            |
+|----------|------------------------------------------------------------|
+| C-MSISDN | Correlation MSISDN.                                        |
+| GWCN     | Gateway Core Network                                       |
+| MME/SGSN | MME or SGSN.                                               |
+| MOCN     | Multi-Operator Core Network                                |
+| SRVCC    | Single Radio Voice Call Continuity.                        |
+| STN-SR   | Session Transfer Number for SRVCC: see 3GPP TS 23.003 [4]. |
+| vSRVCC   | Single Radio Video Call Continuity.                        |
+
+# 4 General Description
+
+This document describes the Sv interface related procedures, message parameters and protocol specifications. The Sv messages are based on GTP. The message format, IE coding, and protocol error handling for Sv is per GTP as specified in 3GPP TS 29.274 [3].
+
+The general rules for IP address and UDP port number handling for the GTP messages on the Sv interface is per 3GPP TS 29.274 [3].
+
+# 5 Sv Messages and Information Elements
+
+The Sv application defines a set of messages between the MME/SGSN and MSC Server to provide SRVCC as defined in 3GPP TS 23.216 [2]. The Sv message header shall be conformant to the GTPv2-C Message Header, see 3GPP TS 29.274 [3]. The messages to be used and the information elements are described in the following
+
+[3] Spec: TS 29.280 | Release: 19
+| Message Type value (Decimal) | Message                              | Reference           | Initial | Triggered |
+|------------------------------|--------------------------------------|---------------------|---------|-----------|
+| 0                            | Reserved                             | 3GPP TS 29.274 [3]  |         |           |
+| 1                            | Echo Request                         | 3GPP TS 29.274 [3]  | X       |           |
+| 2                            | Echo Response                        | 3GPP TS 29.274 [3]  |         | X         |
+| 3                            | Version Not Supported Indication     | 3GPP TS 29.274 [3]  |         | X         |
+| 4-16                         | Reserved for S101 interface          | 3GPP TS 29.276 [17] |         |           |
+| 17-24                        | Reserved for S121 interface          | 3GPP TS 29.276 [17] |         |           |
+| 25                           | SRVCC PS to CS Request               | 5.2.2               | X       |           |
+| 26                           | SRVCC PS to CS Response              | 5.2.3               |         | X         |
+| 27                           | SRVCC PS to CS Complete Notification | 5.2.4               | X       |           |
+| 28                           | SRVCC PS to CS Complete Acknowledge  | 5.2.5               |         | X         |
+| 29                           | SRVCC PS to CS Cancel Notification   | 5.2.6               | X       |           |
+| 30                           | SRVCC PS to CS Cancel Acknowledge    | 5.2.7               |         | X         |
+| 31                           | SRVCC CS to PS Request               | 5.2.8               | X       |           |
+| 32-239                       | Reserved for GTPv2                   | 3GPP TS 29.274 [3]  |         |           |
+| 240                          | SRVCC CS to PS Response              | 5.2.9               |         | X         |
+| 241                          | SRVCC CS to PS Complete Notification | 5.2.10              | X       |           |
+| 242                          | SRVCC CS to PS Complete Acknowledge  | 5.2.11              |
+
+[4] Spec: TS 29.280 | Release: 19
+| IE Type value (Decimal) | Information elements                            | Comment / Reference   | Number of Fixed Octets |
+|-------------------------|-------------------------------------------------|-----------------------|------------------------|
+| 0                       | Reserved                                        | 3GPP TS 29.274 [3]    | 3GPP TS 29.274 [3]     |
+| 1                       | International Mobile Subscriber Identity (IMSI) | 3GPP TS 29.274 [3]    | 3GPP TS 29.274 [3]     |
+| 2                       | Cause                                           | 3GPP TS 29.274 [3]    | 3GPP TS 29.274 [3]     |
+| 3                       | Recovery (Restart Counter)                      | 3GPP TS 29.274 [3]    | 3GPP TS 29.274 [3]     |
+| 4-34                    | Reserved for S101 interface                     | 3GPP TS 29.276 [17]   | 3GPP TS 29.276 [17]    |
+| 35-50                   | Reserved for S121 interface                     | 3GPP TS 29.276 [17]   | 3GPP TS 29.276 [17]    |
+| 51                      | STN-SR                                          | Variable Length / 6.2 | Not Applicable         |
+| 52                      | Source to Target Transparent Container          | Variable Length / 6.3 | Not Applicable         |
+| 53                      | Target to Source Transparent Container          | Variable Length / 6.4 | Not Applicable         |
+| 54                      | MM Context for E-UTRAN (v)SRVCC                 | Variable Length / 6.5 | Not Applicable         |
+| 55                      | MM Context for UTRAN SRVCC                      | Variable Length / 6.6 | Not Applicable         |
+| 56                      | SRVCC Cause                                     | Fixed Length / 6.7    | 1                      |
+| 57                      | Target RNC ID                                   | Variable Length / 6.8 | Not Applicable         |
+| 58                      | Target Global Cell ID                           | Variable Length / 6.9 | Not Applicable         |
+| 59                      | TEID-C                                          | Extendable / 6.10     | 4                      |
+| 60                      | Sv Flags
+
+[5] Spec: TS 29.280 | Release: 19
+                                        | Extendable / 6.11     | 1                      |
+| 61                      | Service Area Identifier                         | Extendable / 6.12     | 7                      |
+| 62                      | MM Context for CS to PS SRVCC                   | Extendable / 6.13     | 42                     |
+| 63-70                   | For future Sv interface use                     | -                     |                        |
+| 71-73                   | Reserved for GTPv2                              | 3GPP TS 29.274 [3]    | 3GPP TS 29.274 [3]     |
+| 74                      | IP Address                                      | 3GPP TS 29.274 [3]    | 3GPP TS 29.274 [3]     |
+
+Question: What does the abbreviation SRVCC stand for, according to 3GPP TS 29.280?
+
+Options:
+A. Single Radio Voice Call Continuity
+B. Single Radio Video Call Continuity
+C. Seamless Radio Voice Call Control
+D. Single RAN Voice Call Continuity
+
+Answer with only the letter of the correct option.",A
+val-003,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+| Message Type value (Decimal) | Message                              | Reference           | Initial | Triggered |
+|------------------------------|--------------------------------------|---------------------|---------|-----------|
+| 0                            | Reserved                             | 3GPP TS 29.274 [3]  |         |           |
+| 1                            | Echo Request                         | 3GPP TS 29.274 [3]  | X       |           |
+| 2                            | Echo Response                        | 3GPP TS 29.274 [3]  |         | X         |
+| 3                            | Version Not Supported Indication     | 3GPP TS 29.274 [3]  |         | X         |
+| 4-16                         | Reserved for S101 interface          | 3GPP TS 29.276 [17] |         |           |
+| 17-24                        | Reserved for S121 interface          | 3GPP TS 29.276 [17] |         |           |
+| 25                           | SRVCC PS to CS Request               | 5.2.2               | X       |           |
+| 26                           | SRVCC PS to CS Response              | 5.2.3               |         | X         |
+| 27                           | SRVCC PS to CS Complete Notification | 5.2.4               | X       |           |
+| 28                           | SRVCC PS to CS Complete Acknowledge  | 5.2.5               |         | X         |
+| 29                           | SRVCC PS to CS Cancel Notification   | 5.2.6               | X       |           |
+| 30                           | SRVCC PS to CS Cancel Acknowledge    | 5.2.7               |         | X         |
+| 31                           | SRVCC CS to PS Request               | 5.2.8               | X       |           |
+| 32-239                       | Reserved for GTPv2                   | 3GPP TS 29.274 [3]  |         |           |
+| 240                          | SRVCC CS to PS Response              | 5.2.9               |         | X         |
+| 241                          | SRVCC CS to PS Complete Notification | 5.2.10              | X       |           |
+| 242                          | SRVCC CS to PS Complete Acknowledge  | 5.2.11              |
+
+[2] Spec: TS 29.280 | Release: 19
+The GTPv2-C messages shall be sent per UE on the Sv interface.
+
+There shall be one pair of TEID-C per UE on the Sv interface. The same tunnel shall be shared for the control messages related to the same UE operation.
+
+The TEID field in the SRVCC PS to CS Request and in the SRVCC CS to PS Request message header shall be set to ""0"" because this is the first message sent between the MME/SGSN and the MSC server to establish the tunnel for a UE.
+
+The TEID field in the SRVCC PS to CS Cancel Notification message header shall be set to ""0"" if the message is sent before reception of the acceptance response to the SRVCC PS to CS Request. If the MME/SGSN sends the SRVCC PS to CS Cancel Notification message after the acceptance response to the SRVCC PS to CS Request, the TEID field of the SRVCC PS to CS Cancel Notification message may be set to the MSC Server's TEID value received in the SRVCC PS to CS Response message. Therefore the MSC Server shall be able to accept the SRVCC PS to CS Cancel Notification messages with ""0"" or non-zero TEID in the message header.
+
+The TEID field in the SRVCC CS to PS Cancel Notification message header shall be set to ""0"" if the message is sent before reception of the acceptance response to the SRVCC CS to PS Request. If the MSC Server sends the SRVCC CS to PS Cancel Notification message after the acceptance response to the SRVCC CS to PS Request, the TEID field of the SRVCC CS to PS Cancel Notification message may be set to the MME/SGSN TEID value received in the SRVCC CS to PS Response message. Therefore the MME/SGSN shall be able to accept the SRVCC CS to PS Cancel Notification messages with ""0"" or non-zero TEID in the message header.
+
+### 5.2.2 SRVCC PS to CS Request
+
+A SRVCC PS to CS Request message shall be sent across Sv interface from the MME/SGSN to the target MSC server as part of the MME/SGSN SRVCC procedure in 3GPP TS 23.216 [2].
+
+This message shall also be sent across Sv interface from the MME to the target MSC server as part of the vSRVCC procedure in 3GPP TS 23.216 [2].
+
+[3] Spec: TS 29.280 | Release: 19
+Table 5.2.12 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.12: Information Elements in a SRVCC CS to PS Cancel Notification**
+
+| Information elements | P | Condition / Comment                                             | IE Type           | Ins. |
+|----------------------|---|-----------------------------------------------------------------|-------------------|------|
+| IMSI                 | C | The IMSI shall be included if available.                        | IMSI              | 0    |
+| Cancel Cause         | M | MSC Server shall indicate the reason for Handover cancellation. | SRVCC Cause       | 0    |
+| ME Identity (MEI)    | C | This IE shall be included if available.                         | MEI               | 0    |
+| Private Extension    | O | None                                                            | Private Extension | VS   |
+
+### 5.2.13 SRVCC CS to PS Cancel Acknowledge
+
+A SRVCC CS to PS Cancel Acknowledge message shall be sent across Sv interface as a response to SRVCC CS to PS Cancel Notification.
+
+Table 5.2.13 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.13: Information Elements in a SRVCC CS to PS Cancel Acknowledge**
+
+| Information elements | P | Condition / Comment | IE Type           | Ins. |
+|----------------------|---|---------------------|-------------------|------|
+| Cause                | M | None                | Cause             | 0    |
+| Private Extension    | O | None                | Private Extension | VS   |
+
+## 5.3 Path Management Messages
+
+### 5.3.1 Introduction
+
+The following GTPv2-C messages support path management for the Sv interface:
+
+- Echo Request
+- Echo Response
+- Version Not Supported Indication
+
+These messages are defined for GTPv2-C and the handling and definition shall also be as defined in GTPv2-C, see 3GPP TS 29.274 [3].
+
+### 5.3.2 Echo Request message
+
+3GPP TS 29.274 [3] specifies the information elements included in the Echo Request message.
+
+### 5.3.3 Echo Response message
+
+3GPP TS 29.274 [3] specifies the information elements included in the Echo Response message.
+
+### 5.3.4 Version Not Supported Indication message
+
+[4] Spec: TS 29.280 | Release: 19
+A SRVCC CS to PS Complete Notification message shall be sent across Sv interface from the target MME/SGSN to the source MSC Server to indicate the SRVCC handover with PS Domain has been finished during UTRAN/GERAN to E-UTRAN/UTRAN (HSPA) SRVCC procedure as specified in 3GPP TS 23.216 [2].
+
+Table 5.2.10 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.10: Information Elements in a SRVCC CS to PS Complete Notification**
+
+| Information elements | P | Condition / Comment                                                                                                                                                            | IE Type           | Ins. |
+|----------------------|---|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|------|
+| SRVCC failure Cause  | C | This IE shall be included if there is a failure detected by the target MME/SGSN during UTRAN/GERAN to E-UTRAN/UTRAN (HSPA) SRVCC procedure as specified in 3GPP TS 23.216 [2]. | SRVCC cause       | 0    |
+| Private Extension    | O | None                                                                                                                                                                           | Private Extension | VS   |
+
+### 5.2.11 SRVCC CS to PS Complete Acknowledge
+
+A SRVCC CS to PS Complete Acknowledge message shall be sent across Sv interface as a response to SRVCC CS to PS Complete Notification during UTRAN/GERAN to E-UTRAN/UTRAN (HSPA) SRVCC procedure as specified in 3GPP TS 23.216 [2].
+
+Table 5.2.10 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.11: Information Elements in a SRVCC CS to PS Complete Acknowledge**
+
+| Information elements | P | Condition / Comment | IE Type           | Ins. |
+|----------------------|---|---------------------|-------------------|------|
+| Cause                | M | None                | Cause             | 0    |
+| Private Extension    | O | None                | Private Extension | VS   |
+
+### 5.2.12 SRVCC CS to PS Cancel Notification
+
+A SRVCC CS to PS Cancel Notification message shall be sent across Sv interface from the MSC Server to the target MME/SGSN to request the cancellation of an ongoing SRVCC handover.
+
+[5] Spec: TS 29.280 | Release: 19
+- to indicate the SRVCC handover with CS Domain has been successfully finished;
+- or to indicate the SRVCC handover with CS Domain has finished (i.e. HO Complete / Relocation Complete message has been received from the target RAN) but the IMS Session Transfer procedure completion in 3GPP TS 23.237 [13] has failed by including the appropriate SRVCC post failure Cause value.
+
+This message shall also be sent on Sv interface to the source MME during vSRVCC procedure in 3GPP TS 23.216 [2].
+
+Table 5.2.4 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.4: Information Elements in a SRVCC PS to CS Complete Notification**
+
+| Information elements     | P  | Condition / Comment                                                                                                                                                                                                                 | IE Type           | Ins. |
+|--------------------------|----|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|------|
+| IMSI                     | C  | This IE shall be included in the message except for the cases:<br>- The UE is emergency attached and it is UICClass<br>- The UE is emergency attached and the IMSI is not authenticated                                             | IMSI              | 0    |
+| SRVCC post failure Cause | CO | This IE shall be sent if a call is to be released locally in the MSC Server due to IMS session leg establishment failure. The MSC Server shall include this IE to indicate the nature of the failure (i.e., permanent or temporary) | SRVCC Cause       | 0    |
+| Private Extension        | O  | None                                                                                                                                                                                                                                | Private Extension | VS   |
+
+### 5.2.5 SRVCC PS to CS Complete Acknowledge
+
+A SRVCC PS to CS Complete Acknowledge message shall be sent across Sv interface as a response to SRVCC PS to CS Complete Notification during (v)SRVCC handover with CS Domain in 3GPP TS 23.216 [2].
+
+Table 5.2.5 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.5: Information Elements in a SRVCC PS to CS Complete Acknowledge**
+
+Question: What is the Message Type value (decimal) of the SRVCC PS to CS Request on the Sv interface, according to 3GPP Rel-19, TS 29.280 v19.0.0?
+
+Options:
+A. 25
+B. 26
+C. 31
+D. 1
+
+Answer with only the letter of the correct option.",A
+val-004,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+| Message Type value (Decimal) | Message                              | Reference           | Initial | Triggered |
+|------------------------------|--------------------------------------|---------------------|---------|-----------|
+| 0                            | Reserved                             | 3GPP TS 29.274 [3]  |         |           |
+| 1                            | Echo Request                         | 3GPP TS 29.274 [3]  | X       |           |
+| 2                            | Echo Response                        | 3GPP TS 29.274 [3]  |         | X         |
+| 3                            | Version Not Supported Indication     | 3GPP TS 29.274 [3]  |         | X         |
+| 4-16                         | Reserved for S101 interface          | 3GPP TS 29.276 [17] |         |           |
+| 17-24                        | Reserved for S121 interface          | 3GPP TS 29.276 [17] |         |           |
+| 25                           | SRVCC PS to CS Request               | 5.2.2               | X       |           |
+| 26                           | SRVCC PS to CS Response              | 5.2.3               |         | X         |
+| 27                           | SRVCC PS to CS Complete Notification | 5.2.4               | X       |           |
+| 28                           | SRVCC PS to CS Complete Acknowledge  | 5.2.5               |         | X         |
+| 29                           | SRVCC PS to CS Cancel Notification   | 5.2.6               | X       |           |
+| 30                           | SRVCC PS to CS Cancel Acknowledge    | 5.2.7               |         | X         |
+| 31                           | SRVCC CS to PS Request               | 5.2.8               | X       |           |
+| 32-239                       | Reserved for GTPv2                   | 3GPP TS 29.274 [3]  |         |           |
+| 240                          | SRVCC CS to PS Response              | 5.2.9               |         | X         |
+| 241                          | SRVCC CS to PS Complete Notification | 5.2.10              | X       |           |
+| 242                          | SRVCC CS to PS Complete Acknowledge  | 5.2.11              |
+
+[2] Spec: TS 29.280 | Release: 19
+The GTPv2-C messages shall be sent per UE on the Sv interface.
+
+There shall be one pair of TEID-C per UE on the Sv interface. The same tunnel shall be shared for the control messages related to the same UE operation.
+
+The TEID field in the SRVCC PS to CS Request and in the SRVCC CS to PS Request message header shall be set to ""0"" because this is the first message sent between the MME/SGSN and the MSC server to establish the tunnel for a UE.
+
+The TEID field in the SRVCC PS to CS Cancel Notification message header shall be set to ""0"" if the message is sent before reception of the acceptance response to the SRVCC PS to CS Request. If the MME/SGSN sends the SRVCC PS to CS Cancel Notification message after the acceptance response to the SRVCC PS to CS Request, the TEID field of the SRVCC PS to CS Cancel Notification message may be set to the MSC Server's TEID value received in the SRVCC PS to CS Response message. Therefore the MSC Server shall be able to accept the SRVCC PS to CS Cancel Notification messages with ""0"" or non-zero TEID in the message header.
+
+The TEID field in the SRVCC CS to PS Cancel Notification message header shall be set to ""0"" if the message is sent before reception of the acceptance response to the SRVCC CS to PS Request. If the MSC Server sends the SRVCC CS to PS Cancel Notification message after the acceptance response to the SRVCC CS to PS Request, the TEID field of the SRVCC CS to PS Cancel Notification message may be set to the MME/SGSN TEID value received in the SRVCC CS to PS Response message. Therefore the MME/SGSN shall be able to accept the SRVCC CS to PS Cancel Notification messages with ""0"" or non-zero TEID in the message header.
+
+### 5.2.2 SRVCC PS to CS Request
+
+A SRVCC PS to CS Request message shall be sent across Sv interface from the MME/SGSN to the target MSC server as part of the MME/SGSN SRVCC procedure in 3GPP TS 23.216 [2].
+
+This message shall also be sent across Sv interface from the MME to the target MSC server as part of the vSRVCC procedure in 3GPP TS 23.216 [2].
+
+[3] Spec: TS 29.280 | Release: 19
+Table 5.2.12 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.12: Information Elements in a SRVCC CS to PS Cancel Notification**
+
+| Information elements | P | Condition / Comment                                             | IE Type           | Ins. |
+|----------------------|---|-----------------------------------------------------------------|-------------------|------|
+| IMSI                 | C | The IMSI shall be included if available.                        | IMSI              | 0    |
+| Cancel Cause         | M | MSC Server shall indicate the reason for Handover cancellation. | SRVCC Cause       | 0    |
+| ME Identity (MEI)    | C | This IE shall be included if available.                         | MEI               | 0    |
+| Private Extension    | O | None                                                            | Private Extension | VS   |
+
+### 5.2.13 SRVCC CS to PS Cancel Acknowledge
+
+A SRVCC CS to PS Cancel Acknowledge message shall be sent across Sv interface as a response to SRVCC CS to PS Cancel Notification.
+
+Table 5.2.13 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.13: Information Elements in a SRVCC CS to PS Cancel Acknowledge**
+
+| Information elements | P | Condition / Comment | IE Type           | Ins. |
+|----------------------|---|---------------------|-------------------|------|
+| Cause                | M | None                | Cause             | 0    |
+| Private Extension    | O | None                | Private Extension | VS   |
+
+## 5.3 Path Management Messages
+
+### 5.3.1 Introduction
+
+The following GTPv2-C messages support path management for the Sv interface:
+
+- Echo Request
+- Echo Response
+- Version Not Supported Indication
+
+These messages are defined for GTPv2-C and the handling and definition shall also be as defined in GTPv2-C, see 3GPP TS 29.274 [3].
+
+### 5.3.2 Echo Request message
+
+3GPP TS 29.274 [3] specifies the information elements included in the Echo Request message.
+
+### 5.3.3 Echo Response message
+
+3GPP TS 29.274 [3] specifies the information elements included in the Echo Response message.
+
+### 5.3.4 Version Not Supported Indication message
+
+[4] Spec: TS 29.280 | Release: 19
+A SRVCC CS to PS Complete Notification message shall be sent across Sv interface from the target MME/SGSN to the source MSC Server to indicate the SRVCC handover with PS Domain has been finished during UTRAN/GERAN to E-UTRAN/UTRAN (HSPA) SRVCC procedure as specified in 3GPP TS 23.216 [2].
+
+Table 5.2.10 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.10: Information Elements in a SRVCC CS to PS Complete Notification**
+
+| Information elements | P | Condition / Comment                                                                                                                                                            | IE Type           | Ins. |
+|----------------------|---|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|------|
+| SRVCC failure Cause  | C | This IE shall be included if there is a failure detected by the target MME/SGSN during UTRAN/GERAN to E-UTRAN/UTRAN (HSPA) SRVCC procedure as specified in 3GPP TS 23.216 [2]. | SRVCC cause       | 0    |
+| Private Extension    | O | None                                                                                                                                                                           | Private Extension | VS   |
+
+### 5.2.11 SRVCC CS to PS Complete Acknowledge
+
+A SRVCC CS to PS Complete Acknowledge message shall be sent across Sv interface as a response to SRVCC CS to PS Complete Notification during UTRAN/GERAN to E-UTRAN/UTRAN (HSPA) SRVCC procedure as specified in 3GPP TS 23.216 [2].
+
+Table 5.2.10 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.11: Information Elements in a SRVCC CS to PS Complete Acknowledge**
+
+| Information elements | P | Condition / Comment | IE Type           | Ins. |
+|----------------------|---|---------------------|-------------------|------|
+| Cause                | M | None                | Cause             | 0    |
+| Private Extension    | O | None                | Private Extension | VS   |
+
+### 5.2.12 SRVCC CS to PS Cancel Notification
+
+A SRVCC CS to PS Cancel Notification message shall be sent across Sv interface from the MSC Server to the target MME/SGSN to request the cancellation of an ongoing SRVCC handover.
+
+[5] Spec: TS 29.280 | Release: 19
+- to indicate the SRVCC handover with CS Domain has been successfully finished;
+- or to indicate the SRVCC handover with CS Domain has finished (i.e. HO Complete / Relocation Complete message has been received from the target RAN) but the IMS Session Transfer procedure completion in 3GPP TS 23.237 [13] has failed by including the appropriate SRVCC post failure Cause value.
+
+This message shall also be sent on Sv interface to the source MME during vSRVCC procedure in 3GPP TS 23.216 [2].
+
+Table 5.2.4 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.4: Information Elements in a SRVCC PS to CS Complete Notification**
+
+| Information elements     | P  | Condition / Comment                                                                                                                                                                                                                 | IE Type           | Ins. |
+|--------------------------|----|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|------|
+| IMSI                     | C  | This IE shall be included in the message except for the cases:<br>- The UE is emergency attached and it is UICClass<br>- The UE is emergency attached and the IMSI is not authenticated                                             | IMSI              | 0    |
+| SRVCC post failure Cause | CO | This IE shall be sent if a call is to be released locally in the MSC Server due to IMS session leg establishment failure. The MSC Server shall include this IE to indicate the nature of the failure (i.e., permanent or temporary) | SRVCC Cause       | 0    |
+| Private Extension        | O  | None                                                                                                                                                                                                                                | Private Extension | VS   |
+
+### 5.2.5 SRVCC PS to CS Complete Acknowledge
+
+A SRVCC PS to CS Complete Acknowledge message shall be sent across Sv interface as a response to SRVCC PS to CS Complete Notification during (v)SRVCC handover with CS Domain in 3GPP TS 23.216 [2].
+
+Table 5.2.5 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.5: Information Elements in a SRVCC PS to CS Complete Acknowledge**
+
+Question: What is the Message Type value (decimal) of the SRVCC CS to PS Request on the Sv interface, according to 3GPP Rel-19, TS 29.280 v19.0.0?
+
+Options:
+A. 31
+B. 25
+C. 30
+D. 27
+
+Answer with only the letter of the correct option.",A
+val-005,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].
+
+For the purposes of the present document, the following terms and definitions given in 3GPP TS 23.216 [2] apply:
+
+For the purposes of the present document, the following terms and definitions given in 3GPP TS 23.251 [16] apply:
+
+For the purposes of the present document, the following symbols apply:
+
+For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].
+
+|          |                                                            |
+|----------|------------------------------------------------------------|
+| C-MSISDN | Correlation MSISDN.                                        |
+| GWCN     | Gateway Core Network                                       |
+| MME/SGSN | MME or SGSN.                                               |
+| MOCN     | Multi-Operator Core Network                                |
+| SRVCC    | Single Radio Voice Call Continuity.                        |
+| STN-SR   | Session Transfer Number for SRVCC: see 3GPP TS 23.003 [4]. |
+| vSRVCC   | Single Radio Video Call Continuity.                        |
+
+# 4 General Description
+
+This document describes the Sv interface related procedures, message parameters and protocol specifications. The Sv messages are based on GTP. The message format, IE coding, and protocol error handling for Sv is per GTP as specified in 3GPP TS 29.274 [3].
+
+The general rules for IP address and UDP port number handling for the GTP messages on the Sv interface is per 3GPP TS 29.274 [3].
+
+# 5 Sv Messages and Information Elements
+
+The Sv application defines a set of messages between the MME/SGSN and MSC Server to provide SRVCC as defined in 3GPP TS 23.216 [2]. The Sv message header shall be conformant to the GTPv2-C Message Header, see 3GPP TS 29.274 [3]. The messages to be used and the information elements are described in the following
+
+[2] Spec: TS 29.280 | Release: 19
+# 3GPP TS 29.280 V19.0.0 (2025-10)
+
+Technical Specification
+
+## **3rd Generation Partnership Project; Technical Specification Group Core Network and Terminals; Evolved Packet System (EPS); 3GPP Sv interface (MME to MSC, and SGSN to MSC) for SRVCC (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G', and the word 'ADVANCED' in smaller letters to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'P' has a red signal wave icon at its base.
+
+The present document has been developed within the 3rd Generation Partnership Project (3GPP™) and may be further elaborated for the purposes of 3GPP. The present document has not been subject to any approval process by the 3GPP Organizational Partners and shall not be implemented. This Specification is provided for future development work within 3GPP only. The Organizational Partners accept no liability for any use of this Specification. Specifications and Reports for implementation of the 3GPP™ system should be obtained via the 3GPP Organizational Partners' Publications Offices.
+
+3GPP support office address
+
+650 Route des Lucioles - Sophia Antipolis  
+Valbonne - FRANCE  
+Tel.: +33 4 92 94 42 00 Fax: +33 4 93 65 47 16
+
+<http://www.3gpp.org>
+
+## --- **Copyright Notification** ---
+
+No part may be reproduced except as authorized by written permission.  
+The copyright and the foregoing restriction extend to reproduction in all media.
+
+© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  
+All rights reserved.
+
+[3] Spec: TS 29.280 | Release: 19
+3GPP TS 29.274 [3] specifies the detailed handling and information elements included in the Version Not Supported Indication message.
+
+## 5.4 Reliable Delivery of Signalling Messages
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.5 Error Handling
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.6 Restoration and Recovery
+
+This is performed as according to GTPv2 in 3GPP TS 23.007 [5].
+
+# --- 6 Sv Information Elements
+
+IE type value used in Sv Message is defined in TS 29.274 [3]. The IE format is coded as per GTP in TS 29.274 [3].
+
+Table 6.1 shows the IEs used for SRVCC. Within information elements, certain fields may be described as spare. These bits shall be transmitted with the value set to 0. To allow for future features, the receiver shall not evaluate these bits.
+
+**Table 6.1-1: Information Elements for SRVCC**
+
+[4] Spec: TS 29.280 | Release: 19
+Sv Messages are used for both the Inter-RAT handover from IMS based voice service over EPS to CS domain over 3GPP UTRAN/GERAN access or from UTRAN (HSPA) to 3GPP UTRAN/GERAN access and the Inter-RAT handover from IMS based voice and video service over EPS to CS domain over 3GPP UTRAN access.
+
+Sv Messages are also used for the Inter-RAT handover from voice service in CS domain over 3GPP UTRAN/GERAN access to IMS based service over LTE or UTRAN (HSPA).
+
+Sv Message Type value is defined in 3GPP TS 29.274 [3]. The message format is coded as per GTP in 3GPP TS 29.274 [3].
+
+**Table 5.2.1: Message types for Sv interface**
+
+[5] Spec: TS 29.280 | Release: 19
+Table 5.2.12 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.12: Information Elements in a SRVCC CS to PS Cancel Notification**
+
+| Information elements | P | Condition / Comment                                             | IE Type           | Ins. |
+|----------------------|---|-----------------------------------------------------------------|-------------------|------|
+| IMSI                 | C | The IMSI shall be included if available.                        | IMSI              | 0    |
+| Cancel Cause         | M | MSC Server shall indicate the reason for Handover cancellation. | SRVCC Cause       | 0    |
+| ME Identity (MEI)    | C | This IE shall be included if available.                         | MEI               | 0    |
+| Private Extension    | O | None                                                            | Private Extension | VS   |
+
+### 5.2.13 SRVCC CS to PS Cancel Acknowledge
+
+A SRVCC CS to PS Cancel Acknowledge message shall be sent across Sv interface as a response to SRVCC CS to PS Cancel Notification.
+
+Table 5.2.13 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.13: Information Elements in a SRVCC CS to PS Cancel Acknowledge**
+
+| Information elements | P | Condition / Comment | IE Type           | Ins. |
+|----------------------|---|---------------------|-------------------|------|
+| Cause                | M | None                | Cause             | 0    |
+| Private Extension    | O | None                | Private Extension | VS   |
+
+## 5.3 Path Management Messages
+
+### 5.3.1 Introduction
+
+The following GTPv2-C messages support path management for the Sv interface:
+
+- Echo Request
+- Echo Response
+- Version Not Supported Indication
+
+These messages are defined for GTPv2-C and the handling and definition shall also be as defined in GTPv2-C, see 3GPP TS 29.274 [3].
+
+### 5.3.2 Echo Request message
+
+3GPP TS 29.274 [3] specifies the information elements included in the Echo Request message.
+
+### 5.3.3 Echo Response message
+
+3GPP TS 29.274 [3] specifies the information elements included in the Echo Response message.
+
+### 5.3.4 Version Not Supported Indication message
+
+Question: What underlying protocol are the Sv interface messages based on? (according to 3GPP Rel-19, TS 29.280 v19.0.0)
+
+Options:
+A. SIP
+B. SCTP
+C. DIAM
+D. GTP
+
+Answer with only the letter of the correct option.",D
+val-006,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+NOTE: The size of the TLI (Type, Length and Instance) fields, i.e ""4"" octets, has been subtracted from the number of the fixed octets of the ""Fixed Length"" and ""Extendable"" IEs.
+
+STN-SR is defined in 3GPP TS 23.003 [4]. STN-SR is transferred via GTP tunnels. The sending entity copies the value part of the STN-SR into the Value field of the STN-SR IE. The STN-SR IE is coded as depicted in Figure 6.2-1. Octet 5 contains the Nature of Address and Numbering Plan Indicator (NANPI) of the ""AddressString"" ASN.1 type (see 3GPP TS 29.002 [11]). Octets 6 to (n+4) contain the actual STN-SR (digits of an address encoded as a TBCD-STRING as in the ""AddressString"" ASN.1 type). For an odd number of STN-SR digits, bits 8 to 5 of the last octet are encoded with the filler ""1111"".
+
+![](41a438d7e4adc17c3a4005e7c9500091_img.jpg)
+
+| Octets | Bits                |   |   |   |             |   |   |   |
+|--------|---------------------|---|---|---|-------------|---|---|---|
+|        | 8                   | 7 | 6 | 5 | 4           | 3 | 2 | 1 |
+| 1      | Type = 51 (decimal) |   |   |   |             |   |   |   |
+| 2 to 3 | Length = n          |   |   |   |             |   |   |   |
+| 4      | Spare               |   |   |   | Instance    |   |   |   |
+| 5      | NANPI               |   |   |   |             |   |   |   |
+| 6      | Digit 2             |   |   |   | Digit 1     |   |   |   |
+| ...    |                     |   |   |   |             |   |   |   |
+| n+4    | Digit m             |   |   |   | Digit (m-1) |   |   |   |
+
+[2] Spec: TS 29.280 | Release: 19
+| IE Type value (Decimal) | Information elements                            | Comment / Reference   | Number of Fixed Octets |
+|-------------------------|-------------------------------------------------|-----------------------|------------------------|
+| 0                       | Reserved                                        | 3GPP TS 29.274 [3]    | 3GPP TS 29.274 [3]     |
+| 1                       | International Mobile Subscriber Identity (IMSI) | 3GPP TS 29.274 [3]    | 3GPP TS 29.274 [3]     |
+| 2                       | Cause                                           | 3GPP TS 29.274 [3]    | 3GPP TS 29.274 [3]     |
+| 3                       | Recovery (Restart Counter)                      | 3GPP TS 29.274 [3]    | 3GPP TS 29.274 [3]     |
+| 4-34                    | Reserved for S101 interface                     | 3GPP TS 29.276 [17]   | 3GPP TS 29.276 [17]    |
+| 35-50                   | Reserved for S121 interface                     | 3GPP TS 29.276 [17]   | 3GPP TS 29.276 [17]    |
+| 51                      | STN-SR                                          | Variable Length / 6.2 | Not Applicable         |
+| 52                      | Source to Target Transparent Container          | Variable Length / 6.3 | Not Applicable         |
+| 53                      | Target to Source Transparent Container          | Variable Length / 6.4 | Not Applicable         |
+| 54                      | MM Context for E-UTRAN (v)SRVCC                 | Variable Length / 6.5 | Not Applicable         |
+| 55                      | MM Context for UTRAN SRVCC                      | Variable Length / 6.6 | Not Applicable         |
+| 56                      | SRVCC Cause                                     | Fixed Length / 6.7    | 1                      |
+| 57                      | Target RNC ID                                   | Variable Length / 6.8 | Not Applicable         |
+| 58                      | Target Global Cell ID                           | Variable Length / 6.9 | Not Applicable         |
+| 59                      | TEID-C                                          | Extendable / 6.10     | 4                      |
+| 60                      | Sv Flags
+
+[3] Spec: TS 29.280 | Release: 19
+| MSISDN                                    | 0    |
+| STN-SR                                 | C  | The MME/SGSN shall include STN-SR IE if this session is not for an emergency call. | STN-SR                                    | 0    |
+| MM Context for E-UTRAN (v)SRVCC        | C  | The MME shall include mobile station classmarks, supported codecs, and CS Security key in MM Context for E-UTRAN (v)SRVCC.<br>The derivation of the CS security keys shall follow the procedures defined 3GPP TS 33.401[7]. | MM Context for E-UTRAN (v)SRVCC           | 0    |
+| MM Context for UTRAN SRVCC             | C  | The SGSN shall include mobile station classmarks, supported codecs, and CS Security key in MM Context for UTRAN (HSPA) SRVCC.<br>The derivation of the CS security keys shall follow the procedures defined 3GPP TS 33.102[10]. | MM Context for UTRAN SRVCC                | 0    |
+| Source to Target Transparent Container | M  | The MME or SGSN shall include Source to Target Transparent Container IE                                                                                                                                                                                                                                                                           | Source to Target Transparent Container IE | 0    |
+| Target RNC ID                          | C  | This IE shall be used to identify the target access for (v)SRVCC handover to UTRAN (NOTE 1). | Target RNC ID                             | 0    |
+| Target Cell ID                         | C  | This IE shall be used to identify the target access for SRVCC handover to GERAN (NOTE 1). | Target Global Cell ID                     | 0    |
+| Source SAI                             | CO | The SGSN shall include this IE during a SRVCC Handover from UTRAN to GERAN and shall set it as per the SAI of the Source ID IE received from the source RNC (see 3GPP TS 25.413 [9]). See NOTE 3. | Service Area Identifier                   | 0    |
+| Allocation/Retention Priority          | CO | The MME shall include this IE if (v)SRVCC with priority is supported and (v)SRVCC is performed for an IMS-based MPS session (see 3GPP TS 23.216 [2]).
+
+[4] Spec: TS 29.280 | Release: 19
+For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].
+
+For the purposes of the present document, the following terms and definitions given in 3GPP TS 23.216 [2] apply:
+
+For the purposes of the present document, the following terms and definitions given in 3GPP TS 23.251 [16] apply:
+
+For the purposes of the present document, the following symbols apply:
+
+For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].
+
+|          |                                                            |
+|----------|------------------------------------------------------------|
+| C-MSISDN | Correlation MSISDN.                                        |
+| GWCN     | Gateway Core Network                                       |
+| MME/SGSN | MME or SGSN.                                               |
+| MOCN     | Multi-Operator Core Network                                |
+| SRVCC    | Single Radio Voice Call Continuity.                        |
+| STN-SR   | Session Transfer Number for SRVCC: see 3GPP TS 23.003 [4]. |
+| vSRVCC   | Single Radio Video Call Continuity.                        |
+
+# 4 General Description
+
+This document describes the Sv interface related procedures, message parameters and protocol specifications. The Sv messages are based on GTP. The message format, IE coding, and protocol error handling for Sv is per GTP as specified in 3GPP TS 29.274 [3].
+
+The general rules for IP address and UDP port number handling for the GTP messages on the Sv interface is per 3GPP TS 29.274 [3].
+
+# 5 Sv Messages and Information Elements
+
+The Sv application defines a set of messages between the MME/SGSN and MSC Server to provide SRVCC as defined in 3GPP TS 23.216 [2]. The Sv message header shall be conformant to the GTPv2-C Message Header, see 3GPP TS 29.274 [3]. The messages to be used and the information elements are described in the following
+
+[5] Spec: TS 29.280 | Release: 19
+3GPP TS 29.274 [3] specifies the detailed handling and information elements included in the Version Not Supported Indication message.
+
+## 5.4 Reliable Delivery of Signalling Messages
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.5 Error Handling
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.6 Restoration and Recovery
+
+This is performed as according to GTPv2 in 3GPP TS 23.007 [5].
+
+# --- 6 Sv Information Elements
+
+IE type value used in Sv Message is defined in TS 29.274 [3]. The IE format is coded as per GTP in TS 29.274 [3].
+
+Table 6.1 shows the IEs used for SRVCC. Within information elements, certain fields may be described as spare. These bits shall be transmitted with the value set to 0. To allow for future features, the receiver shall not evaluate these bits.
+
+**Table 6.1-1: Information Elements for SRVCC**
+
+Question: What does STN-SR stand for, according to 3GPP TS 29.280?
+
+Options:
+A. Session Transfer Number for SRVCC
+B. Single Transfer Number for SRVCC
+C. Session Transfer Node for SRVCC
+D. Subscriber Transfer Number for SRVCC
+
+Answer with only the letter of the correct option.",A
+val-007,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+The GTPv2-C messages shall be sent per UE on the Sv interface.
+
+There shall be one pair of TEID-C per UE on the Sv interface. The same tunnel shall be shared for the control messages related to the same UE operation.
+
+The TEID field in the SRVCC PS to CS Request and in the SRVCC CS to PS Request message header shall be set to ""0"" because this is the first message sent between the MME/SGSN and the MSC server to establish the tunnel for a UE.
+
+The TEID field in the SRVCC PS to CS Cancel Notification message header shall be set to ""0"" if the message is sent before reception of the acceptance response to the SRVCC PS to CS Request. If the MME/SGSN sends the SRVCC PS to CS Cancel Notification message after the acceptance response to the SRVCC PS to CS Request, the TEID field of the SRVCC PS to CS Cancel Notification message may be set to the MSC Server's TEID value received in the SRVCC PS to CS Response message. Therefore the MSC Server shall be able to accept the SRVCC PS to CS Cancel Notification messages with ""0"" or non-zero TEID in the message header.
+
+The TEID field in the SRVCC CS to PS Cancel Notification message header shall be set to ""0"" if the message is sent before reception of the acceptance response to the SRVCC CS to PS Request. If the MSC Server sends the SRVCC CS to PS Cancel Notification message after the acceptance response to the SRVCC CS to PS Request, the TEID field of the SRVCC CS to PS Cancel Notification message may be set to the MME/SGSN TEID value received in the SRVCC CS to PS Response message. Therefore the MME/SGSN shall be able to accept the SRVCC CS to PS Cancel Notification messages with ""0"" or non-zero TEID in the message header.
+
+### 5.2.2 SRVCC PS to CS Request
+
+A SRVCC PS to CS Request message shall be sent across Sv interface from the MME/SGSN to the target MSC server as part of the MME/SGSN SRVCC procedure in 3GPP TS 23.216 [2].
+
+This message shall also be sent across Sv interface from the MME to the target MSC server as part of the vSRVCC procedure in 3GPP TS 23.216 [2].
+
+[2] Spec: TS 29.280 | Release: 19
+| Information elements                    | P  | Condition / Comment                                                                                                                                                                                                                                                                                                                                                                                       | IE Type                                   | Ins. |
+|-----------------------------------------|----|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|------|
+| Cause                                   | M  |                                                                                                                                                                                                                                                                                                                                                                                                           | Cause                                     | 0    |
+| (v)SRVCC rejected Cause                 | CO | This IE shall be sent if Cause value differs from ""Request accepted"".<br>MSC Server shall include this information element to indicate the reason for rejecting SRVCC PS to CS request                                                                                                                                                                                                                    | SRVCC Cause                               | 0    |
+| MSC Server Sv Address for Control Plane | O  | If the Cause IE contains the value ""Request accepted"", the target MSC server may include MSC server Sv Address for Control Plane IE in SRVCC PS to CS Response message if target MSC Server decides to use different IP address for the subsequent communication. The source MME/SGSN shall store this MSC server address and use it when sending subsequent control plane messages to this GTP-C tunnel. | IP Address                                | 0    |
+| MSC Server Sv TEID for Control Plane    | C  | The target MSC server shall include MSC server Sv Tunnel Endpoint Identifier for Control Plane IE in SRVCC PS to CS Response message if the Cause IE contains the value ""Request accepted"". The source MME/SGSN shall include this TEID-C in the GTP-C header of all subsequent uplink control plane messages from the source MME/SGSN to the target MSC servers.                                         | TEID-C                                    | 0    |
+| Target to Source Transparent Container  | C  | If the Cause IE contains the value ""Request accepted"", this IE shall be included and shall carry the Target to Source Transparent Container to be sent within the Handover command or the Relocation Command towards the source access network.                                                                                                                                                           | Target to Source Transparent Container IE | 0    |
+| Private Extension                       | O  | None                                                                                                                                                                                                                                                                                                                                                                                                      | Private Extension                         | VS   |
+
+### 5.2.4 SRVCC PS to CS Complete Notification
+
+A SRVCC PS to CS Complete Notification message shall be sent across Sv interface to the source MME/SGSN during SRVCC procedure as specified in 3GPP TS 23.216 [2]:
+
+[3] Spec: TS 29.280 | Release: 19
+| Information elements                   | P | Condition / Comment                                                                                                                                                                                                                                                                                                                                                                                         | IE Type                                | Ins. |
+|----------------------------------------|---|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------|------|
+| Cause                                  | M |                                                                                                                                                                                                                                                                                                                                                                                                             | Cause                                  | 0    |
+| SRVCC rejected Cause                   | O | This IE may be sent if Cause value is differs from ""Request accepted"".<br>MME/SGSN may include additional information to indicate the reason for rejecting SRVCC CS to PS request                                                                                                                                                                                                                           | SRVCC Cause                            | 0    |
+| MME/SGSN Sv Address for Control Plane  | O | If the Cause IE contains the value"" Request accepted"", the target MME/SGSN may include MME/SGSN Sv Address for Control Plane IE in SRVCC CS to PS Response message if target MME/SGSN decides to use different IP address for the subsequent communication. The source MSC Server shall store this MME/SGSN address and use it when sending subsequent control plane initial messages to this GTP-C tunnel. | IP Address                             | 0    |
+| MME/SGSN Sv TEID for Control Plane     | C | The target MME/SGSN shall include MME/SGSN Sv Tunnel Endpoint Identifier for Control Plane IE in SRVCC CS to PS Response message if the Cause IE contains the value ""Request accepted"". The source MSC Server shall include this TEID-C in the GTP-C header of all subsequent control plane messages from the source MSC Server to the target MME/SGSN.                                                     | TEID-C                                 | 0    |
+| Target to Source Transparent Container | C | If the Cause IE contains the value ""Request accepted"", this IE shall be included and shall carry the Target to Source Transparent Container to be sent within the Handover command or the Relocation Command towards the source access network.                                                                                                                                                             | Target to Source Transparent Container | 0    |
+| Private Extension                      | O | None                                                                                                                                                                                                                                                                                                                                                                                                        | Private Extension                      | VS   |
+
+### 5.2.10 SRVCC CS to PS Complete Notification
+
+[4] Spec: TS 29.280 | Release: 19
+| Information elements                    | P | Condition / Comment                                                                                                                                                                                                                            | IE Type                                | Ins. |
+|-----------------------------------------|---|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------|------|
+| IMSI                                    | C | The IE shall be included if available.                                                                                                                                                                                                         | IMSI                                   | 0    |
+| ME Identity (MEI)                       | C | This IE shall be included if available.                                                                                                                                                                                                        | MEI                                    | 0    |
+| MSC Server Sv Address for Control Plane | M | This IE specifies the address for control plane Initial message which is chosen by the source MSC Server. The target MME/SGSN shall send subsequent control plane Initial messages related to the GTP tunnel for this UE towards this address. | IP Address                             | 0    |
+| MSC Server Sv TEID for Control Plane    | M | This IE specifies the tunnel for control plane message which is chosen by the source MSC Server. The target MME/SGSN shall include this TEID in the GTP header of all control plane messages related to the GTP tunnel for this UE.            | TEID-C                                 | 0    |
+| Source to Target Transparent Container  | M | The MSC Server shall include Source to Target Transparent Container IE.                                                                                                                                                                        | Source to Target Transparent Container | 0    |
+| Target Identification                   | M | This IE shall be included to identify the target access.                                                                                                                                                                                       | Target Identification                  | 0    |
+| P-TMSI                                  | C | This IE shall be included if available.                                                                                                                                                                                                        | P-TMSI                                 | 0    |
+| Source RAI                              | C | This IE shall be included if available                                                                                                                                                                                                         | ULI                                    | 0    |
+| P-TMSI Signature                        | C | This IE shall be included if available                                                                                                                                                                                                         | P-TMSI Signature                       | 0    |
+| GUTI                                    | C | This IE shall be included if available.                                                                                                                                                                                                        | GUTI                                   | 0    |
+| MM Context for CS to PS SRVCC           | M |                                                                                                                                                                                                                                                | MM Context for CS to PS SRVCC          | 0    |
+| Private Extension                       | O | None                                                                                                                                                                                                                                           | Private Extension                      | VS   |
+
+### 5.2.9 SRVCC CS to PS Response
+
+[5] Spec: TS 29.280 | Release: 19
+| Information elements                   | P  | Condition / Comment                                                                                                                                                                                                                                                                                                                               | IE Type                                   | Ins. |
+|----------------------------------------|----|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|------|
+| IMSI                                   | C  | This IE shall be included in the message except for the cases:<br>- The UE is emergency attached and it is UICClass<br>- The UE is emergency attached and the IMSI is not authenticated                                                                                                                                                           | IMSI                                      | 0    |
+| ME Identity (MEI)                      | C  | This IE shall be included in the message for all types of emergency calls by the MME and the SGSN. | MEI                                       | 0    |
+|                                        | CO | This IE shall be included for all SRVCC calls if available in the MME or SGSN (NOTE 2). |                                           |      |
+| Sv Flags                               | C  | This IE shall be included if any one of the applicable flags is set to 1.<br>The following flags are applicable:<br>- EmInd: this flag shall be sent if this session is for an emergency call.<br>- ICS: this flag shall be sent to request IMS Centralized Service support.<br>- VHO: this flag shall be sent if the MME requests the vSRVCC HO. | Sv Flags                                  | 0    |
+| MME/SGSN Sv Address for Control Plane  | M  | This IE specifies the address for control plane Initial message which is chosen by the source MME/SGSN. The target MSC Server shall send subsequent control plane Initial messages related to the GTP tunnel for this UE towards this address. | IP-Address                                | 0    |
+| MME/SGSN Sv TEID for Control Plane     | M  | This IE specifies the tunnel for control plane message which is chosen by the source MME/SGSN. The target MSC Server shall include this TEID in the GTP header of all control plane messages related to the GTP tunnel for this UE. | TEID-C                                    | 0    |
+| C-MSISDN                               | C  | The MME/SGSN shall include C-MSISDN IE in the message except for the cases:<br>- The UE is emergency attached and it is UICClass<br>- The UE is emergency attached and the IMSI is not authenticated<br>The C-MSISDN is defined in 3GPP TS 23.003 [4].
+
+Question: The TEID field in the SRVCC PS to CS Request message header shall be set to ""0"" because this is the first message sent between the MME/SGSN and the MSC server to establish the tunnel for a UE. (according to 3GPP Rel-19, TS 29.280 v19.0.0)
+
+Answer with only TRUE or FALSE.",TRUE
+val-008,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+The GTPv2-C messages shall be sent per UE on the Sv interface.
+
+There shall be one pair of TEID-C per UE on the Sv interface. The same tunnel shall be shared for the control messages related to the same UE operation.
+
+The TEID field in the SRVCC PS to CS Request and in the SRVCC CS to PS Request message header shall be set to ""0"" because this is the first message sent between the MME/SGSN and the MSC server to establish the tunnel for a UE.
+
+The TEID field in the SRVCC PS to CS Cancel Notification message header shall be set to ""0"" if the message is sent before reception of the acceptance response to the SRVCC PS to CS Request. If the MME/SGSN sends the SRVCC PS to CS Cancel Notification message after the acceptance response to the SRVCC PS to CS Request, the TEID field of the SRVCC PS to CS Cancel Notification message may be set to the MSC Server's TEID value received in the SRVCC PS to CS Response message. Therefore the MSC Server shall be able to accept the SRVCC PS to CS Cancel Notification messages with ""0"" or non-zero TEID in the message header.
+
+The TEID field in the SRVCC CS to PS Cancel Notification message header shall be set to ""0"" if the message is sent before reception of the acceptance response to the SRVCC CS to PS Request. If the MSC Server sends the SRVCC CS to PS Cancel Notification message after the acceptance response to the SRVCC CS to PS Request, the TEID field of the SRVCC CS to PS Cancel Notification message may be set to the MME/SGSN TEID value received in the SRVCC CS to PS Response message. Therefore the MME/SGSN shall be able to accept the SRVCC CS to PS Cancel Notification messages with ""0"" or non-zero TEID in the message header.
+
+### 5.2.2 SRVCC PS to CS Request
+
+A SRVCC PS to CS Request message shall be sent across Sv interface from the MME/SGSN to the target MSC server as part of the MME/SGSN SRVCC procedure in 3GPP TS 23.216 [2].
+
+This message shall also be sent across Sv interface from the MME to the target MSC server as part of the vSRVCC procedure in 3GPP TS 23.216 [2].
+
+[2] Spec: TS 29.280 | Release: 19
+# 3GPP TS 29.280 V19.0.0 (2025-10)
+
+Technical Specification
+
+## **3rd Generation Partnership Project; Technical Specification Group Core Network and Terminals; Evolved Packet System (EPS); 3GPP Sv interface (MME to MSC, and SGSN to MSC) for SRVCC (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G', and the word 'ADVANCED' in smaller letters to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'P' has a red signal wave icon at its base.
+
+The present document has been developed within the 3rd Generation Partnership Project (3GPP™) and may be further elaborated for the purposes of 3GPP. The present document has not been subject to any approval process by the 3GPP Organizational Partners and shall not be implemented. This Specification is provided for future development work within 3GPP only. The Organizational Partners accept no liability for any use of this Specification. Specifications and Reports for implementation of the 3GPP™ system should be obtained via the 3GPP Organizational Partners' Publications Offices.
+
+3GPP support office address
+
+650 Route des Lucioles - Sophia Antipolis  
+Valbonne - FRANCE  
+Tel.: +33 4 92 94 42 00 Fax: +33 4 93 65 47 16
+
+<http://www.3gpp.org>
+
+## --- **Copyright Notification** ---
+
+No part may be reproduced except as authorized by written permission.  
+The copyright and the foregoing restriction extend to reproduction in all media.
+
+© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  
+All rights reserved.
+
+[3] Spec: TS 29.280 | Release: 19
+3GPP TS 29.274 [3] specifies the detailed handling and information elements included in the Version Not Supported Indication message.
+
+## 5.4 Reliable Delivery of Signalling Messages
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.5 Error Handling
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.6 Restoration and Recovery
+
+This is performed as according to GTPv2 in 3GPP TS 23.007 [5].
+
+# --- 6 Sv Information Elements
+
+IE type value used in Sv Message is defined in TS 29.274 [3]. The IE format is coded as per GTP in TS 29.274 [3].
+
+Table 6.1 shows the IEs used for SRVCC. Within information elements, certain fields may be described as spare. These bits shall be transmitted with the value set to 0. To allow for future features, the receiver shall not evaluate these bits.
+
+**Table 6.1-1: Information Elements for SRVCC**
+
+[4] Spec: TS 29.280 | Release: 19
+| Information elements                   | P  | Condition / Comment                                                                                                                                                                                                                                                                                                                               | IE Type                                   | Ins. |
+|----------------------------------------|----|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|------|
+| IMSI                                   | C  | This IE shall be included in the message except for the cases:<br>- The UE is emergency attached and it is UICClass<br>- The UE is emergency attached and the IMSI is not authenticated                                                                                                                                                           | IMSI                                      | 0    |
+| ME Identity (MEI)                      | C  | This IE shall be included in the message for all types of emergency calls by the MME and the SGSN. | MEI                                       | 0    |
+|                                        | CO | This IE shall be included for all SRVCC calls if available in the MME or SGSN (NOTE 2). |                                           |      |
+| Sv Flags                               | C  | This IE shall be included if any one of the applicable flags is set to 1.<br>The following flags are applicable:<br>- EmInd: this flag shall be sent if this session is for an emergency call.<br>- ICS: this flag shall be sent to request IMS Centralized Service support.<br>- VHO: this flag shall be sent if the MME requests the vSRVCC HO. | Sv Flags                                  | 0    |
+| MME/SGSN Sv Address for Control Plane  | M  | This IE specifies the address for control plane Initial message which is chosen by the source MME/SGSN. The target MSC Server shall send subsequent control plane Initial messages related to the GTP tunnel for this UE towards this address. | IP-Address                                | 0    |
+| MME/SGSN Sv TEID for Control Plane     | M  | This IE specifies the tunnel for control plane message which is chosen by the source MME/SGSN. The target MSC Server shall include this TEID in the GTP header of all control plane messages related to the GTP tunnel for this UE. | TEID-C                                    | 0    |
+| C-MSISDN                               | C  | The MME/SGSN shall include C-MSISDN IE in the message except for the cases:<br>- The UE is emergency attached and it is UICClass<br>- The UE is emergency attached and the IMSI is not authenticated<br>The C-MSISDN is defined in 3GPP TS 23.003 [4].
+
+[5] Spec: TS 29.280 | Release: 19
+| Information elements                    | P  | Condition / Comment                                                                                                                                                                                                                                                                                                                                                                                       | IE Type                                   | Ins. |
+|-----------------------------------------|----|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|------|
+| Cause                                   | M  |                                                                                                                                                                                                                                                                                                                                                                                                           | Cause                                     | 0    |
+| (v)SRVCC rejected Cause                 | CO | This IE shall be sent if Cause value differs from ""Request accepted"".<br>MSC Server shall include this information element to indicate the reason for rejecting SRVCC PS to CS request                                                                                                                                                                                                                    | SRVCC Cause                               | 0    |
+| MSC Server Sv Address for Control Plane | O  | If the Cause IE contains the value ""Request accepted"", the target MSC server may include MSC server Sv Address for Control Plane IE in SRVCC PS to CS Response message if target MSC Server decides to use different IP address for the subsequent communication. The source MME/SGSN shall store this MSC server address and use it when sending subsequent control plane messages to this GTP-C tunnel. | IP Address                                | 0    |
+| MSC Server Sv TEID for Control Plane    | C  | The target MSC server shall include MSC server Sv Tunnel Endpoint Identifier for Control Plane IE in SRVCC PS to CS Response message if the Cause IE contains the value ""Request accepted"". The source MME/SGSN shall include this TEID-C in the GTP-C header of all subsequent uplink control plane messages from the source MME/SGSN to the target MSC servers.                                         | TEID-C                                    | 0    |
+| Target to Source Transparent Container  | C  | If the Cause IE contains the value ""Request accepted"", this IE shall be included and shall carry the Target to Source Transparent Container to be sent within the Handover command or the Relocation Command towards the source access network.                                                                                                                                                           | Target to Source Transparent Container IE | 0    |
+| Private Extension                       | O  | None                                                                                                                                                                                                                                                                                                                                                                                                      | Private Extension                         | VS   |
+
+### 5.2.4 SRVCC PS to CS Complete Notification
+
+A SRVCC PS to CS Complete Notification message shall be sent across Sv interface to the source MME/SGSN during SRVCC procedure as specified in 3GPP TS 23.216 [2]:
+
+Question: There shall be one pair of TEID-C per UE on the Sv interface. (according to 3GPP Rel-19, TS 29.280 v19.0.0)
+
+Answer with only TRUE or FALSE.",TRUE
+val-009,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+| MSISDN                                    | 0    |
+| STN-SR                                 | C  | The MME/SGSN shall include STN-SR IE if this session is not for an emergency call. | STN-SR                                    | 0    |
+| MM Context for E-UTRAN (v)SRVCC        | C  | The MME shall include mobile station classmarks, supported codecs, and CS Security key in MM Context for E-UTRAN (v)SRVCC.<br>The derivation of the CS security keys shall follow the procedures defined 3GPP TS 33.401[7]. | MM Context for E-UTRAN (v)SRVCC           | 0    |
+| MM Context for UTRAN SRVCC             | C  | The SGSN shall include mobile station classmarks, supported codecs, and CS Security key in MM Context for UTRAN (HSPA) SRVCC.<br>The derivation of the CS security keys shall follow the procedures defined 3GPP TS 33.102[10]. | MM Context for UTRAN SRVCC                | 0    |
+| Source to Target Transparent Container | M  | The MME or SGSN shall include Source to Target Transparent Container IE                                                                                                                                                                                                                                                                           | Source to Target Transparent Container IE | 0    |
+| Target RNC ID                          | C  | This IE shall be used to identify the target access for (v)SRVCC handover to UTRAN (NOTE 1). | Target RNC ID                             | 0    |
+| Target Cell ID                         | C  | This IE shall be used to identify the target access for SRVCC handover to GERAN (NOTE 1). | Target Global Cell ID                     | 0    |
+| Source SAI                             | CO | The SGSN shall include this IE during a SRVCC Handover from UTRAN to GERAN and shall set it as per the SAI of the Source ID IE received from the source RNC (see 3GPP TS 25.413 [9]). See NOTE 3. | Service Area Identifier                   | 0    |
+| Allocation/Retention Priority          | CO | The MME shall include this IE if (v)SRVCC with priority is supported and (v)SRVCC is performed for an IMS-based MPS session (see 3GPP TS 23.216 [2]).
+
+[2] Spec: TS 29.280 | Release: 19
+| Information elements                   | P  | Condition / Comment                                                                                                                                                                                                                                                                                                                               | IE Type                                   | Ins. |
+|----------------------------------------|----|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|------|
+| IMSI                                   | C  | This IE shall be included in the message except for the cases:<br>- The UE is emergency attached and it is UICClass<br>- The UE is emergency attached and the IMSI is not authenticated                                                                                                                                                           | IMSI                                      | 0    |
+| ME Identity (MEI)                      | C  | This IE shall be included in the message for all types of emergency calls by the MME and the SGSN. | MEI                                       | 0    |
+|                                        | CO | This IE shall be included for all SRVCC calls if available in the MME or SGSN (NOTE 2). |                                           |      |
+| Sv Flags                               | C  | This IE shall be included if any one of the applicable flags is set to 1.<br>The following flags are applicable:<br>- EmInd: this flag shall be sent if this session is for an emergency call.<br>- ICS: this flag shall be sent to request IMS Centralized Service support.<br>- VHO: this flag shall be sent if the MME requests the vSRVCC HO. | Sv Flags                                  | 0    |
+| MME/SGSN Sv Address for Control Plane  | M  | This IE specifies the address for control plane Initial message which is chosen by the source MME/SGSN. The target MSC Server shall send subsequent control plane Initial messages related to the GTP tunnel for this UE towards this address. | IP-Address                                | 0    |
+| MME/SGSN Sv TEID for Control Plane     | M  | This IE specifies the tunnel for control plane message which is chosen by the source MME/SGSN. The target MSC Server shall include this TEID in the GTP header of all control plane messages related to the GTP tunnel for this UE. | TEID-C                                    | 0    |
+| C-MSISDN                               | C  | The MME/SGSN shall include C-MSISDN IE in the message except for the cases:<br>- The UE is emergency attached and it is UICClass<br>- The UE is emergency attached and the IMSI is not authenticated<br>The C-MSISDN is defined in 3GPP TS 23.003 [4].
+
+[3] Spec: TS 29.280 | Release: 19
+For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].
+
+For the purposes of the present document, the following terms and definitions given in 3GPP TS 23.216 [2] apply:
+
+For the purposes of the present document, the following terms and definitions given in 3GPP TS 23.251 [16] apply:
+
+For the purposes of the present document, the following symbols apply:
+
+For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].
+
+|          |                                                            |
+|----------|------------------------------------------------------------|
+| C-MSISDN | Correlation MSISDN.                                        |
+| GWCN     | Gateway Core Network                                       |
+| MME/SGSN | MME or SGSN.                                               |
+| MOCN     | Multi-Operator Core Network                                |
+| SRVCC    | Single Radio Voice Call Continuity.                        |
+| STN-SR   | Session Transfer Number for SRVCC: see 3GPP TS 23.003 [4]. |
+| vSRVCC   | Single Radio Video Call Continuity.                        |
+
+# 4 General Description
+
+This document describes the Sv interface related procedures, message parameters and protocol specifications. The Sv messages are based on GTP. The message format, IE coding, and protocol error handling for Sv is per GTP as specified in 3GPP TS 29.274 [3].
+
+The general rules for IP address and UDP port number handling for the GTP messages on the Sv interface is per 3GPP TS 29.274 [3].
+
+# 5 Sv Messages and Information Elements
+
+The Sv application defines a set of messages between the MME/SGSN and MSC Server to provide SRVCC as defined in 3GPP TS 23.216 [2]. The Sv message header shall be conformant to the GTPv2-C Message Header, see 3GPP TS 29.274 [3]. The messages to be used and the information elements are described in the following
+
+[4] Spec: TS 29.280 | Release: 19
+| Information elements                    | P  | Condition / Comment                                                                                                                                                                                                                                                                                                                                                                                       | IE Type                                   | Ins. |
+|-----------------------------------------|----|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|------|
+| Cause                                   | M  |                                                                                                                                                                                                                                                                                                                                                                                                           | Cause                                     | 0    |
+| (v)SRVCC rejected Cause                 | CO | This IE shall be sent if Cause value differs from ""Request accepted"".<br>MSC Server shall include this information element to indicate the reason for rejecting SRVCC PS to CS request                                                                                                                                                                                                                    | SRVCC Cause                               | 0    |
+| MSC Server Sv Address for Control Plane | O  | If the Cause IE contains the value ""Request accepted"", the target MSC server may include MSC server Sv Address for Control Plane IE in SRVCC PS to CS Response message if target MSC Server decides to use different IP address for the subsequent communication. The source MME/SGSN shall store this MSC server address and use it when sending subsequent control plane messages to this GTP-C tunnel. | IP Address                                | 0    |
+| MSC Server Sv TEID for Control Plane    | C  | The target MSC server shall include MSC server Sv Tunnel Endpoint Identifier for Control Plane IE in SRVCC PS to CS Response message if the Cause IE contains the value ""Request accepted"". The source MME/SGSN shall include this TEID-C in the GTP-C header of all subsequent uplink control plane messages from the source MME/SGSN to the target MSC servers.                                         | TEID-C                                    | 0    |
+| Target to Source Transparent Container  | C  | If the Cause IE contains the value ""Request accepted"", this IE shall be included and shall carry the Target to Source Transparent Container to be sent within the Handover command or the Relocation Command towards the source access network.                                                                                                                                                           | Target to Source Transparent Container IE | 0    |
+| Private Extension                       | O  | None                                                                                                                                                                                                                                                                                                                                                                                                      | Private Extension                         | VS   |
+
+### 5.2.4 SRVCC PS to CS Complete Notification
+
+A SRVCC PS to CS Complete Notification message shall be sent across Sv interface to the source MME/SGSN during SRVCC procedure as specified in 3GPP TS 23.216 [2]:
+
+[5] Spec: TS 29.280 | Release: 19
+| Information elements                   | P | Condition / Comment                                                                                                                                                                                                                                                                                                                                                                                         | IE Type                                | Ins. |
+|----------------------------------------|---|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------|------|
+| Cause                                  | M |                                                                                                                                                                                                                                                                                                                                                                                                             | Cause                                  | 0    |
+| SRVCC rejected Cause                   | O | This IE may be sent if Cause value is differs from ""Request accepted"".<br>MME/SGSN may include additional information to indicate the reason for rejecting SRVCC CS to PS request                                                                                                                                                                                                                           | SRVCC Cause                            | 0    |
+| MME/SGSN Sv Address for Control Plane  | O | If the Cause IE contains the value"" Request accepted"", the target MME/SGSN may include MME/SGSN Sv Address for Control Plane IE in SRVCC CS to PS Response message if target MME/SGSN decides to use different IP address for the subsequent communication. The source MSC Server shall store this MME/SGSN address and use it when sending subsequent control plane initial messages to this GTP-C tunnel. | IP Address                             | 0    |
+| MME/SGSN Sv TEID for Control Plane     | C | The target MME/SGSN shall include MME/SGSN Sv Tunnel Endpoint Identifier for Control Plane IE in SRVCC CS to PS Response message if the Cause IE contains the value ""Request accepted"". The source MSC Server shall include this TEID-C in the GTP-C header of all subsequent control plane messages from the source MSC Server to the target MME/SGSN.                                                     | TEID-C                                 | 0    |
+| Target to Source Transparent Container | C | If the Cause IE contains the value ""Request accepted"", this IE shall be included and shall carry the Target to Source Transparent Container to be sent within the Handover command or the Relocation Command towards the source access network.                                                                                                                                                             | Target to Source Transparent Container | 0    |
+| Private Extension                      | O | None                                                                                                                                                                                                                                                                                                                                                                                                        | Private Extension                      | VS   |
+
+### 5.2.10 SRVCC CS to PS Complete Notification
+
+Question: The MME/SGSN shall include the STN-SR information element for every SRVCC session, including emergency calls. (according to 3GPP Rel-19, TS 29.280 v19.0.0)
+
+Answer with only TRUE or FALSE.",TRUE
+val-010,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+For the purposes of the present document, the terms and definitions given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].
+
+For the purposes of the present document, the following terms and definitions given in 3GPP TS 23.216 [2] apply:
+
+For the purposes of the present document, the following terms and definitions given in 3GPP TS 23.251 [16] apply:
+
+For the purposes of the present document, the following symbols apply:
+
+For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].
+
+|          |                                                            |
+|----------|------------------------------------------------------------|
+| C-MSISDN | Correlation MSISDN.                                        |
+| GWCN     | Gateway Core Network                                       |
+| MME/SGSN | MME or SGSN.                                               |
+| MOCN     | Multi-Operator Core Network                                |
+| SRVCC    | Single Radio Voice Call Continuity.                        |
+| STN-SR   | Session Transfer Number for SRVCC: see 3GPP TS 23.003 [4]. |
+| vSRVCC   | Single Radio Video Call Continuity.                        |
+
+# 4 General Description
+
+This document describes the Sv interface related procedures, message parameters and protocol specifications. The Sv messages are based on GTP. The message format, IE coding, and protocol error handling for Sv is per GTP as specified in 3GPP TS 29.274 [3].
+
+The general rules for IP address and UDP port number handling for the GTP messages on the Sv interface is per 3GPP TS 29.274 [3].
+
+# 5 Sv Messages and Information Elements
+
+The Sv application defines a set of messages between the MME/SGSN and MSC Server to provide SRVCC as defined in 3GPP TS 23.216 [2]. The Sv message header shall be conformant to the GTPv2-C Message Header, see 3GPP TS 29.274 [3]. The messages to be used and the information elements are described in the following
+
+[2] Spec: TS 29.280 | Release: 19
+- [1] 3GPP TR 21.905: ""Vocabulary for 3GPP Specifications"".
+- [2] 3GPP TR 23.216: ""Single Radio Voice Call Continuity (SRVCC)"".
+- [3] 3GPP TS 29.274: ""Evolved GPRS Tunnelling Protocol for Control Plane (GTPv2-C)"".
+- [4] 3GPP TS 23.003: ""Numbering, addressing and identification"".
+- [5] 3GPP TS 23.007: ""Restoration Procedures"".
+- [6] 3GPP TS 33.401: ""3GPP System Architecture Evolution (SAE): Security architecture"".
+- [7] 3GPP TS 24.008: ""Mobile radio interface Layer 3 specification; Core network protocols; Stage 3"".
+- [8] 3GPP TS 48.008: ""Mobile Switching Centre – Base Station System (MSC - BSS) interface; Layer 3 specification"".
+- [9] 3GPP TS 25.413: ""UTRAN Iu interface Radio Access Network Application Part (RANAP) signalling"".
+- [10] 3GPP TS 33.102: ""3G Security; Security architecture"".
+- [11] 3GPP TS 29.002: ""Mobile Application Part (MAP) specification; Stage 3"".
+- [12] 3GPP TS 24.301: ""Non-Access-Stratum (NAS) protocol for Evolved Packet"".
+- [13] 3GPP TS 23.237: ""IP Multimedia Subsystem (IMS) Service Continuity: Stage 2"".
+- [14] 3GPP TS 36.413: ""S1 Application Protocol (S1AP)"".
+- [15] 3GPP TS 33.401: ""3GPP System Architecture Evolution (SAE); Security architecture"".
+- [16] 3GPP TS 23.251: ""Network Sharing; Architecture and Functional Description"".
+- [17] 3GPP TS 29.276: ""Optimized Handover Procedures and Protocols between E-UTRAN access and cdma2000 HRPD Access"".
+
+# 3 Definitions, symbols and abbreviations
+
+[3] Spec: TS 29.280 | Release: 19
+Sv Messages are used for both the Inter-RAT handover from IMS based voice service over EPS to CS domain over 3GPP UTRAN/GERAN access or from UTRAN (HSPA) to 3GPP UTRAN/GERAN access and the Inter-RAT handover from IMS based voice and video service over EPS to CS domain over 3GPP UTRAN access.
+
+Sv Messages are also used for the Inter-RAT handover from voice service in CS domain over 3GPP UTRAN/GERAN access to IMS based service over LTE or UTRAN (HSPA).
+
+Sv Message Type value is defined in 3GPP TS 29.274 [3]. The message format is coded as per GTP in 3GPP TS 29.274 [3].
+
+**Table 5.2.1: Message types for Sv interface**
+
+[4] Spec: TS 29.280 | Release: 19
+3GPP TS 29.274 [3] specifies the detailed handling and information elements included in the Version Not Supported Indication message.
+
+## 5.4 Reliable Delivery of Signalling Messages
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.5 Error Handling
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.6 Restoration and Recovery
+
+This is performed as according to GTPv2 in 3GPP TS 23.007 [5].
+
+# --- 6 Sv Information Elements
+
+IE type value used in Sv Message is defined in TS 29.274 [3]. The IE format is coded as per GTP in TS 29.274 [3].
+
+Table 6.1 shows the IEs used for SRVCC. Within information elements, certain fields may be described as spare. These bits shall be transmitted with the value set to 0. To allow for future features, the receiver shall not evaluate these bits.
+
+**Table 6.1-1: Information Elements for SRVCC**
+
+[5] Spec: TS 29.280 | Release: 19
+This Technical Specification has been produced by the 3<sup>rd</sup> Generation Partnership Project (3GPP).
+
+The contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:
+
+- x the first digit:
+  - 1 presented to TSG for information;
+  - 2 presented to TSG for approval;
+  - 3 or greater indicates TSG approved document under change control.
+- y the second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.
+- z the third digit is incremented when editorial only changes have been incorporated in the document.
+
+The present document describes the Sv interface between the Mobility Management Entity (MME) or Serving GPRS Support Node (SGSN) and 3GPP MSC server enhanced for SRVCC. Sv interface is used to support Inter-RAT handover from IMS based voice service over EPS to CS domain over 3GPP UTRAN/GERAN access or from UTRAN (HSPA) to 3GPP UTRAN/GERAN access and to support Inter-RAT handover from IMS based voice and video service over EPS to CS domain over 3GPP UTRAN access. Sv interface is also used to support Inter-RAT handover from voice service in CS domain over 3GPP UTRAN/GERAN access to IMS based service over LTE or UTRAN (HSPA).
+
+If there is no specific indication, the term ""MSC server"" denotes 3GPP MSC server enhanced for SRVCC or 3GPP MSC server enhanced for vSRVCC as defined in 3GPP TS 23.216 [2].
+
+The following documents contain provisions which, through reference in this text, constitute provisions of the present document.
+
+- References are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.
+- For a specific reference, subsequent revisions do not apply.
+- For a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document *in the same Release as the present document*.
+
+Question: vSRVCC stands for Single Radio Voice Call Continuity. (according to 3GPP TS 29.280)
+
+Answer with only TRUE or FALSE.",TRUE
+val-011,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+Sv Messages are used for both the Inter-RAT handover from IMS based voice service over EPS to CS domain over 3GPP UTRAN/GERAN access or from UTRAN (HSPA) to 3GPP UTRAN/GERAN access and the Inter-RAT handover from IMS based voice and video service over EPS to CS domain over 3GPP UTRAN access.
+
+Sv Messages are also used for the Inter-RAT handover from voice service in CS domain over 3GPP UTRAN/GERAN access to IMS based service over LTE or UTRAN (HSPA).
+
+Sv Message Type value is defined in 3GPP TS 29.274 [3]. The message format is coded as per GTP in 3GPP TS 29.274 [3].
+
+**Table 5.2.1: Message types for Sv interface**
+
+[2] Spec: TS 29.280 | Release: 19
+This Technical Specification has been produced by the 3<sup>rd</sup> Generation Partnership Project (3GPP).
+
+The contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:
+
+- x the first digit:
+  - 1 presented to TSG for information;
+  - 2 presented to TSG for approval;
+  - 3 or greater indicates TSG approved document under change control.
+- y the second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.
+- z the third digit is incremented when editorial only changes have been incorporated in the document.
+
+The present document describes the Sv interface between the Mobility Management Entity (MME) or Serving GPRS Support Node (SGSN) and 3GPP MSC server enhanced for SRVCC. Sv interface is used to support Inter-RAT handover from IMS based voice service over EPS to CS domain over 3GPP UTRAN/GERAN access or from UTRAN (HSPA) to 3GPP UTRAN/GERAN access and to support Inter-RAT handover from IMS based voice and video service over EPS to CS domain over 3GPP UTRAN access. Sv interface is also used to support Inter-RAT handover from voice service in CS domain over 3GPP UTRAN/GERAN access to IMS based service over LTE or UTRAN (HSPA).
+
+If there is no specific indication, the term ""MSC server"" denotes 3GPP MSC server enhanced for SRVCC or 3GPP MSC server enhanced for vSRVCC as defined in 3GPP TS 23.216 [2].
+
+The following documents contain provisions which, through reference in this text, constitute provisions of the present document.
+
+- References are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.
+- For a specific reference, subsequent revisions do not apply.
+- For a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document *in the same Release as the present document*.
+
+[3] Spec: TS 29.280 | Release: 19
+A SRVCC CS to PS Complete Notification message shall be sent across Sv interface from the target MME/SGSN to the source MSC Server to indicate the SRVCC handover with PS Domain has been finished during UTRAN/GERAN to E-UTRAN/UTRAN (HSPA) SRVCC procedure as specified in 3GPP TS 23.216 [2].
+
+Table 5.2.10 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.10: Information Elements in a SRVCC CS to PS Complete Notification**
+
+| Information elements | P | Condition / Comment                                                                                                                                                            | IE Type           | Ins. |
+|----------------------|---|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|------|
+| SRVCC failure Cause  | C | This IE shall be included if there is a failure detected by the target MME/SGSN during UTRAN/GERAN to E-UTRAN/UTRAN (HSPA) SRVCC procedure as specified in 3GPP TS 23.216 [2]. | SRVCC cause       | 0    |
+| Private Extension    | O | None                                                                                                                                                                           | Private Extension | VS   |
+
+### 5.2.11 SRVCC CS to PS Complete Acknowledge
+
+A SRVCC CS to PS Complete Acknowledge message shall be sent across Sv interface as a response to SRVCC CS to PS Complete Notification during UTRAN/GERAN to E-UTRAN/UTRAN (HSPA) SRVCC procedure as specified in 3GPP TS 23.216 [2].
+
+Table 5.2.10 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.11: Information Elements in a SRVCC CS to PS Complete Acknowledge**
+
+| Information elements | P | Condition / Comment | IE Type           | Ins. |
+|----------------------|---|---------------------|-------------------|------|
+| Cause                | M | None                | Cause             | 0    |
+| Private Extension    | O | None                | Private Extension | VS   |
+
+### 5.2.12 SRVCC CS to PS Cancel Notification
+
+A SRVCC CS to PS Cancel Notification message shall be sent across Sv interface from the MSC Server to the target MME/SGSN to request the cancellation of an ongoing SRVCC handover.
+
+[4] Spec: TS 29.280 | Release: 19
+| MSISDN                                    | 0    |
+| STN-SR                                 | C  | The MME/SGSN shall include STN-SR IE if this session is not for an emergency call. | STN-SR                                    | 0    |
+| MM Context for E-UTRAN (v)SRVCC        | C  | The MME shall include mobile station classmarks, supported codecs, and CS Security key in MM Context for E-UTRAN (v)SRVCC.<br>The derivation of the CS security keys shall follow the procedures defined 3GPP TS 33.401[7]. | MM Context for E-UTRAN (v)SRVCC           | 0    |
+| MM Context for UTRAN SRVCC             | C  | The SGSN shall include mobile station classmarks, supported codecs, and CS Security key in MM Context for UTRAN (HSPA) SRVCC.<br>The derivation of the CS security keys shall follow the procedures defined 3GPP TS 33.102[10]. | MM Context for UTRAN SRVCC                | 0    |
+| Source to Target Transparent Container | M  | The MME or SGSN shall include Source to Target Transparent Container IE                                                                                                                                                                                                                                                                           | Source to Target Transparent Container IE | 0    |
+| Target RNC ID                          | C  | This IE shall be used to identify the target access for (v)SRVCC handover to UTRAN (NOTE 1). | Target RNC ID                             | 0    |
+| Target Cell ID                         | C  | This IE shall be used to identify the target access for SRVCC handover to GERAN (NOTE 1). | Target Global Cell ID                     | 0    |
+| Source SAI                             | CO | The SGSN shall include this IE during a SRVCC Handover from UTRAN to GERAN and shall set it as per the SAI of the Source ID IE received from the source RNC (see 3GPP TS 25.413 [9]). See NOTE 3. | Service Area Identifier                   | 0    |
+| Allocation/Retention Priority          | CO | The MME shall include this IE if (v)SRVCC with priority is supported and (v)SRVCC is performed for an IMS-based MPS session (see 3GPP TS 23.216 [2]).
+
+[5] Spec: TS 29.280 | Release: 19
+|                                                                                                                                                                                                                                                                                                                                     |   |                                                                        |                   |    |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|------------------------------------------------------------------------|-------------------|----|
+|                                                                                                                                                                                                                                                                                                                                     |   | handover in the reverse direction as specified in 3GPP TS 23.251 [16]. |                   |    |
+| Private Extension                                                                                                                                                                                                                                                                                                                   | O | None                                                                   | Private Extension | VS |
+| NOTE1: Based upon the SRVCC Handover procedure, either Target RNC ID or Target Cell ID shall be present in this message                                                                                                                                                                                                             |   |                                                                        |                   |    |
+| NOTE2: An MME or SGSN supporting the Sv interface should attempt to get the ME Identity for all SRVCC calls for interception, charging or Automatic Device Detection in the MSC.                                                                                                                                                    |   |                                                                        |                   |    |
+| NOTE 3: The Source SAI is sent in BSSMAP Handover Request during a SRVCC Handover from UTRAN to GERAN. A default SAI configured in the MSC Server enhanced for SRVCC is sent in BSSMAP Handover Request during a SRVCC Handover from E-UTRAN to GERAN. The default SAI for E-UTRAN should be different from the SAIs used in UTRAN. |   |                                                                        |                   |    |
+
+### 5.2.3 SRVCC PS to CS Response
+
+A SRVCC PS to CS Response message shall be sent across Sv interface as a response to SRVCC PS to CS Request by the MSC server during SRVCC procedure in 3GPP TS 23.216 [2].
+
+Table 5.2.3 specifies the presence requirements and conditions of the IEs in the message.
+
+Cause IE indicates if the SRVCC PS to CS request has been accepted, or not. The request has not been accepted by the target MSC server if the Cause IE value differs from ""Request accepted"".
+
+**Table 5.2.3: Information Elements in a SRVCC PS to CS Response**
+
+Question: The Sv interface is used to support Inter-RAT handover from IMS based voice service over EPS to CS domain over 3GPP UTRAN/GERAN access. (according to 3GPP Rel-19, TS 29.280 v19.0.0)
+
+Answer with only TRUE or FALSE.",TRUE
+val-012,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+| Message Type value (Decimal) | Message                              | Reference           | Initial | Triggered |
+|------------------------------|--------------------------------------|---------------------|---------|-----------|
+| 0                            | Reserved                             | 3GPP TS 29.274 [3]  |         |           |
+| 1                            | Echo Request                         | 3GPP TS 29.274 [3]  | X       |           |
+| 2                            | Echo Response                        | 3GPP TS 29.274 [3]  |         | X         |
+| 3                            | Version Not Supported Indication     | 3GPP TS 29.274 [3]  |         | X         |
+| 4-16                         | Reserved for S101 interface          | 3GPP TS 29.276 [17] |         |           |
+| 17-24                        | Reserved for S121 interface          | 3GPP TS 29.276 [17] |         |           |
+| 25                           | SRVCC PS to CS Request               | 5.2.2               | X       |           |
+| 26                           | SRVCC PS to CS Response              | 5.2.3               |         | X         |
+| 27                           | SRVCC PS to CS Complete Notification | 5.2.4               | X       |           |
+| 28                           | SRVCC PS to CS Complete Acknowledge  | 5.2.5               |         | X         |
+| 29                           | SRVCC PS to CS Cancel Notification   | 5.2.6               | X       |           |
+| 30                           | SRVCC PS to CS Cancel Acknowledge    | 5.2.7               |         | X         |
+| 31                           | SRVCC CS to PS Request               | 5.2.8               | X       |           |
+| 32-239                       | Reserved for GTPv2                   | 3GPP TS 29.274 [3]  |         |           |
+| 240                          | SRVCC CS to PS Response              | 5.2.9               |         | X         |
+| 241                          | SRVCC CS to PS Complete Notification | 5.2.10              | X       |           |
+| 242                          | SRVCC CS to PS Complete Acknowledge  | 5.2.11              |
+
+[2] Spec: TS 29.280 | Release: 19
+Table 5.2.12 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.12: Information Elements in a SRVCC CS to PS Cancel Notification**
+
+| Information elements | P | Condition / Comment                                             | IE Type           | Ins. |
+|----------------------|---|-----------------------------------------------------------------|-------------------|------|
+| IMSI                 | C | The IMSI shall be included if available.                        | IMSI              | 0    |
+| Cancel Cause         | M | MSC Server shall indicate the reason for Handover cancellation. | SRVCC Cause       | 0    |
+| ME Identity (MEI)    | C | This IE shall be included if available.                         | MEI               | 0    |
+| Private Extension    | O | None                                                            | Private Extension | VS   |
+
+### 5.2.13 SRVCC CS to PS Cancel Acknowledge
+
+A SRVCC CS to PS Cancel Acknowledge message shall be sent across Sv interface as a response to SRVCC CS to PS Cancel Notification.
+
+Table 5.2.13 specifies the presence requirements and conditions of the IEs in the message.
+
+**Table 5.2.13: Information Elements in a SRVCC CS to PS Cancel Acknowledge**
+
+| Information elements | P | Condition / Comment | IE Type           | Ins. |
+|----------------------|---|---------------------|-------------------|------|
+| Cause                | M | None                | Cause             | 0    |
+| Private Extension    | O | None                | Private Extension | VS   |
+
+## 5.3 Path Management Messages
+
+### 5.3.1 Introduction
+
+The following GTPv2-C messages support path management for the Sv interface:
+
+- Echo Request
+- Echo Response
+- Version Not Supported Indication
+
+These messages are defined for GTPv2-C and the handling and definition shall also be as defined in GTPv2-C, see 3GPP TS 29.274 [3].
+
+### 5.3.2 Echo Request message
+
+3GPP TS 29.274 [3] specifies the information elements included in the Echo Request message.
+
+### 5.3.3 Echo Response message
+
+3GPP TS 29.274 [3] specifies the information elements included in the Echo Response message.
+
+### 5.3.4 Version Not Supported Indication message
+
+[3] Spec: TS 29.280 | Release: 19
+3GPP TS 29.274 [3] specifies the detailed handling and information elements included in the Version Not Supported Indication message.
+
+## 5.4 Reliable Delivery of Signalling Messages
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.5 Error Handling
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.6 Restoration and Recovery
+
+This is performed as according to GTPv2 in 3GPP TS 23.007 [5].
+
+# --- 6 Sv Information Elements
+
+IE type value used in Sv Message is defined in TS 29.274 [3]. The IE format is coded as per GTP in TS 29.274 [3].
+
+Table 6.1 shows the IEs used for SRVCC. Within information elements, certain fields may be described as spare. These bits shall be transmitted with the value set to 0. To allow for future features, the receiver shall not evaluate these bits.
+
+**Table 6.1-1: Information Elements for SRVCC**
+
+[4] Spec: TS 29.280 | Release: 19
+# 3GPP TS 29.280 V19.0.0 (2025-10)
+
+Technical Specification
+
+## **3rd Generation Partnership Project; Technical Specification Group Core Network and Terminals; Evolved Packet System (EPS); 3GPP Sv interface (MME to MSC, and SGSN to MSC) for SRVCC (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G', and the word 'ADVANCED' in smaller letters to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'P' has a red signal wave icon at its base.
+
+The present document has been developed within the 3rd Generation Partnership Project (3GPP™) and may be further elaborated for the purposes of 3GPP. The present document has not been subject to any approval process by the 3GPP Organizational Partners and shall not be implemented. This Specification is provided for future development work within 3GPP only. The Organizational Partners accept no liability for any use of this Specification. Specifications and Reports for implementation of the 3GPP™ system should be obtained via the 3GPP Organizational Partners' Publications Offices.
+
+3GPP support office address
+
+650 Route des Lucioles - Sophia Antipolis  
+Valbonne - FRANCE  
+Tel.: +33 4 92 94 42 00 Fax: +33 4 93 65 47 16
+
+<http://www.3gpp.org>
+
+## --- **Copyright Notification** ---
+
+No part may be reproduced except as authorized by written permission.  
+The copyright and the foregoing restriction extend to reproduction in all media.
+
+© 2025, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  
+All rights reserved.
+
+[5] Spec: TS 29.280 | Release: 19
+Sv Messages are used for both the Inter-RAT handover from IMS based voice service over EPS to CS domain over 3GPP UTRAN/GERAN access or from UTRAN (HSPA) to 3GPP UTRAN/GERAN access and the Inter-RAT handover from IMS based voice and video service over EPS to CS domain over 3GPP UTRAN access.
+
+Sv Messages are also used for the Inter-RAT handover from voice service in CS domain over 3GPP UTRAN/GERAN access to IMS based service over LTE or UTRAN (HSPA).
+
+Sv Message Type value is defined in 3GPP TS 29.274 [3]. The message format is coded as per GTP in 3GPP TS 29.274 [3].
+
+**Table 5.2.1: Message types for Sv interface**
+
+Question: Echo Request has Message Type value 25 on the Sv interface. (according to 3GPP Rel-19, TS 29.280 v19.0.0)
+
+Answer with only TRUE or FALSE.",TRUE

@@ -1,0 +1,70 @@
+{
+  "n_questions": 30,
+  "n_answered": 2,
+  "per_question": [
+    {
+      "id": "val-031",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 2525,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS23434-c0084",
+        "TS23434-c0082",
+        "TS23434-c0083",
+        "TS23434-c0006",
+        "TS23434-c0074"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-032",
+      "raw_generator_output": "FALSE",
+      "answer": "FALSE",
+      "prompt_tokens": 2477,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS23434-c0093",
+        "TS23434-c0346",
+        "TS23434-c0222",
+        "TS23434-c0099",
+        "TS23434-c0633"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-033",
+      "raw_generator_output": "",
+      "answer": "",
+      "prompt_tokens": 2589,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS23434-c0099",
+        "TS23434-c0354",
+        "TS23434-c0341",
+        "TS23434-c0326",
+        "TS23434-c0098"
+      ],
+      "evidence_in_context": true,
+      "error": "503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemma-4-26b-a4b-it:generateContent"
+    }
+  ],
+  "config": {
+    "generator": "gemma-4-26b-a4b-it",
+    "top_k": 10,
+    "rerank_top_k": 5,
+    "context_budget": null,
+    "index": "data/mini_index.jsonl"
+  },
+  "aborted": true,
+  "abort_error": "503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemma-4-26b-a4b-it:generateContent",
+  "score": {
+    "n_questions": 2,
+    "n_correct": 2,
+    "accuracy": 1.0,
+    "total_prompt_tokens": 5002,
+    "token_efficiency": 25.37,
+    "overall": 77.61,
+    "passes_accuracy_gate": true
+  }
+}

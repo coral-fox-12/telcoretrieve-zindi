@@ -5,10 +5,11 @@ Two generators, one interface (generate(input_prompt) -> str):
 1. OpenRouterGenerator — calls a free OpenRouter model with the exact
    challenge prompt. Stand-in ONLY: the challenge fixes the generator
    to google/gemma-3n-E4B-it, which is not on OpenRouter; local runs
-   use google/gemma-4-26b-a4b-it:free (same family, free tier) and the
-   report always records which model actually generated. API key is
-   read at runtime from the OpenRouter credentials file (key "key12"),
-   never printed or stored in this repo.
+   use nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free (the model
+   the 12/12 baseline used; gemma-4 free is 429-limited upstream)
+   and the report always records which model actually generated. API
+   key is read at runtime from the OpenRouter credentials file (key
+   "key12"), never printed or stored in this repo.
 
 2. LexicalAnswerer — no model at all: picks the option whose text best
    overlaps the retrieved passages (TF overlap). A floor that isolates

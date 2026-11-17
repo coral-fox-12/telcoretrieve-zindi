@@ -1,0 +1,37 @@
+{
+  "n_questions": 1,
+  "n_answered": 1,
+  "per_question": [
+    {
+      "id": "val-053",
+      "raw_generator_output": "",
+      "answer": "",
+      "prompt_tokens": 2675,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS23434-c0336",
+        "TS23434-c0633",
+        "TS23434-c0342",
+        "TS23434-c0324",
+        "TS23434-c0326"
+      ],
+      "evidence_in_context": true
+    }
+  ],
+  "config": {
+    "generator": "gemma-4-26b-a4b-it",
+    "top_k": 10,
+    "rerank_top_k": 5,
+    "context_budget": null,
+    "index": "data/mini_index.jsonl"
+  },
+  "score": {
+    "n_questions": 1,
+    "n_correct": 0,
+    "accuracy": 0.0,
+    "total_prompt_tokens": 2675,
+    "token_efficiency": 24.11,
+    "overall": 7.23,
+    "passes_accuracy_gate": false
+  }
+}

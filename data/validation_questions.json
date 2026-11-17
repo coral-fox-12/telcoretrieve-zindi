@@ -1,0 +1,122 @@
+{
+  "questions": [
+    {
+      "answer": "A",
+      "evidence_chunk": "TS29280-c0005",
+      "id": "val-001",
+      "options": {
+        "A": "MME or SGSN and MSC server enhanced for SRVCC",
+        "B": "MME and HSS",
+        "C": "SGSN and GGSN",
+        "D": "MSC server and HLR"
+      },
+      "question": "According to 3GPP Rel-19, TS 29.280 v19.0.0, which entities does the Sv interface connect?"
+    },
+    {
+      "answer": "A",
+      "evidence_chunk": "TS29280-c0007",
+      "id": "val-002",
+      "options": {
+        "A": "Single Radio Voice Call Continuity",
+        "B": "Single Radio Video Call Continuity",
+        "C": "Seamless Radio Voice Call Control",
+        "D": "Single RAN Voice Call Continuity"
+      },
+      "question": "What does the abbreviation SRVCC stand for, according to 3GPP TS 29.280?"
+    },
+    {
+      "answer": "A",
+      "evidence_chunk": "TS29280-c0010",
+      "id": "val-003",
+      "options": {
+        "A": "25",
+        "B": "26",
+        "C": "31",
+        "D": "1"
+      },
+      "question": "What is the Message Type value (decimal) of the SRVCC PS to CS Request on the Sv interface, according to 3GPP Rel-19, TS 29.280 v19.0.0?",
+      "evidence_quote": "| 25                           | SRVCC PS to CS Request"
+    },
+    {
+      "answer": "A",
+      "evidence_chunk": "TS29280-c0010",
+      "id": "val-004",
+      "options": {
+        "A": "31",
+        "B": "25",
+        "C": "30",
+        "D": "27"
+      },
+      "question": "What is the Message Type value (decimal) of the SRVCC CS to PS Request on the Sv interface, according to 3GPP Rel-19, TS 29.280 v19.0.0?",
+      "evidence_quote": "| 31                           | SRVCC CS to PS Request"
+    },
+    {
+      "answer": "D",
+      "evidence_chunk": "TS29280-c0012",
+      "id": "val-005",
+      "options": {
+        "A": "SIP",
+        "B": "SCTP",
+        "C": "DIAM",
+        "D": "GTP"
+      },
+      "question": "What underlying protocol are the Sv interface messages based on? (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "A",
+      "evidence_chunk": "TS29280-c0007",
+      "id": "val-006",
+      "options": {
+        "A": "Session Transfer Number for SRVCC",
+        "B": "Single Transfer Number for SRVCC",
+        "C": "Session Transfer Node for SRVCC",
+        "D": "Subscriber Transfer Number for SRVCC"
+      },
+      "question": "What does STN-SR stand for, according to 3GPP TS 29.280?"
+    },
+    {
+      "answer": "TRUE",
+      "evidence_chunk": "TS29280-c0012",
+      "id": "val-007",
+      "options": {},
+      "question": "The TEID field in the SRVCC PS to CS Request message header shall be set to \"0\" because this is the first message sent between the MME/SGSN and the MSC server to establish the tunnel for a UE. (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "TRUE",
+      "evidence_chunk": "TS29280-c0012",
+      "id": "val-008",
+      "options": {},
+      "question": "There shall be one pair of TEID-C per UE on the Sv interface. (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "FALSE",
+      "evidence_chunk": "TS29280-c0014",
+      "id": "val-009",
+      "options": {},
+      "question": "The MME/SGSN shall include the STN-SR information element for every SRVCC session, including emergency calls. (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "FALSE",
+      "evidence_chunk": "TS29280-c0007",
+      "id": "val-010",
+      "options": {},
+      "question": "vSRVCC stands for Single Radio Voice Call Continuity. (according to 3GPP TS 29.280)"
+    },
+    {
+      "answer": "TRUE",
+      "evidence_chunk": "TS29280-c0005",
+      "id": "val-011",
+      "options": {},
+      "question": "The Sv interface is used to support Inter-RAT handover from IMS based voice service over EPS to CS domain over 3GPP UTRAN/GERAN access. (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "FALSE",
+      "evidence_chunk": "TS29280-c0009",
+      "id": "val-012",
+      "options": {},
+      "question": "Echo Request has Message Type value 25 on the Sv interface. (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    }
+  ],
+  "source": "3GPP TS 29.280 V19.0.0 (2025-10), chunked from data/TS29280.md (mini_index.jsonl). Questions authored 2026-11-17; each answer is stated verbatim in its evidence chunk. Mirrors the real Test.csv format (ID, question, options JSON; {} for true/false).",
+  "version": 1
+}

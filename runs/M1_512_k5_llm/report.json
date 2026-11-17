@@ -1,0 +1,295 @@
+{
+  "n_questions": 60,
+  "n_answered": 17,
+  "per_question": [
+    {
+      "id": "val-001",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 2422,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0001",
+        "TS29280-c0027",
+        "TS29280-c0028",
+        "TS29280-c0026",
+        "TS23434-c0633"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-002",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 2117,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0027",
+        "TS29280-c0007",
+        "TS29280-c0010",
+        "TS29280-c0028",
+        "TS29280-c0029"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-003",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 2664,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0010",
+        "TS29280-c0012",
+        "TS29280-c0026",
+        "TS29280-c0025",
+        "TS29280-c0019"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-004",
+      "raw_generator_output": "We need to find the Message Type value (decimal) of the SRVCC CS to PS Request on the Sv interface, according to 3GPP Rel-19, TS 29.280 v19.0.0.\n\nWe have a table in passage [1] that lists Message Type values (Decimal) and messages. Let's parse.\n\nThe table:\n\n| Message Type value (Decimal) | Message                              | Reference           | Initial | Triggered |\n|------------------------------|--------------------------------------|---------------------|---------|-----------|\n| 0                            | Reserved                             | 3GPP TS 29.274 [3]  |         |           |\n| 1                            | Echo Request                         | 3GPP TS 29.274 [3]  | X       |           |\n| 2                            | Echo Response                        | 3GPP TS 29.274 [3]  |         | X         |\n| 3                            | Version Not Supported Indication     | 3GPP TS 29.274 [3]  |         | X         |\n| 4-16                         | Reserved for S101 interface          | 3GPP TS 29.276 [17] |         |           |\n| 17-24                        | Reserved for S121 interface          | 3GPP TS 29.276 [17] |         |           |\n| 25                           | SRVCC PS to CS Request               | 5.2.2               | X       |           |\n| 26                           | SRVCC PS to CS Response              | 5.2.3               |         | X         |\n| 27                           | SRVCC PS to CS Complete Notification | 5.2.4               | X       |           |\n| 28                           | SRVCC PS to CS Complete Acknowledge  | 5.2.5               |         | X         |\n| 29                           | SRVCC PS to CS Cancel Notification   | 5.2.6               | X       |           |\n| 30                           | SRVCC PS to CS Cancel Acknowledge    | 5.2.7               |         | X         |\n| 31                           | SRVCC CS to PS Request               |",
+      "answer": "A",
+      "prompt_tokens": 2664,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0010",
+        "TS29280-c0012",
+        "TS29280-c0026",
+        "TS29280-c0025",
+        "TS29280-c0019"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-005",
+      "raw_generator_output": "D",
+      "answer": "D",
+      "prompt_tokens": 2071,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0007",
+        "TS29280-c0001",
+        "TS29280-c0027",
+        "TS29280-c0009",
+        "TS29280-c0026"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-006",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 2459,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0032",
+        "TS29280-c0028",
+        "TS29280-c0015",
+        "TS29280-c0007",
+        "TS29280-c0027"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-007",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 2599,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0012",
+        "TS29280-c0018",
+        "TS29280-c0024",
+        "TS29280-c0022",
+        "TS29280-c0014"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-008",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 2359,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0012",
+        "TS29280-c0001",
+        "TS29280-c0027",
+        "TS29280-c0014",
+        "TS29280-c0018"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-009",
+      "raw_generator_output": "FALSE",
+      "answer": "FALSE",
+      "prompt_tokens": 2606,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0015",
+        "TS29280-c0014",
+        "TS29280-c0007",
+        "TS29280-c0018",
+        "TS29280-c0024"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-010",
+      "raw_generator_output": "FALSE",
+      "answer": "FALSE",
+      "prompt_tokens": 2057,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0007",
+        "TS29280-c0006",
+        "TS29280-c0009",
+        "TS29280-c0027",
+        "TS29280-c0005"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-011",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 2277,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0009",
+        "TS29280-c0005",
+        "TS29280-c0025",
+        "TS29280-c0015",
+        "TS29280-c0017"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-012",
+      "raw_generator_output": "We need to check the statement: \"Echo Request has Message Type value 25 on the Sv interface. (according to 3GPP Rel-19, TS 29.280 v19.0.0)\". We need to see if that's true.\n\nFrom the context, we have a table in passage [1] which lists Message Type value (Decimal) and Message. Let's examine that table.\n\nThe table shows:\n\n| Message Type value (Decimal) | Message                              | Reference           | Initial | Triggered |\n|------------------------------|--------------------------------------|---------------------|---------|-----------|\n| 0                            | Reserved                             | 3GPP TS 29.274 [3]  |         |           |\n| 1                            | Echo Request                         | 3GPP TS 29.274 [3]  | X       |           |\n| 2                            | Echo Response                        | 3GPP TS 29.274 [3]  |         | X         |\n| 3                            | Version Not Supported Indication     | 3GPP TS 29.274 [3]  |         | X         |\n| 4-16                         | Reserved for S101 interface          | 3GPP TS 29.276 [17] |         |           |\n| 17-24                        | Reserved for S121 interface          | 3GPP TS 29.276 [17] |         |           |\n| 25                           | SRVCC PS to CS Request               | 5.2.2               | X       |           |\n| 26                           | SRVCC PS to CS Response              | 5.2.3               |         | X         |\n| 27                           | SRVCC PS to CS Complete Notification | 5.2.4               | X       |           |\n| 28                           | SRVCC PS to CS Complete Acknowledge  | 5.2.5               |         | X         |\n| 29                           | SRVCC PS to CS Cancel Notification   | 5.2.6               | X       |           |\n| 30                           | SRVCC PS to CS Cancel Acknowledge    | 5.2.7               |         | X         |\n|",
+      "answer": "TRUE",
+      "prompt_tokens": 2048,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0010",
+        "TS29280-c0026",
+        "TS29280-c0027",
+        "TS29280-c0001",
+        "TS29280-c0009"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-013",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 2225,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS23434-c0633",
+        "TS23434-c0638",
+        "TS23434-c0001",
+        "TS29280-c0027",
+        "TS23434-c0624"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-014",
+      "raw_generator_output": "B",
+      "answer": "B",
+      "prompt_tokens": 2500,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS23434-c0633",
+        "TS23434-c0080",
+        "TS23434-c0624",
+        "TS23434-c0001",
+        "TS23434-c0638"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-015",
+      "raw_generator_output": "C",
+      "answer": "C",
+      "prompt_tokens": 2434,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS23434-c0633",
+        "TS23434-c0341",
+        "TS23434-c0638",
+        "TS23434-c0080",
+        "TS23434-c0068"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-016",
+      "raw_generator_output": "D",
+      "answer": "D",
+      "prompt_tokens": 2620,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS23434-c0083",
+        "TS23434-c0084",
+        "TS23434-c0341",
+        "TS23434-c0080",
+        "TS23434-c0099"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-017",
+      "raw_generator_output": "D",
+      "answer": "D",
+      "prompt_tokens": 2242,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS23434-c0633",
+        "TS23434-c0001",
+        "TS23434-c0638",
+        "TS23434-c0620",
+        "TS29280-c0027"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-018",
+      "raw_generator_output": "",
+      "answer": "",
+      "prompt_tokens": 2496,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS23434-c0093",
+        "TS23434-c0633",
+        "TS23434-c0346",
+        "TS23434-c0099",
+        "TS23434-c0222"
+      ],
+      "evidence_in_context": true,
+      "error": "OpenRouter free quota exhausted (3 consecutive 429s); stop and retry later or rotate the stand-in model"
+    }
+  ],
+  "config": {
+    "generator": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+    "top_k": 10,
+    "rerank_top_k": 5,
+    "context_budget": null,
+    "index": "data/mini_index.jsonl"
+  },
+  "aborted": true,
+  "abort_error": "OpenRouter free quota exhausted (3 consecutive 429s); stop and retry later or rotate the stand-in model",
+  "score": {
+    "n_questions": 17,
+    "n_correct": 15,
+    "accuracy": 0.8824,
+    "total_prompt_tokens": 40364,
+    "token_efficiency": 26.36,
+    "overall": 69.67,
+    "passes_accuracy_gate": true
+  }
+}

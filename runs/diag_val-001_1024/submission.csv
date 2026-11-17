@@ -1,0 +1,58 @@
+ID,input_prompt,answer
+val-001,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+# 3GPP TS 29.280 V19.0.0 (2025-10)
+
+Technical Specification
+
+## **3rd Generation Partnership Project; Technical Specification Group Core Network and Terminals; Evolved Packet System (EPS); 3GPP Sv interface (MME to MSC, and SGSN to MSC) for SRVCC (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G', and the word 'ADVANCED' in smaller letters to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'P' has a red signal wave icon at its base.
+
+[2] Spec: TS 29.280 | Release: 19
+## 5.4 Reliable Delivery of Signalling Messages
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.5 Error Handling
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.6 Restoration and Recovery
+
+This is performed as according to GTPv2 in 3GPP TS 23.007 [5].
+
+# --- 6 Sv Information Elements
+
+IE type value used in Sv Message is defined in TS 29.274 [3]. The IE format is coded as per GTP in TS 29.274 [3].
+
+Table 6.1 shows the IEs used for SRVCC. Within information elements, certain fields may be described as spare. These bits shall be transmitted with the value set to 0. To allow for future features, the receiver shall not evaluate these bits.
+
+**Table 6.1-1: Information Elements for SRVCC**
+
+[3] Spec: TS 23.434 | Release: 19
+ surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+Question: According to 3GPP Rel-19, TS 29.280 v19.0.0, which entities does the Sv interface connect?
+
+Options:
+A. MME or SGSN and MSC server enhanced for SRVCC
+B. MME and HSS
+C. SGSN and GGSN
+D. MSC server and HLR
+
+Answer with only the letter of the correct option.",A

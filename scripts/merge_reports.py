@@ -13,8 +13,14 @@ the remaining questions into a second directory, then merge:
 Merges per_question (base error entry dropped), submission.csv rows,
 and recomputes the score over all answered questions. The merged
 report's config comes from the base run; both runs must use the same
-variant settings and generator model.
+variant settings and generator model — unless
+--allow-generator-mismatch is given, which merges runs whose configs
+differ ONLY in "generator" (e.g. completing a nemotron M1 slice with
+a Gemini continuation) and records the mismatch in the report. A
+mismatched merge is honest but confounded: do not quote its score as
+a single-generator result.
 """
+import argparse
 import json
 import sys
 from pathlib import Path
@@ -29,14 +35,47 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main() -> int:
-    base_dir, cont_dir, out_dir = (Path(p) for p in sys.argv[1:4])
+    ap = argparse.ArgumentParser(description="Merge a partial run with its continuation")
+    ap.add_argument("base_dir")
+    ap.add_argument("cont_dir")
+    ap.add_argument("out_dir")
+    ap.add_argument(
+        "--allow-generator-mismatch",
+        action="store_true",
+        help="merge even if the two runs' configs differ ONLY in "
+        "'generator'; records the mismatch in the merged report",
+    )
+    args = ap.parse_args()
+    base_dir, cont_dir, out_dir = (
+        Path(args.base_dir),
+        Path(args.cont_dir),
+        Path(args.out_dir),
+    )
     base = json.loads((base_dir / "report.json").read_text(encoding="utf-8"))
     cont = json.loads((cont_dir / "report.json").read_text(encoding="utf-8"))
+    generator_mismatch = None
     if base["config"] != cont["config"]:
-        print("config mismatch between runs, refusing to merge:", file=sys.stderr)
-        print("  base:", base["config"], file=sys.stderr)
-        print("  cont:", cont["config"], file=sys.stderr)
-        return 1
+        if args.allow_generator_mismatch and all(
+            base["config"].get(k) == cont["config"].get(k)
+            for k in base["config"]
+            if k != "generator"
+        ):
+            generator_mismatch = {
+                "base": base["config"].get("generator"),
+                "cont": cont["config"].get("generator"),
+            }
+            print(
+                "WARNING: merging runs with different generators "
+                f"(base={generator_mismatch['base']}, "
+                f"cont={generator_mismatch['cont']}); the merged score is "
+                "a MIXED-generator result, not a single-generator number",
+                file=sys.stderr,
+            )
+        else:
+            print("config mismatch between runs, refusing to merge:", file=sys.stderr)
+            print("  base:", base["config"], file=sys.stderr)
+            print("  cont:", cont["config"], file=sys.stderr)
+            return 1
 
     per_question = [p for p in base["per_question"] if "error" not in p]
     per_question += cont["per_question"]
@@ -58,6 +97,8 @@ def main() -> int:
         "score": score.as_dict(),
         "merged_from": [str(base_dir), str(cont_dir)],
     }
+    if generator_mismatch is not None:
+        report["generator_mismatch"] = generator_mismatch
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "report.json").write_text(
         json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8"

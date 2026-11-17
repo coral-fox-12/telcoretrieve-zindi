@@ -1,0 +1,148 @@
+ID,input_prompt,answer
+val-002,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+## 5.4 Reliable Delivery of Signalling Messages
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.5 Error Handling
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.6 Restoration and Recovery
+
+This is performed as according to GTPv2 in 3GPP TS 23.007 [5].
+
+# --- 6 Sv Information Elements
+
+IE type value used in Sv Message is defined in TS 29.274 [3]. The IE format is coded as per GTP in TS 29.274 [3].
+
+Table 6.1 shows the IEs used for SRVCC. Within information elements, certain fields may be described as spare. These bits shall be transmitted with the value set to 0. To allow for future features, the receiver shall not evaluate these bits.
+
+**Table 6.1-1: Information Elements for SRVCC**
+
+[2] Spec: TS 29.280 | Release: 19
+| Message Type value (Decimal) | Message                              | Reference           | Initial | Triggered |
+|------------------------------|--------------------------------------|---------------------|---------|-----------|
+| 0                            | Reserved                             | 3GPP TS 29.274 [3]  |         |           |
+| 1                            | Echo Request                         | 3GPP TS 29.274 [3]  | X       |           |
+| 2                            | Echo Response                        | 3GPP TS 29.274 [3]  |         | X         |
+| 3                            | Version Not Supported Indication     | 3GPP TS 29.274 [3]  |         | X         |
+| 4-16                         | Reserved for S101 interface          | 3GPP TS 29.276 [17] |         |           |
+| 17-24                        | Reserved for S121 interface          | 3GPP TS 29.276 [17] |         |           |
+| 25                           | SRVCC PS to CS Request               | 5.2.2               | X       |           |
+| 26                           | SRVCC PS to CS Response              | 5.2.3               |
+
+[3] Spec: TS 29.280 | Release: 19
+# 3GPP TS 29.280 V19.0.0 (2025-10)
+
+Technical Specification
+
+## **3rd Generation Partnership Project; Technical Specification Group Core Network and Terminals; Evolved Packet System (EPS); 3GPP Sv interface (MME to MSC, and SGSN to MSC) for SRVCC (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G', and the word 'ADVANCED' in smaller letters to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'P' has a red signal wave icon at its base.
+
+Question: What does the abbreviation SRVCC stand for, according to 3GPP TS 29.280?
+
+Options:
+A. Single Radio Voice Call Continuity
+B. Single Radio Video Call Continuity
+C. Seamless Radio Voice Call Control
+D. Single RAN Voice Call Continuity
+
+Answer with only the letter of the correct option.",
+val-004,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+| Message Type value (Decimal) | Message                              | Reference           | Initial | Triggered |
+|------------------------------|--------------------------------------|---------------------|---------|-----------|
+| 0                            | Reserved                             | 3GPP TS 29.274 [3]  |         |           |
+| 1                            | Echo Request                         | 3GPP TS 29.274 [3]  | X       |           |
+| 2                            | Echo Response                        | 3GPP TS 29.274 [3]  |         | X         |
+| 3                            | Version Not Supported Indication     | 3GPP TS 29.274 [3]  |         | X         |
+| 4-16                         | Reserved for S101 interface          | 3GPP TS 29.276 [17] |         |           |
+| 17-24                        | Reserved for S121 interface          | 3GPP TS 29.276 [17] |         |           |
+| 25                           | SRVCC PS to CS Request               | 5.2.2               | X       |           |
+| 26                           | SRVCC PS to CS Response              | 5.2.3               |
+
+[2] Spec: TS 29.280 | Release: 19
+The TEID field in the SRVCC CS to PS Cancel Notification message header shall be set to ""0"" if the message is sent before reception of the acceptance response to the SRVCC CS to PS Request. If the MSC Server sends the SRVCC CS to PS Cancel Notification message after the acceptance response to the SRVCC CS to PS Request, the TEID field of the SRVCC CS to PS Cancel Notification message may be set to the MME/SGSN TEID value received in the SRVCC CS to PS Response message. Therefore the MME/SGSN shall be able to accept the SRVCC CS to PS Cancel Notification messages with ""0"" or non-zero TEID in the message header.
+
+### 5.2.2 SRVCC PS to CS Request
+
+A SRVCC PS to CS Request message shall be sent across Sv interface from the MME/SGSN to the target MSC server as part of the MME/SGSN SRVCC procedure in 3GPP TS 23.216 [2].
+
+This message shall also be sent across Sv interface from the MME to the target MSC server as part of the vSRVCC procedure in 3GPP TS 23.216 [2
+
+[3] Spec: TS 29.280 | Release: 19
+The GTPv2-C messages shall be sent per UE on the Sv interface.
+
+There shall be one pair of TEID-C per UE on the Sv interface. The same tunnel shall be shared for the control messages related to the same UE operation.
+
+The TEID field in the SRVCC PS to CS Request and in the SRVCC CS to PS Request message header shall be set to ""0"" because this is the first message sent between the MME/SGSN and the MSC server to establish the tunnel for a UE.
+
+The TEID field in the SRVCC PS to CS Cancel Notification message header shall be set to ""0"" if the message is sent before reception of the acceptance response to the SRVCC PS to CS Request. If the MME/SGSN sends the SRVCC PS to CS Cancel Notification message after the acceptance response to the SRVCC PS to CS Request, the TEID field of the SRVCC PS to CS Cancel Notification message may be set to the MSC Server's TEID value received in the SRVCC PS to CS Response message. Therefore the MSC Server shall be able to accept the SRVCC PS to CS Cancel Notification messages with ""0"" or non-zero TEID in the message header.
+
+Question: What is the Message Type value (decimal) of the SRVCC CS to PS Request on the Sv interface, according to 3GPP Rel-19, TS 29.280 v19.0.0?
+
+Options:
+A. 31
+B. 25
+C. 30
+D. 27
+
+Answer with only the letter of the correct option.",
+val-022,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+ surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+[2] Spec: TS 23.434 | Release: 19
+# 3GPP TS 23.434 V19.5.0 (2025-03)
+
+*Technical Specification*
+
+## **3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; Service Enabler Architecture Layer for Verticals (SEAL); Functional architecture and information flows; (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G' and the word 'ADVANCED' in smaller text to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'G' has a red signal wave icon below it.
+
+[3] Spec: TS 23.434 | Release: 19
+**Figure 10.2.2-4: Utilization of Core Network Northbound APIs via CAPIF – service based representation**
+
+The Group management server acts as authorized API invoker to consume services from the Core Network northbound API entities like NEF which act as API Exposing Function as specified in 3GPP TS 23.222 [6].
+
+## 10.2.3 Off-network functional model description
+
+Figure 10.2.3-1 illustrates the off-network functional model for group management.
+
+Question: Which CAPIF role does the group management server act as, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. CAPIF's API invoker
+B. CAPIF's API exposing function
+C. CAPIF's API consumer
+D. CAPIF's API publisher
+
+Answer with only the letter of the correct option.",A

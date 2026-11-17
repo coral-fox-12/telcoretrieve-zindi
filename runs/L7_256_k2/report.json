@@ -1,0 +1,741 @@
+{
+  "n_questions": 60,
+  "per_question": [
+    {
+      "id": "val-001",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 565,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0001",
+        "TS29280-c0053"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-002",
+      "raw_generator_output": "D",
+      "answer": "D",
+      "prompt_tokens": 593,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0053",
+        "TS29280-c0018"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-003",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 645,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0018",
+        "TS29280-c0022"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-004",
+      "raw_generator_output": "B",
+      "answer": "B",
+      "prompt_tokens": 645,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0018",
+        "TS29280-c0022"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-005",
+      "raw_generator_output": "D",
+      "answer": "D",
+      "prompt_tokens": 564,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0015",
+        "TS29280-c0001"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-006",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 593,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0060",
+        "TS29280-c0027"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-007",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 645,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0021",
+        "TS29280-c0022"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-008",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 569,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0021",
+        "TS29280-c0001"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-009",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 510,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0027",
+        "TS29280-c0025"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-010",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 571,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0015",
+        "TS29280-c0012"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-011",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 604,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0010",
+        "TS29280-c0016"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-012",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 611,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0018",
+        "TS29280-c0051"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-013",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 597,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c1331",
+        "TS23434-c0001"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-014",
+      "raw_generator_output": "C",
+      "answer": "C",
+      "prompt_tokens": 603,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c1331",
+        "TS23434-c0001"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-015",
+      "raw_generator_output": "C",
+      "answer": "C",
+      "prompt_tokens": 631,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c1331",
+        "TS23434-c0696"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-016",
+      "raw_generator_output": "B",
+      "answer": "B",
+      "prompt_tokens": 632,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0158",
+        "TS23434-c1331"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-017",
+      "raw_generator_output": "D",
+      "answer": "D",
+      "prompt_tokens": 614,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c1331",
+        "TS23434-c0001"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-018",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 606,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0178",
+        "TS23434-c1331"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-019",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 628,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0697",
+        "TS23434-c0188"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-020",
+      "raw_generator_output": "D",
+      "answer": "D",
+      "prompt_tokens": 627,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c1331",
+        "TS23434-c0001"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-021",
+      "raw_generator_output": "D",
+      "answer": "D",
+      "prompt_tokens": 590,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c1331",
+        "TS23434-c0001"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-022",
+      "raw_generator_output": "B",
+      "answer": "B",
+      "prompt_tokens": 597,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c1331",
+        "TS23434-c0001"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-023",
+      "raw_generator_output": "C",
+      "answer": "C",
+      "prompt_tokens": 636,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c1331",
+        "TS23434-c0001"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-024",
+      "raw_generator_output": "D",
+      "answer": "D",
+      "prompt_tokens": 652,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c1331",
+        "TS23434-c0001"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-025",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 586,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0094",
+        "TS23434-c0096"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-026",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 633,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0109",
+        "TS23434-c0697"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-027",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 510,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0125",
+        "TS23434-c0001"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-028",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 471,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0695",
+        "TS23434-c0510"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-029",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 584,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0149",
+        "TS23434-c0151"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-030",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 609,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0154",
+        "TS23434-c0155"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-031",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 601,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0160",
+        "TS23434-c0158"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-032",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 554,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0178",
+        "TS23434-c0706"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-033",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 596,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0725",
+        "TS23434-c0516"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-034",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 563,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c1331",
+        "TS23434-c0001"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-035",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 563,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0400",
+        "TS23434-c0403"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-036",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 532,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0595",
+        "TS23434-c0551"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-037",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 645,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0658",
+        "TS23434-c0049"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-038",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 551,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0067",
+        "TS29280-c0063"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-039",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 562,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0083",
+        "TS29280-c0001"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-040",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 525,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0089",
+        "TS29280-c0001"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-041",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 635,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0666",
+        "TS23434-c0724"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-042",
+      "raw_generator_output": "B",
+      "answer": "B",
+      "prompt_tokens": 647,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0696",
+        "TS23434-c0697"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-043",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 584,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0084",
+        "TS29280-c0083"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-044",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 580,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0706",
+        "TS23434-c0178"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-045",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 656,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0727",
+        "TS23434-c1331"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-046",
+      "raw_generator_output": "B",
+      "answer": "B",
+      "prompt_tokens": 467,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0072",
+        "TS29280-c0027"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-047",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 619,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0725",
+        "TS23434-c0724"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-048",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 595,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0860",
+        "TS23434-c0865"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-049",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 577,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0661",
+        "TS23434-c0658"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-050",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 490,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0064",
+        "TS29280-c0068"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-051",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 522,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0675",
+        "TS23434-c0001"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-052",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 607,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0077",
+        "TS29280-c0093"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-053",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 624,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0685",
+        "TS23434-c1331"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-054",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 532,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0001",
+        "TS29280-c0083"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-055",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 606,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0722",
+        "TS23434-c0619"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-056",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 613,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0697",
+        "TS23434-c0696"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-057",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 570,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0093",
+        "TS29280-c0001"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-058",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 617,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0838",
+        "TS23434-c0837"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-059",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 538,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS23434-c0882",
+        "TS23434-c0886"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-060",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 546,
+      "n_passages": 2,
+      "retrieved_ids": [
+        "TS29280-c0092",
+        "TS29280-c0091"
+      ],
+      "evidence_in_context": true
+    }
+  ],
+  "config": {
+    "generator": "lexical",
+    "top_k": 10,
+    "rerank_top_k": 2,
+    "context_budget": null,
+    "index": "data/mini_index_256.jsonl"
+  },
+  "score": {
+    "n_questions": 60,
+    "n_correct": 30,
+    "accuracy": 0.5,
+    "total_prompt_tokens": 35238,
+    "token_efficiency": 59.14,
+    "overall": 52.74,
+    "passes_accuracy_gate": false
+  }
+}

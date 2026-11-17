@@ -49,7 +49,9 @@ def main() -> int:
     score = score_submission(answers, reference, total_tokens)
 
     report = {
-        "n_questions": base["n_questions"],
+        # Full validation set size (a sliced base run reports only its
+        # slice length; the merged report covers the whole set).
+        "n_questions": len(questions),
         "n_answered": len(answered),
         "per_question": per_question,
         "config": base["config"],
@@ -78,7 +80,7 @@ def main() -> int:
     else:
         print(f"WARNING: only {len(answered)}/{len(questions)} answered; "
               f"skipping submission check (merge more continuations)")
-    print(f"merged {len(answered)}/{base['n_questions']} answered "
+    print(f"merged {len(answered)}/{len(questions)} answered "
           f"-> {out_dir}/report.json + submission.csv")
     print("score:", json.dumps(score.as_dict()))
     return 0

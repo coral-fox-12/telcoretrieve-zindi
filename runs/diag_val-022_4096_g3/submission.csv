@@ -1,0 +1,46 @@
+ID,input_prompt,answer
+val-022,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+ surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+[2] Spec: TS 23.434 | Release: 19
+# 3GPP TS 23.434 V19.5.0 (2025-03)
+
+*Technical Specification*
+
+## **3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; Service Enabler Architecture Layer for Verticals (SEAL); Functional architecture and information flows; (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G' and the word 'ADVANCED' in smaller text to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'G' has a red signal wave icon below it.
+
+[3] Spec: TS 23.434 | Release: 19
+**Figure 10.2.2-4: Utilization of Core Network Northbound APIs via CAPIF – service based representation**
+
+The Group management server acts as authorized API invoker to consume services from the Core Network northbound API entities like NEF which act as API Exposing Function as specified in 3GPP TS 23.222 [6].
+
+## 10.2.3 Off-network functional model description
+
+Figure 10.2.3-1 illustrates the off-network functional model for group management.
+
+Question: Which CAPIF role does the group management server act as, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. CAPIF's API invoker
+B. CAPIF's API exposing function
+C. CAPIF's API consumer
+D. CAPIF's API publisher
+
+Answer with only the letter of the correct option.",A

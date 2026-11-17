@@ -1,0 +1,624 @@
+{
+  "questions": [
+    {
+      "answer": "A",
+      "evidence_chunk": "TS29280-c0005",
+      "id": "val-001",
+      "options": {
+        "A": "MME or SGSN and MSC server enhanced for SRVCC",
+        "B": "MME and HSS",
+        "C": "SGSN and GGSN",
+        "D": "MSC server and HLR"
+      },
+      "question": "According to 3GPP Rel-19, TS 29.280 v19.0.0, which entities does the Sv interface connect?"
+    },
+    {
+      "answer": "A",
+      "evidence_chunk": "TS29280-c0007",
+      "id": "val-002",
+      "options": {
+        "A": "Single Radio Voice Call Continuity",
+        "B": "Single Radio Video Call Continuity",
+        "C": "Seamless Radio Voice Call Control",
+        "D": "Single RAN Voice Call Continuity"
+      },
+      "question": "What does the abbreviation SRVCC stand for, according to 3GPP TS 29.280?"
+    },
+    {
+      "answer": "A",
+      "evidence_chunk": "TS29280-c0010",
+      "id": "val-003",
+      "options": {
+        "A": "25",
+        "B": "26",
+        "C": "31",
+        "D": "1"
+      },
+      "question": "What is the Message Type value (decimal) of the SRVCC PS to CS Request on the Sv interface, according to 3GPP Rel-19, TS 29.280 v19.0.0?",
+      "evidence_quote": "| 25                           | SRVCC PS to CS Request"
+    },
+    {
+      "answer": "A",
+      "evidence_chunk": "TS29280-c0010",
+      "id": "val-004",
+      "options": {
+        "A": "31",
+        "B": "25",
+        "C": "30",
+        "D": "27"
+      },
+      "question": "What is the Message Type value (decimal) of the SRVCC CS to PS Request on the Sv interface, according to 3GPP Rel-19, TS 29.280 v19.0.0?",
+      "evidence_quote": "| 31                           | SRVCC CS to PS Request"
+    },
+    {
+      "answer": "D",
+      "evidence_chunk": "TS29280-c0012",
+      "id": "val-005",
+      "options": {
+        "A": "SIP",
+        "B": "SCTP",
+        "C": "DIAM",
+        "D": "GTP"
+      },
+      "question": "What underlying protocol are the Sv interface messages based on? (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "A",
+      "evidence_chunk": "TS29280-c0007",
+      "id": "val-006",
+      "options": {
+        "A": "Session Transfer Number for SRVCC",
+        "B": "Single Transfer Number for SRVCC",
+        "C": "Session Transfer Node for SRVCC",
+        "D": "Subscriber Transfer Number for SRVCC"
+      },
+      "question": "What does STN-SR stand for, according to 3GPP TS 29.280?"
+    },
+    {
+      "answer": "TRUE",
+      "evidence_chunk": "TS29280-c0012",
+      "id": "val-007",
+      "options": {},
+      "question": "The TEID field in the SRVCC PS to CS Request message header shall be set to \"0\" because this is the first message sent between the MME/SGSN and the MSC server to establish the tunnel for a UE. (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "TRUE",
+      "evidence_chunk": "TS29280-c0012",
+      "id": "val-008",
+      "options": {},
+      "question": "There shall be one pair of TEID-C per UE on the Sv interface. (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "FALSE",
+      "evidence_chunk": "TS29280-c0014",
+      "id": "val-009",
+      "options": {},
+      "question": "The MME/SGSN shall include the STN-SR information element for every SRVCC session, including emergency calls. (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "FALSE",
+      "evidence_chunk": "TS29280-c0007",
+      "id": "val-010",
+      "options": {},
+      "question": "vSRVCC stands for Single Radio Voice Call Continuity. (according to 3GPP TS 29.280)"
+    },
+    {
+      "answer": "TRUE",
+      "evidence_chunk": "TS29280-c0005",
+      "id": "val-011",
+      "options": {},
+      "question": "The Sv interface is used to support Inter-RAT handover from IMS based voice service over EPS to CS domain over 3GPP UTRAN/GERAN access. (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "FALSE",
+      "evidence_chunk": "TS29280-c0009",
+      "id": "val-012",
+      "options": {},
+      "question": "Echo Request has Message Type value 25 on the Sv interface. (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "A",
+      "evidence_chunk": "TS23434-c0059",
+      "evidence_quote": "Service Enabler Architecture Layer for Verticals",
+      "id": "val-013",
+      "options": {
+        "A": "Service Enabler Architecture Layer for Verticals",
+        "B": "Service Enabler Application Layer for Verticals",
+        "C": "Service Enabler Architecture Layer for Vehicles",
+        "D": "System Enabler Architecture Layer for Verticals"
+      },
+      "question": "What does the abbreviation SEAL stand for, according to 3GPP Rel-19, TS 23.434 v19.5.0?"
+    },
+    {
+      "answer": "B",
+      "evidence_chunk": "TS23434-c0080",
+      "evidence_quote": "LWP is a generic representation of a light-weight protocol for use in constrained environments",
+      "id": "val-014",
+      "options": {
+        "A": "a light-weight protocol for use in unconstrained environments",
+        "B": "a light-weight protocol for use in constrained environments",
+        "C": "a signalling protocol for use in constrained environments",
+        "D": "a light-weight protocol for use in satellite environments"
+      },
+      "question": "What is LWP a generic representation of, according to 3GPP Rel-19, TS 23.434 v19.5.0?"
+    },
+    {
+      "answer": "C",
+      "evidence_chunk": "TS23434-c0068",
+      "evidence_quote": "VAL-UU supports both unicast and multicast delivery modes",
+      "id": "val-015",
+      "options": {
+        "A": "unicast delivery mode only",
+        "B": "multicast delivery mode only",
+        "C": "both unicast and multicast delivery modes",
+        "D": "broadcast delivery mode only"
+      },
+      "question": "Which delivery modes does the VAL-UU reference point support, according to 3GPP Rel-19, TS 23.434 v19.5.0?"
+    },
+    {
+      "answer": "D",
+      "evidence_chunk": "TS23434-c0083",
+      "evidence_quote": "shall use the ISC and Ma reference points as defined in 3GPP TS 23.002 [14]",
+      "id": "val-016",
+      "options": {
+        "A": "the Gm reference point",
+        "B": "the Mm and ICi reference points",
+        "C": "the Cx reference point",
+        "D": "the ISC and Ma reference points"
+      },
+      "question": "Which reference points shall the SIP-2 reference point use, according to 3GPP Rel-19, TS 23.434 v19.5.0?"
+    },
+    {
+      "answer": "A",
+      "evidence_chunk": "TS23434-c0086",
+      "evidence_quote": "A VAL Stream ID is an identity used by the VAL server to identify a VAL stream",
+      "id": "val-017",
+      "options": {
+        "A": "an identity used by the VAL server to identify a VAL stream",
+        "B": "a globally unique identifier representing a VAL system",
+        "C": "an identity used by the VAL client to identify a VAL stream",
+        "D": "a unique identifier within the VAL service that represents a set of VAL users or VAL UE"
+      },
+      "question": "What is a VAL Stream ID, according to 3GPP Rel-19, TS 23.434 v19.5.0?"
+    },
+    {
+      "answer": "B",
+      "evidence_chunk": "TS23434-c0093",
+      "evidence_quote": "The location management server obtains location information from the NEF via N33 reference point",
+      "id": "val-018",
+      "options": {
+        "A": "SCEF",
+        "B": "NEF",
+        "C": "GMLC",
+        "D": "3rd party location server"
+      },
+      "question": "From which network function does the location management server obtain location information via the N33 reference point, according to 3GPP Rel-19, TS 23.434 v19.5.0?"
+    },
+    {
+      "answer": "C",
+      "evidence_chunk": "TS23434-c0098",
+      "evidence_quote": "This reference point is an instance of CAPIF-2 reference point as specified in 3GPP TS 23.222 [8]",
+      "id": "val-019",
+      "options": {
+        "A": "CAPIF-1",
+        "B": "CAPIF-3",
+        "C": "CAPIF-2",
+        "D": "CAPIF-4"
+      },
+      "question": "Of which CAPIF reference point is the LM-S reference point an instance, according to 3GPP Rel-19, TS 23.434 v19.5.0?"
+    },
+    {
+      "answer": "D",
+      "evidence_chunk": "TS23434-c0105",
+      "evidence_quote": "\"DIRECT UPDATE\", indicates the SEAL LMS to directly update the SEAL LM client once configuration is adjusted",
+      "id": "val-020",
+      "options": {
+        "A": "that the VAL Server subscribes to receive the suggested configurations from the SEAL LMS",
+        "B": "that the SEAL LMS discards the updated configuration",
+        "C": "that the VAL server directly updates the SEAL LMS",
+        "D": "the SEAL LMS to directly update the SEAL LM client once configuration is adjusted"
+      },
+      "question": "In a location reporting trigger, what does the adaptive reporting value \"DIRECT UPDATE\" indicate, according to 3GPP Rel-19, TS 23.434 v19.5.0?"
+    },
+    {
+      "answer": "A",
+      "evidence_chunk": "TS23434-c0291",
+      "evidence_quote": "Temporary groups are formed by combining two or more groups",
+      "id": "val-021",
+      "options": {
+        "A": "by combining two or more groups",
+        "B": "by combining exactly two groups",
+        "C": "by combining three or more groups",
+        "D": "by splitting one group into two or more groups"
+      },
+      "question": "How are temporary groups formed, according to 3GPP Rel-19, TS 23.434 v19.5.0?"
+    },
+    {
+      "answer": "B",
+      "evidence_chunk": "TS23434-c0254",
+      "evidence_quote": "The group management server acts as CAPIF's API exposing function as specified in 3GPP TS 23.222 [8]",
+      "id": "val-022",
+      "options": {
+        "A": "CAPIF's API invoker",
+        "B": "CAPIF's API exposing function",
+        "C": "CAPIF's API consumer",
+        "D": "CAPIF's API publisher"
+      },
+      "question": "Which CAPIF role does the group management server act as, according to 3GPP Rel-19, TS 23.434 v19.5.0?"
+    },
+    {
+      "answer": "C",
+      "evidence_chunk": "TS23434-c0225",
+      "evidence_quote": "This API enables the VAL server to trigger reporting of location information to the location management server over LM-S",
+      "id": "val-023",
+      "options": {
+        "A": "subscribe, receive and unsubscribe the UEs location information from the location management server over LM-S",
+        "B": "obtain UEs location information from the location management server over LM-S",
+        "C": "trigger reporting of location information to the location management server over LM-S",
+        "D": "configure the list of VAL service area identifiers and the corresponding geographical co-ordinates with SEAL location management server"
+      },
+      "question": "What does the SS_LocationReporting API enable the VAL server to do, according to 3GPP Rel-19, TS 23.434 v19.5.0?"
+    },
+    {
+      "answer": "D",
+      "evidence_chunk": "TS23434-c0205",
+      "evidence_quote": "The location management server stops getting the UE's location and deletes the stored UE location data and the location tracing configuration for the service",
+      "id": "val-024",
+      "options": {
+        "A": "stops getting the UE's location but keeps the stored UE location data and the location tracing configuration",
+        "B": "deletes the stored UE location data but keeps the location tracing configuration for the service",
+        "C": "sends the stored UE location data to the VAL server and keeps the location tracing configuration",
+        "D": "stops getting the UE's location and deletes the stored UE location data and the location tracing configuration for the service"
+      },
+      "question": "When the VAL server decides to stop the location tracing services for the UE(s), what does the location management server do, according to 3GPP Rel-19, TS 23.434 v19.5.0?"
+    },
+    {
+      "answer": "TRUE",
+      "evidence_chunk": "TS23434-c0052",
+      "evidence_quote": "The present document specifies the functional architecture for service enabler architecture layer (SEAL) and the procedures, information flows and APIs for each service within SEAL in order to support vertical applications over the 3GPP system",
+      "id": "val-025",
+      "options": {},
+      "question": "The present document specifies the functional architecture for SEAL and the procedures, information flows and APIs for each service within SEAL in order to support vertical applications over the 3GPP system. (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "FALSE",
+      "evidence_chunk": "TS23434-c0060",
+      "evidence_quote": "[AR-4.1.2-e] The API interactions between the vertical application server(s) and SEAL server(s) shall conform to CAPIF as specified in 3GPP TS 23.222 [8]",
+      "id": "val-026",
+      "options": {},
+      "question": "The API interactions between the VAL client(s) and SEAL server(s) shall conform to CAPIF as specified in 3GPP TS 23.222 [8]. (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "TRUE",
+      "evidence_chunk": "TS23434-c0069",
+      "evidence_quote": "The SEAL client(s) provides the service enabler layer support functions to the VAL client(s) over SEAL-C reference points",
+      "id": "val-027",
+      "options": {},
+      "question": "The SEAL client(s) provides the service enabler layer support functions to the VAL client(s) over SEAL-C reference points. (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "FALSE",
+      "evidence_chunk": "TS23434-c0073",
+      "evidence_quote": "The VAL server acts as CAPIF's API invoker as specified in 3GPP TS 23.222 [8]",
+      "id": "val-028",
+      "options": {},
+      "question": "The VAL server acts as CAPIF's API exposing function as specified in 3GPP TS 23.222 [8]. (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "TRUE",
+      "evidence_chunk": "TS23434-c0079",
+      "evidence_quote": "The HTTP proxy shall be in the same trust domain as the HTTP clients and HTTP servers that are located within a VAL service provider's network",
+      "id": "val-029",
+      "options": {},
+      "question": "The HTTP proxy shall be in the same trust domain as the HTTP clients and HTTP servers that are located within a VAL service provider's network. (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "FALSE",
+      "evidence_chunk": "TS23434-c0081",
+      "evidence_quote": "The interactions between the SEAL servers of the same type are generically referred to as SEAL-E reference point",
+      "id": "val-030",
+      "options": {},
+      "question": "The interactions between the SEAL servers of different type are generically referred to as SEAL-E reference point. (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "TRUE",
+      "evidence_chunk": "TS23434-c0084",
+      "evidence_quote": "The AAA-1 reference point, which exists between the SIP database and the SIP core, is used by the SIP core to retrieve signalling plane data from the SIP database",
+      "id": "val-031",
+      "options": {},
+      "question": "The AAA-1 reference point, which exists between the SIP database and the SIP core, is used by the SIP core to retrieve signalling plane data from the SIP database. (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "FALSE",
+      "evidence_chunk": "TS23434-c0093",
+      "evidence_quote": "The location management server communicates with the SCEF via T8 reference point to obtain location information from the underlying 3GPP network system",
+      "id": "val-032",
+      "options": {},
+      "question": "The location management server communicates with the NEF via the T8 reference point to obtain location information from the underlying 3GPP network system. (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "TRUE",
+      "evidence_chunk": "TS23434-c0099",
+      "evidence_quote": "The reference point N33 supports the interactions between the location management server and the NEF and is specified in 3GPP TS 23.501 [10] and 3GPP TS 23.502 [11]",
+      "id": "val-033",
+      "options": {},
+      "question": "The N33 reference point supports the interactions between the location management server and the NEF. (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "FALSE",
+      "evidence_chunk": "TS23434-c0146",
+      "evidence_quote": "Upon receiving the report, the location management server updates location of the reporting location management client",
+      "id": "val-034",
+      "options": {},
+      "question": "Upon receiving the location information report, the location management client updates the location of the reporting location management server. (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "TRUE",
+      "evidence_chunk": "TS23434-c0199",
+      "evidence_quote": "By deregistration, the location management client may deregister the available location services which have registered to the location management server before",
+      "id": "val-035",
+      "options": {},
+      "question": "By deregistration, the location management client may deregister the available location services which have registered to the location management server before. (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "FALSE",
+      "evidence_chunk": "TS23434-c0291",
+      "evidence_quote": "The temporary group formation shall be rejected if any of the requested VAL services are not common to all the constituent VAL service groups",
+      "id": "val-036",
+      "options": {},
+      "question": "The temporary group formation shall be rejected if all of the requested VAL services are common to all the constituent VAL service groups. (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "A",
+      "evidence_chunk": "TS23434-c0322",
+      "evidence_quote": "This API enables the VAL server to communicate with the configuration management server for obtaining user profile over CM-S.",
+      "id": "val-037",
+      "options": {
+        "A": "Obtain_User_Profile",
+        "B": "Subscribe_User_Profile_Update",
+        "C": "Notify_User_Profile_Update",
+        "D": "Obtain_VAL_Service_Data"
+      },
+      "question": "Which operation of the SS_UserProfileRetrieval API is used by the VAL server to obtain a user profile? (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "B",
+      "evidence_chunk": "TS29280-c0033",
+      "evidence_quote": "When the target network is GERAN, the Transparent container field contains the value part of the *Old BSS to New BSS Information* IE defined in 3GPP TS 48.008 [8], i.e. octets 3 to n, excluding octet 1 (Element ID) and octet 2 (Length).",
+      "id": "val-038",
+      "options": {
+        "A": "Layer 3 Information",
+        "B": "Old BSS to New BSS Information",
+        "C": "Source RNC to Target RNC Transparent Container",
+        "D": "Source eNB To Target eNB Transparent Container"
+      },
+      "question": "When the target network is GERAN, the Transparent container field of the Source to Target Transparent Container contains the value part of which information element? (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "C",
+      "evidence_chunk": "TS29280-c0042",
+      "evidence_quote": "| 5                     | Unknown Target ID                                                                       |",
+      "id": "val-039",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "5",
+        "D": "7"
+      },
+      "question": "What is the SRVCC Cause value (decimal) for \"Unknown Target ID\"? (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "D",
+      "evidence_chunk": "TS29280-c0045",
+      "evidence_quote": "Bit 4 – VHO (vSRVCC flag): This flag is used to indicate that the vSRVCC HO is requested by the MME.",
+      "id": "val-040",
+      "options": {
+        "A": "Bit 1 – EmInd",
+        "B": "Bit 2 – ICS",
+        "C": "Bit 3 – STI",
+        "D": "Bit 4 – VHO"
+      },
+      "question": "In the Sv Flags information element, which bit indicates that the vSRVCC handover is requested by the MME? (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "A",
+      "evidence_chunk": "TS23434-c0326",
+      "evidence_quote": "The interactions related to identity management functions between the identity management clients located in different VAL UEs are supported by IM-PC5 reference point.",
+      "id": "val-041",
+      "options": {
+        "A": "IM-PC5",
+        "B": "IM-UU",
+        "C": "IM-C",
+        "D": "IM-S"
+      },
+      "question": "Which reference point supports the identity management interactions between the identity management clients located in different VAL UEs? (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "B",
+      "evidence_chunk": "TS23434-c0341",
+      "evidence_quote": "The KM-UU reference point shall use the HTTP-1 and HTTP-2 signalling control plane reference points for transport and routing of security related information to the key management client.",
+      "id": "val-042",
+      "options": {
+        "A": "HTTP-1 only",
+        "B": "HTTP-1 and HTTP-2",
+        "C": "HTTP-2 only",
+        "D": "HTTP-3"
+      },
+      "question": "Which signalling control plane reference points shall the KM-UU reference point use for transport and routing of security related information to the key management client? (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "C",
+      "evidence_chunk": "TS29280-c0043",
+      "evidence_quote": "Type = 57 (decimal)",
+      "id": "val-043",
+      "options": {
+        "A": "55",
+        "B": "56",
+        "C": "57",
+        "D": "58"
+      },
+      "question": "What is the Type value (decimal) of the Target RNC ID information element? (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "D",
+      "evidence_chunk": "TS23434-c0346",
+      "evidence_quote": "The network resource management server communicates with the PCRF via Rx reference point or communicates with the PCF via N5 reference point to control the unicast resources from the underlying 3GPP network system.",
+      "id": "val-044",
+      "options": {
+        "A": "N5",
+        "B": "T8",
+        "C": "N33",
+        "D": "Rx"
+      },
+      "question": "Through which reference point does the network resource management server communicate with the PCRF to control the unicast resources from the underlying 3GPP network system? (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "A",
+      "evidence_chunk": "TS23434-c0355",
+      "evidence_quote": "The resource adaptation requirement corresponds to the VAL service QoS requirements as applied for a UE or group of UEs (E.g. bandwidth, resource).",
+      "id": "val-045",
+      "options": {
+        "A": "Resource adaptation requirement",
+        "B": "List of VAL UE IDs",
+        "C": "VAL group ID",
+        "D": "BDT Reference ID"
+      },
+      "question": "In the network resource adaptation request, which mandatory information element corresponds to the VAL service QoS requirements as applied for a UE or group of UEs? (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "B",
+      "evidence_chunk": "TS29280-c0036",
+      "evidence_quote": "For an emergency call without an authenticated IMSI, the source MME shall set the key sequence value of the eKSI to the value '111' and  $CK_{SRVCC}$  and  $IK_{SRVCC}$  to all 0's in binary.",
+      "id": "val-046",
+      "options": {
+        "A": "'000'",
+        "B": "'111'",
+        "C": "'101'",
+        "D": "'010'"
+      },
+      "question": "For an emergency call without an authenticated IMSI, to which value shall the source MME set the key sequence value of the eKSI in the MM Context for E-UTRAN (v)SRVCC? (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "C",
+      "evidence_chunk": "TS23434-c0354",
+      "evidence_quote": "The reference point Nmb13 supports the interactions between the network resource management server and the MB-SMF is specified in 3GPP TS 23.247 [39].",
+      "id": "val-047",
+      "options": {
+        "A": "Nmb10",
+        "B": "N33",
+        "C": "Nmb13",
+        "D": "N5"
+      },
+      "question": "Which reference point supports the interactions between the network resource management server and the MB-SMF? (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "D",
+      "evidence_chunk": "TS23434-c0414",
+      "evidence_quote": "To activate the multicast bearers in the EPS, the NRM server shall use the Activate MBMS Bearer procedure specified in 3GPP TS 23.468 [16] with the NRM server performing the GCS AS function.",
+      "id": "val-048",
+      "options": {
+        "A": "Deactivate MBMS Bearer procedure",
+        "B": "Modify MBMS Bearer procedure",
+        "C": "Activate MBS Session procedure",
+        "D": "Activate MBMS Bearer procedure"
+      },
+      "question": "Which procedure shall the NRM server use to activate the multicast bearers in the EPS? (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "TRUE",
+      "evidence_chunk": "TS23434-c0324",
+      "evidence_quote": "This API enables the group management server to communicate with the configuration management server for obtaining VAL service data over SEAL-X.",
+      "id": "val-049",
+      "options": {},
+      "question": "The SS_VALServiceData API enables the group management server to communicate with the configuration management server for obtaining VAL service data over SEAL-X. (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "FALSE",
+      "evidence_chunk": "TS29280-c0035",
+      "evidence_quote": "The receiver of this Information Element shall ignore the length of the transparent container encoded in octet 5 and shall derive the actual length of the container from the length encoded in octets 2 to 3 minus 1.",
+      "id": "val-050",
+      "options": {},
+      "question": "The receiver of the Target to Source Transparent Container information element shall derive the actual length of the container from the length encoded in octets 2 to 3 plus 1. (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "TRUE",
+      "evidence_chunk": "TS23434-c0331",
+      "evidence_quote": "In a VAL system with multiple VAL services, a single user authentication as in step 1 can be used for multiple VAL service authorizations for the user.",
+      "id": "val-051",
+      "options": {},
+      "question": "In a VAL system with multiple VAL services, a single user authentication as in step 1 can be used for multiple VAL service authorizations for the user. (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "FALSE",
+      "evidence_chunk": "TS29280-c0039",
+      "evidence_quote": "The source SGSN will send to the MSC Server enhanced for SRVCC either the KSI'cs/CK'cs/IK'cs for an UMTS subscriber or the CKSN'cs/Kc' for a GSM subscriber (see 3GPP TS 33.102 [10]):",
+      "id": "val-052",
+      "options": {},
+      "question": "The source SGSN will send to the MSC Server enhanced for SRVCC either the KSI'cs/CK'cs/IK'cs for a GSM subscriber or the CKSN'cs/Kc' for a UMTS subscriber. (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "TRUE",
+      "evidence_chunk": "TS23434-c0336",
+      "evidence_quote": "This API enables the VAL server to provision configuration for the VAL service to the SEAL IM-S.",
+      "id": "val-053",
+      "options": {},
+      "question": "The SS_IdmParameterProvisioning API enables the VAL server to provision configuration for the VAL service to the SEAL IM-S. (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "FALSE",
+      "evidence_chunk": "TS29280-c0042",
+      "evidence_quote": "| 0                     | Reserved. Shall not be sent and if received the Cause shall be treated as an invalid IE |",
+      "id": "val-054",
+      "options": {},
+      "question": "SRVCC Cause value 0 means \"Unspecified\". (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "TRUE",
+      "evidence_chunk": "TS23434-c0353",
+      "evidence_quote": "The network resource management client of the UE1 communicates with the network resource management client of the UE2 over the NRM-PC5 reference point.",
+      "id": "val-055",
+      "options": {},
+      "question": "The network resource management client of the UE1 communicates with the network resource management client of the UE2 over the NRM-PC5 reference point. (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "FALSE",
+      "evidence_chunk": "TS23434-c0342",
+      "evidence_quote": "The interactions related to key management functions between the VAL server(s) and the key management server are supported by KM-S reference point. This reference point is an instance of CAPIF-2 reference point as specified in 3GPP TS 23.222 [8].",
+      "id": "val-056",
+      "options": {},
+      "question": "The KM-S reference point is an instance of CAPIF-1 reference point as specified in 3GPP TS 23.222. (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "TRUE",
+      "evidence_chunk": "TS29280-c0047",
+      "evidence_quote": "Note: Kc'ps, is called GPRS Kc in 3GPP TS 33.102 [10].",
+      "id": "val-057",
+      "options": {},
+      "question": "Kc'ps is called GPRS Kc in 3GPP TS 33.102. (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    },
+    {
+      "answer": "FALSE",
+      "evidence_chunk": "TS23434-c0402",
+      "evidence_quote": "3. The NRM server retrieves UE IP address by using event monitoring capability for PDU session status (or PDN connectivity status), and then PCC procedures are initiated from NRM server.",
+      "id": "val-058",
+      "options": {},
+      "question": "In the resource request procedure at VAL service communication establishment, the NRM server sends a resource response to the VAL server before retrieving the UE IP address and initiating PCC procedures. (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "TRUE",
+      "evidence_chunk": "TS23434-c0425",
+      "evidence_quote": "This estimation can be dependent on for example the modulation and coding scheme (MCS) and measurements from the reference signals from the eNB(s).",
+      "id": "val-059",
+      "options": {},
+      "question": "To estimate the MBMS bearer quality when no data is sent, the estimation can be dependent on the modulation and coding scheme (MCS) and measurements from the reference signals from the eNB(s). (according to 3GPP Rel-19, TS 23.434 v19.5.0)"
+    },
+    {
+      "answer": "FALSE",
+      "evidence_chunk": "TS29280-c0046",
+      "evidence_quote": "The Location Area Code (LAC) consists of 2 octets. Bit 8 of Octet 8 is the most significant bit and bit 1 of Octet 9 the least significant bit.",
+      "id": "val-060",
+      "options": {},
+      "question": "The Location Area Code (LAC) consists of 2 octets. Bit 8 of Octet 8 is the least significant bit and bit 1 of Octet 9 the most significant bit. (according to 3GPP Rel-19, TS 29.280 v19.0.0)"
+    }
+  ]
+}

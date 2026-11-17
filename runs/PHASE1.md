@@ -98,3 +98,16 @@ Still to do (phase 2, NOT run yet): Kaggle notebook (L4 x4 or T4 x2),
 via vLLM on :8000, export with the official CLI per variant,
 `challenge check`, submit the best variant to Zindi (1/day, 20 total —
 spend submissions only on clear local winners).
+
+**Gemini stand-in sweep (this session, after Phase 1): see
+`runs/GEMINI_SWEEP.md` + `runs/gemini_honest_60q.json`.** Same 60
+validation questions, stand-in gemma-4-26b-a4b-it via the user's two
+Gemini keys (NOT gemini-2.5-flash — 404s; NOT the real gemma-3n).
+Honest 60-q overall (empties as wrong): G1 512/k5 73.91, G2 512/b850
+70.51, G3 256/k3 67.79, M1-mixed 71.45. BUT the raw ranking is
+misleading: 23 empty answers (G2 14, G3 8, G1 1) are a Gemma-4
+thinking-budget artifact — 5/6 re-tested empties recover CORRECT at
+max_tokens 4096 (only val-022 is genuinely hard). Answered-only
+accuracy: G2 100% (46/46) > G1 96.6% > G3 86.5%. **Recommended
+phase-2 shortlist, unchanged from Phase 1: 512/b850 → 256/k3 →
+512/k5 control.** $0 spent, nothing submitted to Zindi.

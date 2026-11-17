@@ -1,0 +1,194 @@
+{
+  "n_questions": 12,
+  "per_question": [
+    {
+      "id": "val-001",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 2422,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0001",
+        "TS29280-c0027",
+        "TS29280-c0028",
+        "TS29280-c0026",
+        "TS23434-c0633"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-002",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 2117,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0027",
+        "TS29280-c0007",
+        "TS29280-c0010",
+        "TS29280-c0028",
+        "TS29280-c0029"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-003",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 2664,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0010",
+        "TS29280-c0012",
+        "TS29280-c0026",
+        "TS29280-c0025",
+        "TS29280-c0019"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-004",
+      "raw_generator_output": "We need to find the Message Type value (decimal) of the SRVCC CS to PS Request on the Sv interface, according to 3GPP Rel-19, TS 29.280 v19.0.0.\n\nWe have a table in passage [1] that lists Message Type values (Decimal) and messages. Let's parse.\n\nThe table:\n\n| Message Type value (Decimal) | Message                              | Reference           | Initial | Triggered |\n|------------------------------|--------------------------------------|---------------------|---------|-----------|\n| 0                            | Reserved                             | 3GPP TS 29.274 [3]  |         |           |\n| 1                            | Echo Request                         | 3GPP TS 29.274 [3]  | X       |           |\n| 2                            | Echo Response                        | 3GPP TS 29.274 [3]  |         | X         |\n| 3                            | Version Not Supported Indication     | 3GPP TS 29.274 [3]  |         | X         |\n| 4-16                         | Reserved for S101 interface          | 3GPP TS 29.276 [17] |         |           |\n| 17-24                        | Reserved for S121 interface          | 3GPP TS 29.276 [17] |         |           |\n| 25                           | SRVCC PS to CS Request               | 5.2.2               | X       |           |\n| 26                           | SRVCC PS to CS Response              | 5.2.3               |         | X         |\n| 27                           | SRVCC PS to CS Complete Notification | 5.2.4               | X       |           |\n| 28                           | SRVCC PS to CS Complete Acknowledge  | 5.2.5               |         | X         |\n| 29                           | SRVCC PS to CS Cancel Notification   | 5.2.6               | X       |           |\n| 30                           | SRVCC PS to CS Cancel Acknowledge    | 5.2.7               |         | X         |\n| 31                           | SRVCC CS to PS Request               |",
+      "answer": "A",
+      "prompt_tokens": 2664,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0010",
+        "TS29280-c0012",
+        "TS29280-c0026",
+        "TS29280-c0025",
+        "TS29280-c0019"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-005",
+      "raw_generator_output": "D",
+      "answer": "D",
+      "prompt_tokens": 2071,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0007",
+        "TS29280-c0001",
+        "TS29280-c0027",
+        "TS29280-c0009",
+        "TS29280-c0026"
+      ],
+      "evidence_in_context": false
+    },
+    {
+      "id": "val-006",
+      "raw_generator_output": "A",
+      "answer": "A",
+      "prompt_tokens": 2459,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0032",
+        "TS29280-c0028",
+        "TS29280-c0015",
+        "TS29280-c0007",
+        "TS29280-c0027"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-007",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 2599,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0012",
+        "TS29280-c0018",
+        "TS29280-c0024",
+        "TS29280-c0022",
+        "TS29280-c0014"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-008",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 2359,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0012",
+        "TS29280-c0001",
+        "TS29280-c0027",
+        "TS29280-c0014",
+        "TS29280-c0018"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-009",
+      "raw_generator_output": "FALSE",
+      "answer": "FALSE",
+      "prompt_tokens": 2606,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0015",
+        "TS29280-c0014",
+        "TS29280-c0007",
+        "TS29280-c0018",
+        "TS29280-c0024"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-010",
+      "raw_generator_output": "FALSE",
+      "answer": "FALSE",
+      "prompt_tokens": 2057,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0007",
+        "TS29280-c0006",
+        "TS29280-c0009",
+        "TS29280-c0027",
+        "TS29280-c0005"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-011",
+      "raw_generator_output": "TRUE",
+      "answer": "TRUE",
+      "prompt_tokens": 2277,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0009",
+        "TS29280-c0005",
+        "TS29280-c0025",
+        "TS29280-c0015",
+        "TS29280-c0017"
+      ],
+      "evidence_in_context": true
+    },
+    {
+      "id": "val-012",
+      "raw_generator_output": "FALSE",
+      "answer": "FALSE",
+      "prompt_tokens": 2048,
+      "n_passages": 5,
+      "retrieved_ids": [
+        "TS29280-c0010",
+        "TS29280-c0026",
+        "TS29280-c0027",
+        "TS29280-c0001",
+        "TS29280-c0009"
+      ],
+      "evidence_in_context": true
+    }
+  ],
+  "score": {
+    "n_questions": 12,
+    "n_correct": 12,
+    "accuracy": 1.0,
+    "total_prompt_tokens": 28343,
+    "token_efficiency": 26.46,
+    "overall": 77.94,
+    "passes_accuracy_gate": true
+  }
+}

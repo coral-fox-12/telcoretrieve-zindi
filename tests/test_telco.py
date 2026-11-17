@@ -218,6 +218,104 @@ class TestGenerate(unittest.TestCase):
             "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
         )
 
+    def test_default_gemini_model(self):
+        # gemini-2.5-flash 404s for these new keys and the Gemini 3.x
+        # flash models hang from this VM; the working stand-in is
+        # gemma-4-26b-a4b-it (verified live 2026-11-17).
+        from telco.generate import DEFAULT_GEMINI_MODEL
+
+        self.assertEqual(DEFAULT_GEMINI_MODEL, "gemma-4-26b-a4b-it")
+
+    def test_parse_gemini_response_text(self):
+        from telco.generate import parse_gemini_response
+
+        data = {
+            "candidates": [
+                {"content": {"parts": [{"text": "B"}], "role": "model"}}
+            ]
+        }
+        self.assertEqual(parse_gemini_response(data), "B")
+
+    def test_parse_gemini_response_empty_candidates(self):
+        from telco.generate import parse_gemini_response
+
+        self.assertEqual(parse_gemini_response({"candidates": []}), "")
+        self.assertEqual(parse_gemini_response({}), "")
+
+    def test_parse_gemini_response_skips_thought_parts(self):
+        from telco.generate import parse_gemini_response
+
+        data = {
+            "candidates": [
+                {
+                    "content": {
+                        "parts": [
+                            {"text": "hmm, let me think", "thought": True},
+                            {"text": "TRUE"},
+                        ]
+                    }
+                }
+            ]
+        }
+        self.assertEqual(parse_gemini_response(data), "TRUE")
+
+    def test_gemini_generator_request_shape(self):
+        from unittest.mock import patch
+
+        from telco.generate import GeminiGenerator
+
+        seen = {}
+
+        class FakeResp:
+            def raise_for_status(self):
+                pass
+
+            def json(self):
+                return {
+                    "candidates": [
+                        {"content": {"parts": [{"text": "C"}], "role": "model"}}
+                    ]
+                }
+
+        def fake_post(url, headers=None, json=None, timeout=None):
+            seen["url"] = url
+            seen["headers"] = headers
+            seen["json"] = json
+            return FakeResp()
+
+        gen = GeminiGenerator(api_key="test-key-123", pace_seconds=0)
+        with patch("telco.generate.requests.post", side_effect=fake_post):
+            self.assertEqual(gen.generate("SYS\n\nUSER"), "C")
+        self.assertIn("models/gemma-4-26b-a4b-it:generateContent", seen["url"])
+        self.assertEqual(seen["headers"]["x-goog-api-key"], "test-key-123")
+        body = seen["json"]
+        self.assertEqual(body["systemInstruction"]["parts"][0]["text"], "SYS")
+        self.assertEqual(body["contents"][0]["parts"][0]["text"], "USER")
+        cfg = body["generationConfig"]
+        self.assertEqual(cfg["temperature"], 0)
+        self.assertEqual(cfg["maxOutputTokens"], 512)
+
+    def test_gemini_generator_bad_key_raises_at_once(self):
+        # A 400 (bad key) is not retried — the loop raises immediately.
+        import requests
+        from unittest.mock import patch
+
+        from telco.generate import GeminiGenerator
+
+        class BadResp:
+            status_code = 400
+            response = None
+
+            def raise_for_status(self):
+                raise requests.exceptions.HTTPError(
+                    "400 Client Error", response=self
+                )
+
+        gen = GeminiGenerator(api_key="bad-key", pace_seconds=0)
+        with patch("telco.generate.requests.post", return_value=BadResp()):
+            with self.assertRaises(requests.exceptions.HTTPError):
+                gen.generate("SYS\n\nUSER")
+
 
 class TestScoring(unittest.TestCase):
     def test_perfect_score(self):

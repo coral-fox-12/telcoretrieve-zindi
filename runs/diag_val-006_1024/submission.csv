@@ -1,0 +1,31 @@
+ID,input_prompt,answer
+val-006,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+NOTE: The size of the TLI (Type, Length and Instance) fields, i.e ""4"" octets, has been subtracted from the number of the fixed octets of the ""Fixed Length"" and ""Extendable"" IEs.
+
+STN-SR is defined in 3GPP TS 23.003 [4]. STN-SR is transferred via GTP tunnels. The sending entity copies the value part of the STN-SR into the Value field of the STN-SR IE. The STN-SR IE is coded as depicted in Figure 6.2-1. Octet 5 contains the Nature of Address and Numbering Plan Indicator (NANPI) of the ""AddressString"" ASN.1 type (see 3GPP TS 29.002 [11]). Octets 6 to (n+4) contain the actual STN-SR (digits of an address encoded as a TBCD-STRING as in the ""AddressString"" ASN.1 type). For an odd number of STN-SR digits, bits 8 to 5 of the last octet are encoded with the filler ""1111"".
+
+![](41a438d7e4adc17c3a4005e7c9500091_img.jpg)
+
+| Octets | Bits                |   |   |   |             |   |   |   |
+|--------|---------------------|---|---|---|-------------|---|---|---|
+|        | 8                   | 7 | 6 | 5 | 4           | 3 | 2 | 1 |
+| 1      | Type = 51 (decimal) |   |   |   |             |   |   |   |
+| 2 to 3 | Length = n          |   |   |   |             |   |   |   |
+| 4      | Spare               |   |   |   | Instance    |   |   |   |
+| 5      | NANPI               |   |   |   |             |   |   |   |
+| 6      | Digit 2             |   |   |   | Digit 1     |   |   |   |
+| ...    |                     |   |   |   |             |   |   |   |
+| n+4    | Digit m             |   |   |   | Digit (m-1) |   |   |   |
+
+Question: What does STN-SR stand for, according to 3GPP TS 29.280?
+
+Options:
+A. Session Transfer Number for SRVCC
+B. Single Transfer Number for SRVCC
+C. Session Transfer Node for SRVCC
+D. Subscriber Transfer Number for SRVCC
+
+Answer with only the letter of the correct option.",A

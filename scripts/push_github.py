@@ -48,6 +48,8 @@ INCLUDE = [
     "scripts/build_mini_index.py",
     "scripts/add_parents_256.py",
     "scripts/verify_validation.py",
+    "scripts/merge_reports.py",
+    "scripts/run_llm_variants.sh",
     "scripts/push_github.py",
     "data/SampleSubmission.csv",
     "data/VariableDefinitions.csv",
@@ -64,6 +66,8 @@ INCLUDE = [
 
 def run_files(root: Path) -> list[str]:
     files = list(INCLUDE)
+    if (root / "runs/PHASE1.md").exists():
+        files.append("runs/PHASE1.md")
     for run_dir in sorted((root / "runs").iterdir()):
         if not run_dir.is_dir():
             continue

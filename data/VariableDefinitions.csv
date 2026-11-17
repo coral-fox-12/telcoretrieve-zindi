@@ -1,0 +1,6 @@
+variable,description
+ID,Unique identifier of the question.
+question,"The question text, including the 3GPP release and specification it refers to."
+options,JSON object mapping option letter to option text for multiple-choice questions; {} for true/false.
+input_prompt,The full prompt your system sent to its generator for this question (scored for token length).
+answer,"Your answer: one option letter A to E for multiple choice, TRUE or FALSE for true/false."

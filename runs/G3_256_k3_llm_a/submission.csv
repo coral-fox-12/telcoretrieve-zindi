@@ -1,0 +1,1385 @@
+ID,input_prompt,answer
+val-001,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+# 3GPP TS 29.280 V19.0.0 (2025-10)
+
+Technical Specification
+
+## **3rd Generation Partnership Project; Technical Specification Group Core Network and Terminals; Evolved Packet System (EPS); 3GPP Sv interface (MME to MSC, and SGSN to MSC) for SRVCC (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G', and the word 'ADVANCED' in smaller letters to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'P' has a red signal wave icon at its base.
+
+[2] Spec: TS 29.280 | Release: 19
+## 5.4 Reliable Delivery of Signalling Messages
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.5 Error Handling
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.6 Restoration and Recovery
+
+This is performed as according to GTPv2 in 3GPP TS 23.007 [5].
+
+# --- 6 Sv Information Elements
+
+IE type value used in Sv Message is defined in TS 29.274 [3]. The IE format is coded as per GTP in TS 29.274 [3].
+
+Table 6.1 shows the IEs used for SRVCC. Within information elements, certain fields may be described as spare. These bits shall be transmitted with the value set to 0. To allow for future features, the receiver shall not evaluate these bits.
+
+**Table 6.1-1: Information Elements for SRVCC**
+
+[3] Spec: TS 23.434 | Release: 19
+ surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+Question: According to 3GPP Rel-19, TS 29.280 v19.0.0, which entities does the Sv interface connect?
+
+Options:
+A. MME or SGSN and MSC server enhanced for SRVCC
+B. MME and HSS
+C. SGSN and GGSN
+D. MSC server and HLR
+
+Answer with only the letter of the correct option.",
+val-002,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+## 5.4 Reliable Delivery of Signalling Messages
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.5 Error Handling
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.6 Restoration and Recovery
+
+This is performed as according to GTPv2 in 3GPP TS 23.007 [5].
+
+# --- 6 Sv Information Elements
+
+IE type value used in Sv Message is defined in TS 29.274 [3]. The IE format is coded as per GTP in TS 29.274 [3].
+
+Table 6.1 shows the IEs used for SRVCC. Within information elements, certain fields may be described as spare. These bits shall be transmitted with the value set to 0. To allow for future features, the receiver shall not evaluate these bits.
+
+**Table 6.1-1: Information Elements for SRVCC**
+
+[2] Spec: TS 29.280 | Release: 19
+| Message Type value (Decimal) | Message                              | Reference           | Initial | Triggered |
+|------------------------------|--------------------------------------|---------------------|---------|-----------|
+| 0                            | Reserved                             | 3GPP TS 29.274 [3]  |         |           |
+| 1                            | Echo Request                         | 3GPP TS 29.274 [3]  | X       |           |
+| 2                            | Echo Response                        | 3GPP TS 29.274 [3]  |         | X         |
+| 3                            | Version Not Supported Indication     | 3GPP TS 29.274 [3]  |         | X         |
+| 4-16                         | Reserved for S101 interface          | 3GPP TS 29.276 [17] |         |           |
+| 17-24                        | Reserved for S121 interface          | 3GPP TS 29.276 [17] |         |           |
+| 25                           | SRVCC PS to CS Request               | 5.2.2               | X       |           |
+| 26                           | SRVCC PS to CS Response              | 5.2.3               |
+
+[3] Spec: TS 29.280 | Release: 19
+# 3GPP TS 29.280 V19.0.0 (2025-10)
+
+Technical Specification
+
+## **3rd Generation Partnership Project; Technical Specification Group Core Network and Terminals; Evolved Packet System (EPS); 3GPP Sv interface (MME to MSC, and SGSN to MSC) for SRVCC (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G', and the word 'ADVANCED' in smaller letters to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'P' has a red signal wave icon at its base.
+
+Question: What does the abbreviation SRVCC stand for, according to 3GPP TS 29.280?
+
+Options:
+A. Single Radio Voice Call Continuity
+B. Single Radio Video Call Continuity
+C. Seamless Radio Voice Call Control
+D. Single RAN Voice Call Continuity
+
+Answer with only the letter of the correct option.",
+val-003,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+| Message Type value (Decimal) | Message                              | Reference           | Initial | Triggered |
+|------------------------------|--------------------------------------|---------------------|---------|-----------|
+| 0                            | Reserved                             | 3GPP TS 29.274 [3]  |         |           |
+| 1                            | Echo Request                         | 3GPP TS 29.274 [3]  | X       |           |
+| 2                            | Echo Response                        | 3GPP TS 29.274 [3]  |         | X         |
+| 3                            | Version Not Supported Indication     | 3GPP TS 29.274 [3]  |         | X         |
+| 4-16                         | Reserved for S101 interface          | 3GPP TS 29.276 [17] |         |           |
+| 17-24                        | Reserved for S121 interface          | 3GPP TS 29.276 [17] |         |           |
+| 25                           | SRVCC PS to CS Request               | 5.2.2               | X       |           |
+| 26                           | SRVCC PS to CS Response              | 5.2.3               |
+
+[2] Spec: TS 29.280 | Release: 19
+The TEID field in the SRVCC CS to PS Cancel Notification message header shall be set to ""0"" if the message is sent before reception of the acceptance response to the SRVCC CS to PS Request. If the MSC Server sends the SRVCC CS to PS Cancel Notification message after the acceptance response to the SRVCC CS to PS Request, the TEID field of the SRVCC CS to PS Cancel Notification message may be set to the MME/SGSN TEID value received in the SRVCC CS to PS Response message. Therefore the MME/SGSN shall be able to accept the SRVCC CS to PS Cancel Notification messages with ""0"" or non-zero TEID in the message header.
+
+### 5.2.2 SRVCC PS to CS Request
+
+A SRVCC PS to CS Request message shall be sent across Sv interface from the MME/SGSN to the target MSC server as part of the MME/SGSN SRVCC procedure in 3GPP TS 23.216 [2].
+
+This message shall also be sent across Sv interface from the MME to the target MSC server as part of the vSRVCC procedure in 3GPP TS 23.216 [2
+
+[3] Spec: TS 29.280 | Release: 19
+The GTPv2-C messages shall be sent per UE on the Sv interface.
+
+There shall be one pair of TEID-C per UE on the Sv interface. The same tunnel shall be shared for the control messages related to the same UE operation.
+
+The TEID field in the SRVCC PS to CS Request and in the SRVCC CS to PS Request message header shall be set to ""0"" because this is the first message sent between the MME/SGSN and the MSC server to establish the tunnel for a UE.
+
+The TEID field in the SRVCC PS to CS Cancel Notification message header shall be set to ""0"" if the message is sent before reception of the acceptance response to the SRVCC PS to CS Request. If the MME/SGSN sends the SRVCC PS to CS Cancel Notification message after the acceptance response to the SRVCC PS to CS Request, the TEID field of the SRVCC PS to CS Cancel Notification message may be set to the MSC Server's TEID value received in the SRVCC PS to CS Response message. Therefore the MSC Server shall be able to accept the SRVCC PS to CS Cancel Notification messages with ""0"" or non-zero TEID in the message header.
+
+Question: What is the Message Type value (decimal) of the SRVCC PS to CS Request on the Sv interface, according to 3GPP Rel-19, TS 29.280 v19.0.0?
+
+Options:
+A. 25
+B. 26
+C. 31
+D. 1
+
+Answer with only the letter of the correct option.",A
+val-004,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+| Message Type value (Decimal) | Message                              | Reference           | Initial | Triggered |
+|------------------------------|--------------------------------------|---------------------|---------|-----------|
+| 0                            | Reserved                             | 3GPP TS 29.274 [3]  |         |           |
+| 1                            | Echo Request                         | 3GPP TS 29.274 [3]  | X       |           |
+| 2                            | Echo Response                        | 3GPP TS 29.274 [3]  |         | X         |
+| 3                            | Version Not Supported Indication     | 3GPP TS 29.274 [3]  |         | X         |
+| 4-16                         | Reserved for S101 interface          | 3GPP TS 29.276 [17] |         |           |
+| 17-24                        | Reserved for S121 interface          | 3GPP TS 29.276 [17] |         |           |
+| 25                           | SRVCC PS to CS Request               | 5.2.2               | X       |           |
+| 26                           | SRVCC PS to CS Response              | 5.2.3               |
+
+[2] Spec: TS 29.280 | Release: 19
+The TEID field in the SRVCC CS to PS Cancel Notification message header shall be set to ""0"" if the message is sent before reception of the acceptance response to the SRVCC CS to PS Request. If the MSC Server sends the SRVCC CS to PS Cancel Notification message after the acceptance response to the SRVCC CS to PS Request, the TEID field of the SRVCC CS to PS Cancel Notification message may be set to the MME/SGSN TEID value received in the SRVCC CS to PS Response message. Therefore the MME/SGSN shall be able to accept the SRVCC CS to PS Cancel Notification messages with ""0"" or non-zero TEID in the message header.
+
+### 5.2.2 SRVCC PS to CS Request
+
+A SRVCC PS to CS Request message shall be sent across Sv interface from the MME/SGSN to the target MSC server as part of the MME/SGSN SRVCC procedure in 3GPP TS 23.216 [2].
+
+This message shall also be sent across Sv interface from the MME to the target MSC server as part of the vSRVCC procedure in 3GPP TS 23.216 [2
+
+[3] Spec: TS 29.280 | Release: 19
+The GTPv2-C messages shall be sent per UE on the Sv interface.
+
+There shall be one pair of TEID-C per UE on the Sv interface. The same tunnel shall be shared for the control messages related to the same UE operation.
+
+The TEID field in the SRVCC PS to CS Request and in the SRVCC CS to PS Request message header shall be set to ""0"" because this is the first message sent between the MME/SGSN and the MSC server to establish the tunnel for a UE.
+
+The TEID field in the SRVCC PS to CS Cancel Notification message header shall be set to ""0"" if the message is sent before reception of the acceptance response to the SRVCC PS to CS Request. If the MME/SGSN sends the SRVCC PS to CS Cancel Notification message after the acceptance response to the SRVCC PS to CS Request, the TEID field of the SRVCC PS to CS Cancel Notification message may be set to the MSC Server's TEID value received in the SRVCC PS to CS Response message. Therefore the MSC Server shall be able to accept the SRVCC PS to CS Cancel Notification messages with ""0"" or non-zero TEID in the message header.
+
+Question: What is the Message Type value (decimal) of the SRVCC CS to PS Request on the Sv interface, according to 3GPP Rel-19, TS 29.280 v19.0.0?
+
+Options:
+A. 31
+B. 25
+C. 30
+D. 27
+
+Answer with only the letter of the correct option.",
+val-005,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+|          |                                                            |
+|----------|------------------------------------------------------------|
+| C-MSISDN | Correlation MSISDN.                                        |
+| GWCN     | Gateway Core Network                                       |
+| MME/SGSN | MME or SGSN.                                               |
+| MOCN     | Multi-Operator Core Network                                |
+| SRVCC    | Single Radio Voice Call Continuity.                        |
+| STN-SR   | Session Transfer Number for SRVCC: see 3GPP TS 23.003 [4]. |
+| vSRVCC   | Single Radio Video Call Continuity.                        |
+
+# 4 General Description
+
+This document describes the Sv interface related procedures, message parameters and protocol specifications. The Sv messages are based on GTP. The message format, IE coding, and protocol error handling for Sv is per GTP as specified in 3GPP TS 29.274 [3].
+
+The general rules for IP address and UDP port number handling for the GTP messages on the Sv interface is per 3GPP TS 29.274 [3].
+
+# 5 Sv Messages and Information Elements
+
+[2] Spec: TS 29.280 | Release: 19
+# 3GPP TS 29.280 V19.0.0 (2025-10)
+
+Technical Specification
+
+## **3rd Generation Partnership Project; Technical Specification Group Core Network and Terminals; Evolved Packet System (EPS); 3GPP Sv interface (MME to MSC, and SGSN to MSC) for SRVCC (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G', and the word 'ADVANCED' in smaller letters to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'P' has a red signal wave icon at its base.
+
+[3] Spec: TS 29.280 | Release: 19
+## 5.4 Reliable Delivery of Signalling Messages
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.5 Error Handling
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.6 Restoration and Recovery
+
+This is performed as according to GTPv2 in 3GPP TS 23.007 [5].
+
+# --- 6 Sv Information Elements
+
+IE type value used in Sv Message is defined in TS 29.274 [3]. The IE format is coded as per GTP in TS 29.274 [3].
+
+Table 6.1 shows the IEs used for SRVCC. Within information elements, certain fields may be described as spare. These bits shall be transmitted with the value set to 0. To allow for future features, the receiver shall not evaluate these bits.
+
+**Table 6.1-1: Information Elements for SRVCC**
+
+Question: What underlying protocol are the Sv interface messages based on? (according to 3GPP Rel-19, TS 29.280 v19.0.0)
+
+Options:
+A. SIP
+B. SCTP
+C. DIAM
+D. GTP
+
+Answer with only the letter of the correct option.",D
+val-006,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+NOTE: The size of the TLI (Type, Length and Instance) fields, i.e ""4"" octets, has been subtracted from the number of the fixed octets of the ""Fixed Length"" and ""Extendable"" IEs.
+
+STN-SR is defined in 3GPP TS 23.003 [4]. STN-SR is transferred via GTP tunnels. The sending entity copies the value part of the STN-SR into the Value field of the STN-SR IE. The STN-SR IE is coded as depicted in Figure 6.2-1. Octet 5 contains the Nature of Address and Numbering Plan Indicator (NANPI) of the ""AddressString"" ASN.1 type (see 3GPP TS 29.002 [11]). Octets 6 to (n+4) contain the actual STN-SR (digits of an address encoded as a TBCD-STRING as in the ""AddressString"" ASN.1 type). For an odd number of STN-SR digits, bits 8 to 5 of the last octet are encoded with the filler ""1111"".
+
+[2] Spec: TS 29.280 | Release: 19
+| TEID-C                                    | 0    |
+| C-MSISDN                               | C  | The MME/SGSN shall include C-MSISDN IE in the message except for the cases:<br>- The UE is emergency attached and it is UICClass<br>- The UE is emergency attached and the IMSI is not authenticated<br>The C-MSISDN is defined in 3GPP TS 23.003 [4]. | MSISDN                                    | 0    |
+| STN-SR                                 | C  | The MME/SGSN shall include STN-SR IE if this session is not for an emergency call. | STN-SR                                    | 0    |
+| MM Context for E-UTRAN (v)SRVCC        | C  | The MME shall include mobile station classmarks, supported codecs, and CS Security key in MM Context for E-UTRAN (v)SRVCC.<br>The derivation of the CS security keys shall follow the procedures defined 3GPP TS 33.401[7].
+
+[3] Spec: TS 29.280 | Release: 19
+|          |                                                            |
+|----------|------------------------------------------------------------|
+| C-MSISDN | Correlation MSISDN.                                        |
+| GWCN     | Gateway Core Network                                       |
+| MME/SGSN | MME or SGSN.                                               |
+| MOCN     | Multi-Operator Core Network                                |
+| SRVCC    | Single Radio Voice Call Continuity.                        |
+| STN-SR   | Session Transfer Number for SRVCC: see 3GPP TS 23.003 [4]. |
+| vSRVCC   | Single Radio Video Call Continuity.                        |
+
+# 4 General Description
+
+This document describes the Sv interface related procedures, message parameters and protocol specifications. The Sv messages are based on GTP. The message format, IE coding, and protocol error handling for Sv is per GTP as specified in 3GPP TS 29.274 [3].
+
+The general rules for IP address and UDP port number handling for the GTP messages on the Sv interface is per 3GPP TS 29.274 [3].
+
+# 5 Sv Messages and Information Elements
+
+Question: What does STN-SR stand for, according to 3GPP TS 29.280?
+
+Options:
+A. Session Transfer Number for SRVCC
+B. Single Transfer Number for SRVCC
+C. Session Transfer Node for SRVCC
+D. Subscriber Transfer Number for SRVCC
+
+Answer with only the letter of the correct option.",A
+val-007,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+The GTPv2-C messages shall be sent per UE on the Sv interface.
+
+There shall be one pair of TEID-C per UE on the Sv interface. The same tunnel shall be shared for the control messages related to the same UE operation.
+
+The TEID field in the SRVCC PS to CS Request and in the SRVCC CS to PS Request message header shall be set to ""0"" because this is the first message sent between the MME/SGSN and the MSC server to establish the tunnel for a UE.
+
+The TEID field in the SRVCC PS to CS Cancel Notification message header shall be set to ""0"" if the message is sent before reception of the acceptance response to the SRVCC PS to CS Request. If the MME/SGSN sends the SRVCC PS to CS Cancel Notification message after the acceptance response to the SRVCC PS to CS Request, the TEID field of the SRVCC PS to CS Cancel Notification message may be set to the MSC Server's TEID value received in the SRVCC PS to CS Response message. Therefore the MSC Server shall be able to accept the SRVCC PS to CS Cancel Notification messages with ""0"" or non-zero TEID in the message header.
+
+[2] Spec: TS 29.280 | Release: 19
+The TEID field in the SRVCC CS to PS Cancel Notification message header shall be set to ""0"" if the message is sent before reception of the acceptance response to the SRVCC CS to PS Request. If the MSC Server sends the SRVCC CS to PS Cancel Notification message after the acceptance response to the SRVCC CS to PS Request, the TEID field of the SRVCC CS to PS Cancel Notification message may be set to the MME/SGSN TEID value received in the SRVCC CS to PS Response message. Therefore the MME/SGSN shall be able to accept the SRVCC CS to PS Cancel Notification messages with ""0"" or non-zero TEID in the message header.
+
+### 5.2.2 SRVCC PS to CS Request
+
+A SRVCC PS to CS Request message shall be sent across Sv interface from the MME/SGSN to the target MSC server as part of the MME/SGSN SRVCC procedure in 3GPP TS 23.216 [2].
+
+This message shall also be sent across Sv interface from the MME to the target MSC server as part of the vSRVCC procedure in 3GPP TS 23.216 [2
+
+[3] Spec: TS 29.280 | Release: 19
+| IP Address                             | 0    |
+| MME/SGSN Sv TEID for Control Plane     | C | The target MME/SGSN shall include MME/SGSN Sv Tunnel Endpoint Identifier for Control Plane IE in SRVCC CS to PS Response message if the Cause IE contains the value ""Request accepted"". The source MSC Server shall include this TEID-C in the GTP-C header of all subsequent control plane messages from the source MSC Server to the target MME/SGSN. | TEID-C                                 | 0    |
+| Target to Source Transparent Container | C | If the Cause IE contains the value ""Request accepted"", this IE shall be included and shall carry the Target to Source Transparent Container to be sent within the Handover command or the Relocation Command towards the source access network. | Target to Source Transparent Container | 0    |
+| Private Extension                      | O | None                                                                                                                                                                                                                                                                                                                                                                                                        | Private Extension                      | VS   |
+
+Question: The TEID field in the SRVCC PS to CS Request message header shall be set to ""0"" because this is the first message sent between the MME/SGSN and the MSC server to establish the tunnel for a UE. (according to 3GPP Rel-19, TS 29.280 v19.0.0)
+
+Answer with only TRUE or FALSE.",TRUE
+val-008,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+The GTPv2-C messages shall be sent per UE on the Sv interface.
+
+There shall be one pair of TEID-C per UE on the Sv interface. The same tunnel shall be shared for the control messages related to the same UE operation.
+
+The TEID field in the SRVCC PS to CS Request and in the SRVCC CS to PS Request message header shall be set to ""0"" because this is the first message sent between the MME/SGSN and the MSC server to establish the tunnel for a UE.
+
+The TEID field in the SRVCC PS to CS Cancel Notification message header shall be set to ""0"" if the message is sent before reception of the acceptance response to the SRVCC PS to CS Request. If the MME/SGSN sends the SRVCC PS to CS Cancel Notification message after the acceptance response to the SRVCC PS to CS Request, the TEID field of the SRVCC PS to CS Cancel Notification message may be set to the MSC Server's TEID value received in the SRVCC PS to CS Response message. Therefore the MSC Server shall be able to accept the SRVCC PS to CS Cancel Notification messages with ""0"" or non-zero TEID in the message header.
+
+[2] Spec: TS 29.280 | Release: 19
+# 3GPP TS 29.280 V19.0.0 (2025-10)
+
+Technical Specification
+
+## **3rd Generation Partnership Project; Technical Specification Group Core Network and Terminals; Evolved Packet System (EPS); 3GPP Sv interface (MME to MSC, and SGSN to MSC) for SRVCC (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G', and the word 'ADVANCED' in smaller letters to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'P' has a red signal wave icon at its base.
+
+[3] Spec: TS 29.280 | Release: 19
+## 5.4 Reliable Delivery of Signalling Messages
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.5 Error Handling
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.6 Restoration and Recovery
+
+This is performed as according to GTPv2 in 3GPP TS 23.007 [5].
+
+# --- 6 Sv Information Elements
+
+IE type value used in Sv Message is defined in TS 29.274 [3]. The IE format is coded as per GTP in TS 29.274 [3].
+
+Table 6.1 shows the IEs used for SRVCC. Within information elements, certain fields may be described as spare. These bits shall be transmitted with the value set to 0. To allow for future features, the receiver shall not evaluate these bits.
+
+**Table 6.1-1: Information Elements for SRVCC**
+
+Question: There shall be one pair of TEID-C per UE on the Sv interface. (according to 3GPP Rel-19, TS 29.280 v19.0.0)
+
+Answer with only TRUE or FALSE.",TRUE
+val-009,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+| TEID-C                                    | 0    |
+| C-MSISDN                               | C  | The MME/SGSN shall include C-MSISDN IE in the message except for the cases:<br>- The UE is emergency attached and it is UICClass<br>- The UE is emergency attached and the IMSI is not authenticated<br>The C-MSISDN is defined in 3GPP TS 23.003 [4]. | MSISDN                                    | 0    |
+| STN-SR                                 | C  | The MME/SGSN shall include STN-SR IE if this session is not for an emergency call. | STN-SR                                    | 0    |
+| MM Context for E-UTRAN (v)SRVCC        | C  | The MME shall include mobile station classmarks, supported codecs, and CS Security key in MM Context for E-UTRAN (v)SRVCC.<br>The derivation of the CS security keys shall follow the procedures defined 3GPP TS 33.401[7].
+
+[2] Spec: TS 29.280 | Release: 19
+| Information elements                   | P  | Condition / Comment                                                                                                                                                                                                                                                                                                                               | IE Type                                   | Ins. |
+|----------------------------------------|----|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------|------|
+| IMSI                                   | C  | This IE shall be included in the message except for the cases:<br>- The UE is emergency attached and it is UICClass<br>- The UE is emergency attached and the IMSI is not authenticated                                                                                                                                                           | IMSI                                      | 0    |
+| ME Identity (MEI)                      | C  | This IE shall be included in the message for all types of emergency calls by the MME and the SGSN. | MEI                                       | 0    |
+|                                        | CO | This IE shall be included for all SRVCC calls if available in the MME or SGSN (NOTE 2).
+
+[3] Spec: TS 29.280 | Release: 19
+# 3GPP TS 29.280 V19.0.0 (2025-10)
+
+Technical Specification
+
+## **3rd Generation Partnership Project; Technical Specification Group Core Network and Terminals; Evolved Packet System (EPS); 3GPP Sv interface (MME to MSC, and SGSN to MSC) for SRVCC (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G', and the word 'ADVANCED' in smaller letters to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'P' has a red signal wave icon at its base.
+
+Question: The MME/SGSN shall include the STN-SR information element for every SRVCC session, including emergency calls. (according to 3GPP Rel-19, TS 29.280 v19.0.0)
+
+Answer with only TRUE or FALSE.",FALSE
+val-010,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+|          |                                                            |
+|----------|------------------------------------------------------------|
+| C-MSISDN | Correlation MSISDN.                                        |
+| GWCN     | Gateway Core Network                                       |
+| MME/SGSN | MME or SGSN.                                               |
+| MOCN     | Multi-Operator Core Network                                |
+| SRVCC    | Single Radio Voice Call Continuity.                        |
+| STN-SR   | Session Transfer Number for SRVCC: see 3GPP TS 23.003 [4]. |
+| vSRVCC   | Single Radio Video Call Continuity.                        |
+
+# 4 General Description
+
+This document describes the Sv interface related procedures, message parameters and protocol specifications. The Sv messages are based on GTP. The message format, IE coding, and protocol error handling for Sv is per GTP as specified in 3GPP TS 29.274 [3].
+
+The general rules for IP address and UDP port number handling for the GTP messages on the Sv interface is per 3GPP TS 29.274 [3].
+
+# 5 Sv Messages and Information Elements
+
+[2] Spec: TS 29.280 | Release: 19
+- [1] 3GPP TR 21.905: ""Vocabulary for 3GPP Specifications"". - [2] 3GPP TR 23.216: ""Single Radio Voice Call Continuity (SRVCC)"". - [3] 3GPP TS 29.274: ""Evolved GPRS Tunnelling Protocol for Control Plane (GTPv2-C)"". - [4] 3GPP TS 23.003: ""Numbering, addressing and identification"". - [5] 3GPP TS 23.007: ""Restoration Procedures"". - [6] 3GPP TS 33.401: ""3GPP System Architecture Evolution (SAE): Security architecture"". - [7] 3GPP TS 24.008: ""Mobile radio interface Layer 3 specification; Core network protocols; Stage 3"". - [8] 3GPP TS 48.008: ""Mobile Switching Centre – Base Station System (MSC - BSS) interface; Layer 3 specification"". - [9] 3GPP TS 25.413: ""UTRAN Iu interface Radio Access Network Application Part (RANAP) signalling"".
+
+[3] Spec: TS 29.280 | Release: 19
+The Sv application defines a set of messages between the MME/SGSN and MSC Server to provide SRVCC as defined in 3GPP TS 23.216 [2]. The Sv message header shall be conformant to the GTPv2-C Message Header, see 3GPP TS 29.274 [3]. The messages to be used and the information elements are described in the following sections.
+
+Sv Messages are used for both the Inter-RAT handover from IMS based voice service over EPS to CS domain over 3GPP UTRAN/GERAN access or from UTRAN (HSPA) to 3GPP UTRAN/GERAN access and the Inter-RAT handover from IMS based voice and video service over EPS to CS domain over 3GPP UTRAN access.
+
+Sv Messages are also used for the Inter-RAT handover from voice service in CS domain over 3GPP UTRAN/GERAN access to IMS based service over LTE or UTRAN (HSPA).
+
+Sv Message Type value is defined in 3GPP TS 29.274 [3]. The message format is coded as per GTP in 3GPP TS 29.274 [3].
+
+Question: vSRVCC stands for Single Radio Voice Call Continuity. (according to 3GPP TS 29.280)
+
+Answer with only TRUE or FALSE.",FALSE
+val-011,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+The present document describes the Sv interface between the Mobility Management Entity (MME) or Serving GPRS Support Node (SGSN) and 3GPP MSC server enhanced for SRVCC. Sv interface is used to support Inter-RAT handover from IMS based voice service over EPS to CS domain over 3GPP UTRAN/GERAN access or from UTRAN (HSPA) to 3GPP UTRAN/GERAN access and to support Inter-RAT handover from IMS based voice and video service over EPS to CS domain over 3GPP UTRAN access. Sv interface is also used to support Inter-RAT handover from voice service in CS domain over 3GPP UTRAN/GERAN access to IMS based service over LTE or UTRAN (HSPA).
+
+If there is no specific indication, the term ""MSC server"" denotes 3GPP MSC server enhanced for SRVCC or 3GPP MSC server enhanced for vSRVCC as defined in 3GPP TS 23.216 [2].
+
+The following documents contain provisions which, through reference in this text, constitute provisions of the present document.
+
+[2] Spec: TS 29.280 | Release: 19
+The Sv application defines a set of messages between the MME/SGSN and MSC Server to provide SRVCC as defined in 3GPP TS 23.216 [2]. The Sv message header shall be conformant to the GTPv2-C Message Header, see 3GPP TS 29.274 [3]. The messages to be used and the information elements are described in the following sections.
+
+Sv Messages are used for both the Inter-RAT handover from IMS based voice service over EPS to CS domain over 3GPP UTRAN/GERAN access or from UTRAN (HSPA) to 3GPP UTRAN/GERAN access and the Inter-RAT handover from IMS based voice and video service over EPS to CS domain over 3GPP UTRAN access.
+
+Sv Messages are also used for the Inter-RAT handover from voice service in CS domain over 3GPP UTRAN/GERAN access to IMS based service over LTE or UTRAN (HSPA).
+
+Sv Message Type value is defined in 3GPP TS 29.274 [3]. The message format is coded as per GTP in 3GPP TS 29.274 [3].
+
+[3] Spec: TS 29.280 | Release: 19
+| Target Global Cell ID                     | 0    |
+| Source SAI                             | CO | The SGSN shall include this IE during a SRVCC Handover from UTRAN to GERAN and shall set it as per the SAI of the Source ID IE received from the source RNC (see 3GPP TS 25.413 [9]). See NOTE 3. | Service Area Identifier                   | 0    |
+| Allocation/Retention Priority          | CO | The MME shall include this IE if (v)SRVCC with priority is supported and (v)SRVCC is performed for an IMS-based MPS session (see 3GPP TS 23.216 [2]). | ARP                                       | 0    |
+| Anchor PLMN ID                         | CO | The MME/SGSN shall include this IE during SRVCC from UTRAN/E-UTRAN PS to UTRAN/GERAN CS domain GWCN/MOCN to be used for subsequent SRVCC                                                                                                                                                                                                          | PLMN ID                                   | 0    |
+
+Question: The Sv interface is used to support Inter-RAT handover from IMS based voice service over EPS to CS domain over 3GPP UTRAN/GERAN access. (according to 3GPP Rel-19, TS 29.280 v19.0.0)
+
+Answer with only TRUE or FALSE.",TRUE
+val-012,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+| Message Type value (Decimal) | Message                              | Reference           | Initial | Triggered |
+|------------------------------|--------------------------------------|---------------------|---------|-----------|
+| 0                            | Reserved                             | 3GPP TS 29.274 [3]  |         |           |
+| 1                            | Echo Request                         | 3GPP TS 29.274 [3]  | X       |           |
+| 2                            | Echo Response                        | 3GPP TS 29.274 [3]  |         | X         |
+| 3                            | Version Not Supported Indication     | 3GPP TS 29.274 [3]  |         | X         |
+| 4-16                         | Reserved for S101 interface          | 3GPP TS 29.276 [17] |         |           |
+| 17-24                        | Reserved for S121 interface          | 3GPP TS 29.276 [17] |         |           |
+| 25                           | SRVCC PS to CS Request               | 5.2.2               | X       |           |
+| 26                           | SRVCC PS to CS Response              | 5.2.3               |
+
+[2] Spec: TS 29.280 | Release: 19
+| Information elements | P | Condition / Comment | IE Type           | Ins. |
+|----------------------|---|---------------------|-------------------|------|
+| Cause                | M | None                | Cause             | 0    |
+| Private Extension    | O | None                | Private Extension | VS   |
+
+## 5.3 Path Management Messages
+
+### 5.3.1 Introduction
+
+The following GTPv2-C messages support path management for the Sv interface:
+
+- Echo Request
+- Echo Response
+- Version Not Supported Indication
+
+These messages are defined for GTPv2-C and the handling and definition shall also be as defined in GTPv2-C, see 3GPP TS 29.274 [3].
+
+### 5.3.2 Echo Request message
+
+3GPP TS 29.274 [3] specifies the information elements included in the Echo Request message.
+
+### 5.3.3 Echo Response message
+
+3GPP TS 29.274 [3] specifies the information elements included in the Echo Response message.
+
+### 5.3.4 Version Not Supported Indication message
+
+3GPP TS 29.274 [3] specifies the detailed handling and information elements included in the Version Not Supported
+
+[3] Spec: TS 29.280 | Release: 19
+# 3GPP TS 29.280 V19.0.0 (2025-10)
+
+Technical Specification
+
+## **3rd Generation Partnership Project; Technical Specification Group Core Network and Terminals; Evolved Packet System (EPS); 3GPP Sv interface (MME to MSC, and SGSN to MSC) for SRVCC (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G', and the word 'ADVANCED' in smaller letters to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'P' has a red signal wave icon at its base.
+
+Question: Echo Request has Message Type value 25 on the Sv interface. (according to 3GPP Rel-19, TS 29.280 v19.0.0)
+
+Answer with only TRUE or FALSE.",FALSE
+val-013,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+ surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+[2] Spec: TS 23.434 | Release: 19
+# 3GPP TS 23.434 V19.5.0 (2025-03)
+
+*Technical Specification*
+
+## **3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; Service Enabler Architecture Layer for Verticals (SEAL); Functional architecture and information flows; (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G' and the word 'ADVANCED' in smaller text to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'G' has a red signal wave icon below it.
+
+[3] Spec: TS 23.434 | Release: 19
+| 19.4.1 |
+| 2025-01 |        |           |      |   |   | Re-application of CR0332R5 ""Support the satellite S&F operation""                                                    | 19.4.2 |
+| 2025-03 | SA#107 | SP-250205 | 0363 | 2 | B | Add the business relationship for SEAL deployment with satellite connectivity                                       | 19.5.0 |
+| 2025-03 | SA#107 | SP-250216 | 0364 | 1 | F | Handling of Editors Notes in TS 23.434                                                                              | 19.5.0 |
+| 2025-03 | SA#107 | SP-250201 | 0366 | 1 | A | Resolve the EN about the security and privacy aspects for location management                                       | 19.5.0 |
+| 2025-03 | SA#107 | SP-250210 | 0367 | 1 | F | Resolve the EN for handling the ""loss of connectivity"" in LM server                                                 | 19.5.0 |
+| 2025-03 | SA#107 | SP-250210 | 0368 | 1 |
+
+Question: What does the abbreviation SEAL stand for, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. Service Enabler Architecture Layer for Verticals
+B. Service Enabler Application Layer for Verticals
+C. Service Enabler Architecture Layer for Vehicles
+D. System Enabler Architecture Layer for Verticals
+
+Answer with only the letter of the correct option.",A
+val-014,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+ surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+[2] Spec: TS 23.434 | Release: 19
+# 3GPP TS 23.434 V19.5.0 (2025-03)
+
+*Technical Specification*
+
+## **3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; Service Enabler Architecture Layer for Verticals (SEAL); Functional architecture and information flows; (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G' and the word 'ADVANCED' in smaller text to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'G' has a red signal wave icon below it.
+
+[3] Spec: TS 23.434 | Release: 19
+| 19.4.1 |
+| 2025-01 |        |           |      |   |   | Re-application of CR0332R5 ""Support the satellite S&F operation""                                                    | 19.4.2 |
+| 2025-03 | SA#107 | SP-250205 | 0363 | 2 | B | Add the business relationship for SEAL deployment with satellite connectivity                                       | 19.5.0 |
+| 2025-03 | SA#107 | SP-250216 | 0364 | 1 | F | Handling of Editors Notes in TS 23.434                                                                              | 19.5.0 |
+| 2025-03 | SA#107 | SP-250201 | 0366 | 1 | A | Resolve the EN about the security and privacy aspects for location management                                       | 19.5.0 |
+| 2025-03 | SA#107 | SP-250210 | 0367 | 1 | F | Resolve the EN for handling the ""loss of connectivity"" in LM server                                                 | 19.5.0 |
+| 2025-03 | SA#107 | SP-250210 | 0368 | 1 |
+
+Question: What is LWP a generic representation of, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. a light-weight protocol for use in unconstrained environments
+B. a light-weight protocol for use in constrained environments
+C. a signalling protocol for use in constrained environments
+D. a light-weight protocol for use in satellite environments
+
+Answer with only the letter of the correct option.",A
+val-015,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+ surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+[2] Spec: TS 23.434 | Release: 19
+The interactions related to key management functions between the key management client and the key management server are supported by KM-UU reference point. This reference point utilizes Uu reference point as described in 3GPP TS 23.401 [9] and 3GPP TS 23.501 [10].
+
+KM-UU reference point provides a means for the key management server to provide security related information (e.g. encryption keys) to the key management client. The KM-UU reference point shall use the HTTP-1 and HTTP-2 signalling control plane reference points for transport and routing of security related information to the key management client.
+
+NOTE: KM-UU reference point is specified in subclause 5.1.1.4 of 3GPP TS 33.434 [29].
+
+The interactions related to key management functions between the key management clients located in different VAL UEs are supported by KM-PC5 reference point. This reference point utilizes PC5 reference point as described in 3GPP TS 23.303 [12].
+
+The interactions related to key management functions between the VAL client(s) and the key management client within a VAL UE are supported by KM-C reference point.
+
+[3] Spec: TS 23.434 | Release: 19
+The protocols on any reference point that is exposed for VAL service interoperability with other SIP core or other IMS entities in other systems shall be compatible with the protocols defined for the corresponding reference point defined in 3GPP TS 23.002 [14].
+
+### 6.5.2 Application plane
+
+The reference points for the generic functional model for SEAL are described in the following subclauses.
+
+The interactions related to vertical application layer support functions between VAL client and VAL server are supported by VAL-UU reference point. This reference point is an instance of Uu reference point as described in 3GPP TS 23.401 [9] and 3GPP TS 23.501 [10].
+
+NOTE: The details of VAL-UU reference point is out of scope of the present document.
+
+The interactions related to vertical application layer support functions between the VAL clients of two UEs are supported by VAL-PC5 reference point. This reference point is an instance of PC5 reference point as described in 3GPP TS 23.303 [12].
+
+NOTE: The details of VAL-PC5 reference point is out of scope of the present document.
+
+Question: Which delivery modes does the VAL-UU reference point support, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. unicast delivery mode only
+B. multicast delivery mode only
+C. both unicast and multicast delivery modes
+D. broadcast delivery mode only
+
+Answer with only the letter of the correct option.",A
+val-016,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+The SIP-2 reference point, which exists between the SIP core and the SIP AS for establishing a session in support of VAL service, shall use the ISC and Ma reference points as defined in 3GPP TS 23.002 [14]. The SIP-2 reference point is used for:
+
+- notification to the VAL service server(s) of SIP registration by the VAL UE;
+- authentication and security to the service layer;
+- event subscription and event notification;
+- communication of the TMGI for multicast operation;
+- session management; and
+- media negotiation.
+
+### 6.5.3.4 Reference point SIP-3 (between the SIP core and SIP core)
+
+The SIP-3 reference point, which exists between one SIP core and another SIP core for establishing a session in support of VAL service, shall use the Mm and ICi reference points as defined in 3GPP TS 23.002 [14]. The SIP-3 reference point is used for:
+
+- event subscription and event notification;
+- session management; and
+- media negotiation.
+
+### 6.5.3.5 Reference point HTTP-1 (between the HTTP client and the HTTP proxy)
+
+[2] Spec: TS 23.434 | Release: 19
+ surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+[3] Spec: TS 23.434 | Release: 19
+### 6.5.3.2 Reference point SIP-1(between the signalling user agent and the SIP core)
+
+The SIP-1 reference point, which exists between the signalling user agent and the SIP core for establishing a session in support of VAL service, shall use the Gm reference point as defined in 3GPP TS 23.002 [14] (with necessary enhancements to support VAL service requirements and profiled to meet the minimum requirements for support of VAL service). The SIP-1 reference point fulfils the requirements of the GC1 reference point specified in 3GPP TS 23.468 [16]. The SIP-1 reference point is used for:
+
+- SIP registration;
+- authentication and security to the service layer;
+- event subscription and event notification;
+- communication of the TMGI for multicast operation;
+- overload control;
+- session management; and
+- media negotiation.
+
+### 6.5.3.3 Reference point SIP-2 (between the SIP core and the SIP AS)
+
+Question: Which reference points shall the SIP-2 reference point use, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. the Gm reference point
+B. the Mm and ICi reference points
+C. the Cx reference point
+D. the ISC and Ma reference points
+
+Answer with only the letter of the correct option.",D
+val-017,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+ surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+[2] Spec: TS 23.434 | Release: 19
+# 3GPP TS 23.434 V19.5.0 (2025-03)
+
+*Technical Specification*
+
+## **3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; Service Enabler Architecture Layer for Verticals (SEAL); Functional architecture and information flows; (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G' and the word 'ADVANCED' in smaller text to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'G' has a red signal wave icon below it.
+
+[3] Spec: TS 23.434 | Release: 19
+ F | Removal of PCP from TSC stream discovery                                                     | 17.4.0 |
+| 2021-12 | SA#94-E | SP-211525 | 0087 |   | F | Add missing location area monitoring API                                                     | 17.4.0 |
+| 2022-03 | SA#95-E | SP-220101 | 0087 |   | F | Clarify the VAL UE ID                                                                        | 17.5.0 |
+| 2022-03 | SA#95-E | SP-220101 | 0092 | 1 | F | Correct QoS monitoring service                                                               | 17.5.0 |
+| 2022-03 | SA#95-E | SP-220101 | 0093 |   | F | Correct TSC stream availability discovery                                                    | 17.5.0 |
+| 2022-03 | SA#95-E | SP-220102 | 0091 | 1 | B | Complete location retrieval in an area                                                       | 18.0.0 |
+| 2022-06 | SA#96   | SP-220473 | 0097 | 2 | A | Minor essential corrections to TS 23.434
+
+Question: What is a VAL Stream ID, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. an identity used by the VAL server to identify a VAL stream
+B. a globally unique identifier representing a VAL system
+C. an identity used by the VAL client to identify a VAL stream
+D. a unique identifier within the VAL service that represents a set of VAL users or VAL UE
+
+Answer with only the letter of the correct option.",A
+val-018,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+The location management client communicates with the location management server over the LM-UU reference point. The location management client provides the support for location management functions to the VAL client(s) over LM-C reference point. The VAL server(s) communicate with the location management server over the LM-S reference point. The VAL client communicates with the VAL server over the VAL-UU reference point which is outside the scope of this document.
+
+The location management server communicates with the SCEF via T8 reference point to obtain location information from the underlying 3GPP network system. The location management server obtains location information from the NEF via N33 reference point by mechanism defined in clause 5.2.6.2 of 3GPP TS 23.502 [11]. The location management server may obtain location information from the GMLC via Le reference point defined in clause 4.4.1 of 3GPP TS 23.273 [50]. The location management server may optionally obtains location information from the 3rd party location server via LM-3P reference point.
+
+[2] Spec: TS 23.434 | Release: 19
+ surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+[3] Spec: TS 23.434 | Release: 19
+The location management server is a functional entity that receives and stores user location information and provides user location information to the vertical application server. The location management server may also acquire location information provided by PLMN operator via T8, N33, or Le reference points. The location management service may optionally obtain location information from 3<sup>rd</sup> party location servers via LM-3P reference point. The LM-3P reference point is out of scope of this specification.
+
+The location management server acts as CAPIF's API exposing function as specified in 3GPP TS 23.222 [8]. The location management server also supports interactions with the corresponding location management server in distributed SEAL deployments. The location management server, with the fused location function, may combine/aggregate location information from multiple sources to provide a more accurate UE location. The location management server also supports to report the value-added location information (e.g. Geofencing monitoring events, history location data, prediction related to UE location, etc.) to the VAL server.
+
+NOTE: The accuracy of location information acquired from 4G system via T8 reference point is not higher than cell level (ECGI) for E-UTRAN.
+
+## 9.2.5 Reference points description
+
+Question: From which network function does the location management server obtain location information via the N33 reference point, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. SCEF
+B. NEF
+C. GMLC
+D. 3rd party location server
+
+Answer with only the letter of the correct option.",B
+val-019,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+The interactions related to key management functions between the VAL server(s) and the key management server are supported by KM-S reference point. This reference point is an instance of CAPIF-2 reference point as specified in 3GPP TS 23.222 [8].
+
+KM-S reference point provides a means for the key management server to provide security related information (e.g. encryption keys) to the VAL server. The KM-S reference point shall use the HTTP-1 and HTTP-2 signalling control plane reference points for transport and routing of security related information to the VAL server.
+
+NOTE: KM-S is specified in subclause 5.1.1.4 of 3GPP TS 33.434 [29].
+
+The interactions related to key management functions between the key management servers in a distributed deployment are supported by KM-E reference point.
+
+#### 13.2.5.7 SEAL-X1
+
+NOTE: SEAL-X1 reference point between the key management server and the group management server is described in subclause 6.5.9.2.
+
+## 13.3 Procedures and information flows for key management
+
+NOTE: The procedure for key management is specified in subclause 5.3 of 3GPP TS 33.434 [29
+
+[2] Spec: TS 23.434 | Release: 19
+The interactions related to location management functions between the VAL server(s) and the location management server are supported by LM-S reference point. This reference point is an instance of CAPIF-2 reference point as specified in 3GPP TS 23.222 [8].
+
+LM-S reference point is used by the VAL server to request and receive location information from location management server. The LM-S reference point shall use SIP-1 and SIP-2 reference points for subscription/notification related signalling. And for transport and routing of location management related signalling LM-S reference point uses the HTTP-1 and HTTP-2 signalling control plane reference points.
+
+The interactions related to location management functions between the location management servers in a distributed deployment are supported by LM-E reference point.
+
+The reference point T8 supports the interactions between the location management server and the SCEF and is specified in 3GPP TS 23.682 [13]. The functions related to location management of T8 are supported by the location management server.
+
+The reference point Le supports the interactions between the location management server and the GMLC and is specified in 3GPP TS 23.273 [50].
+
+[3] Spec: TS 23.434 | Release: 19
+ surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+Question: Of which CAPIF reference point is the LM-S reference point an instance, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. CAPIF-1
+B. CAPIF-3
+C. CAPIF-2
+D. CAPIF-4
+
+Answer with only the letter of the correct option.",C
+val-020,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+ surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+[2] Spec: TS 23.434 | Release: 19
+# 3GPP TS 23.434 V19.5.0 (2025-03)
+
+*Technical Specification*
+
+## **3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; Service Enabler Architecture Layer for Verticals (SEAL); Functional architecture and information flows; (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G' and the word 'ADVANCED' in smaller text to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'G' has a red signal wave icon below it.
+
+[3] Spec: TS 23.434 | Release: 19
+| 19.4.1 |
+| 2025-01 |        |           |      |   |   | Re-application of CR0332R5 ""Support the satellite S&F operation""                                                    | 19.4.2 |
+| 2025-03 | SA#107 | SP-250205 | 0363 | 2 | B | Add the business relationship for SEAL deployment with satellite connectivity                                       | 19.5.0 |
+| 2025-03 | SA#107 | SP-250216 | 0364 | 1 | F | Handling of Editors Notes in TS 23.434                                                                              | 19.5.0 |
+| 2025-03 | SA#107 | SP-250201 | 0366 | 1 | A | Resolve the EN about the security and privacy aspects for location management                                       | 19.5.0 |
+| 2025-03 | SA#107 | SP-250210 | 0367 | 1 | F | Resolve the EN for handling the ""loss of connectivity"" in LM server                                                 | 19.5.0 |
+| 2025-03 | SA#107 | SP-250210 | 0368 | 1 |
+
+Question: In a location reporting trigger, what does the adaptive reporting value ""DIRECT UPDATE"" indicate, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. that the VAL Server subscribes to receive the suggested configurations from the SEAL LMS
+B. that the SEAL LMS discards the updated configuration
+C. that the VAL server directly updates the SEAL LMS
+D. the SEAL LMS to directly update the SEAL LM client once configuration is adjusted
+
+Answer with only the letter of the correct option.",A
+val-021,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+ surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+[2] Spec: TS 23.434 | Release: 19
+# 3GPP TS 23.434 V19.5.0 (2025-03)
+
+*Technical Specification*
+
+## **3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; Service Enabler Architecture Layer for Verticals (SEAL); Functional architecture and information flows; (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G' and the word 'ADVANCED' in smaller text to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'G' has a red signal wave icon below it.
+
+[3] Spec: TS 23.434 | Release: 19
+1. The VAL client determines to de-register member from the group and group management client is aware of it.
+2. The group management client initiates the group de-registration request towards the group management server.
+3. The group management server checks the authorization of group de-registration request and updates the group member list.
+4. The group management server sends a group de-registration response to the group management client.
+5. The group management server sends identity list notification about the leaving registered user to the other members of the group and the VAL server, whose subscription to receive notifications of de-registered VAL UE IDs is successful in step 7 and step 8 of the procedure in clause 10.3.8.2 respectively.
+
+### 10.3.10 Temporary groups
+
+#### 10.3.10.1 Temporary group formation within a VAL system
+
+Figure 10.3.10.1-1 below illustrates the temporary group formation within a VAL system.
+
+Temporary groups are formed by combining two or more groups. The temporary group formation is applicable only for groups configured with at least one common VAL service. The temporary group formation shall be rejected if any of the requested VAL services are not common to all the constituent VAL service groups.
+
+Question: How are temporary groups formed, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. by combining two or more groups
+B. by combining exactly two groups
+C. by combining three or more groups
+D. by splitting one group into two or more groups
+
+Answer with only the letter of the correct option.",A
+val-022,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+ surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+[2] Spec: TS 23.434 | Release: 19
+# 3GPP TS 23.434 V19.5.0 (2025-03)
+
+*Technical Specification*
+
+## **3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; Service Enabler Architecture Layer for Verticals (SEAL); Functional architecture and information flows; (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G' and the word 'ADVANCED' in smaller text to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'G' has a red signal wave icon below it.
+
+[3] Spec: TS 23.434 | Release: 19
+**Figure 10.2.2-4: Utilization of Core Network Northbound APIs via CAPIF – service based representation**
+
+The Group management server acts as authorized API invoker to consume services from the Core Network northbound API entities like NEF which act as API Exposing Function as specified in 3GPP TS 23.222 [6].
+
+## 10.2.3 Off-network functional model description
+
+Figure 10.2.3-1 illustrates the off-network functional model for group management.
+
+Question: Which CAPIF role does the group management server act as, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. CAPIF's API invoker
+B. CAPIF's API exposing function
+C. CAPIF's API consumer
+D. CAPIF's API publisher
+
+Answer with only the letter of the correct option.",
+val-023,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+ surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+[2] Spec: TS 23.434 | Release: 19
+# 3GPP TS 23.434 V19.5.0 (2025-03)
+
+*Technical Specification*
+
+## **3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; Service Enabler Architecture Layer for Verticals (SEAL); Functional architecture and information flows; (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G' and the word 'ADVANCED' in smaller text to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'G' has a red signal wave icon below it.
+
+[3] Spec: TS 23.434 | Release: 19
+| 19.4.1 |
+| 2025-01 |        |           |      |   |   | Re-application of CR0332R5 ""Support the satellite S&F operation""                                                    | 19.4.2 |
+| 2025-03 | SA#107 | SP-250205 | 0363 | 2 | B | Add the business relationship for SEAL deployment with satellite connectivity                                       | 19.5.0 |
+| 2025-03 | SA#107 | SP-250216 | 0364 | 1 | F | Handling of Editors Notes in TS 23.434                                                                              | 19.5.0 |
+| 2025-03 | SA#107 | SP-250201 | 0366 | 1 | A | Resolve the EN about the security and privacy aspects for location management                                       | 19.5.0 |
+| 2025-03 | SA#107 | SP-250210 | 0367 | 1 | F | Resolve the EN for handling the ""loss of connectivity"" in LM server                                                 | 19.5.0 |
+| 2025-03 | SA#107 | SP-250210 | 0368 | 1 |
+
+Question: What does the SS_LocationReporting API enable the VAL server to do, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. subscribe, receive and unsubscribe the UEs location information from the location management server over LM-S
+B. obtain UEs location information from the location management server over LM-S
+C. trigger reporting of location information to the location management server over LM-S
+D. configure the list of VAL service area identifiers and the corresponding geographical co-ordinates with SEAL location management server
+
+Answer with only the letter of the correct option.",A
+val-024,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+ surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+[2] Spec: TS 23.434 | Release: 19
+# 3GPP TS 23.434 V19.5.0 (2025-03)
+
+*Technical Specification*
+
+## **3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; Service Enabler Architecture Layer for Verticals (SEAL); Functional architecture and information flows; (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G' and the word 'ADVANCED' in smaller text to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'G' has a red signal wave icon below it.
+
+[3] Spec: TS 23.434 | Release: 19
+| 19.4.1 |
+| 2025-01 |        |           |      |   |   | Re-application of CR0332R5 ""Support the satellite S&F operation""                                                    | 19.4.2 |
+| 2025-03 | SA#107 | SP-250205 | 0363 | 2 | B | Add the business relationship for SEAL deployment with satellite connectivity                                       | 19.5.0 |
+| 2025-03 | SA#107 | SP-250216 | 0364 | 1 | F | Handling of Editors Notes in TS 23.434                                                                              | 19.5.0 |
+| 2025-03 | SA#107 | SP-250201 | 0366 | 1 | A | Resolve the EN about the security and privacy aspects for location management                                       | 19.5.0 |
+| 2025-03 | SA#107 | SP-250210 | 0367 | 1 | F | Resolve the EN for handling the ""loss of connectivity"" in LM server                                                 | 19.5.0 |
+| 2025-03 | SA#107 | SP-250210 | 0368 | 1 |
+
+Question: When the VAL server decides to stop the location tracing services for the UE(s), what does the location management server do, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. stops getting the UE's location but keeps the stored UE location data and the location tracing configuration
+B. deletes the stored UE location data but keeps the location tracing configuration for the service
+C. sends the stored UE location data to the VAL server and keeps the location tracing configuration
+D. stops getting the UE's location and deletes the stored UE location data and the location tracing configuration for the service
+
+Answer with only the letter of the correct option.",A
+val-025,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+The present document specifies the functional architecture for service enabler architecture layer (SEAL) and the procedures, information flows and APIs for each service within SEAL in order to support vertical applications over the 3GPP system. The present document is applicable to vertical applications using E-UTRAN or NR access based on the EPS or 5GS architecture defined in 3GPP TS 23.401 [9], 3GPP TS 23.246 [17], 3GPP TS 23.468 [16], 3GPP TS 23.501 [10], and 3GPP TS 23.247 [39]. To ensure efficient use and deployment of vertical applications over 3GPP systems this specification for SEAL services includes the group management, configuration management, location management, identity management, key management, network resource management, notification management, network slice capability enablement, data delivery and application data analytics enablement.
+
+The following documents contain provisions which, through reference in this text, constitute provisions of the present document.
+
+[2] Spec: TS 23.434 | Release: 19
+- [6] 3GPP TS 23.282: ""Functional architecture and information flows to support Mission Critical Data (MCData); Stage 2"". - [7] 3GPP TS 23.286: ""Application layer support for V2X services; Functional architecture and information flows"". - [8] 3GPP TS 23.222: ""Functional architecture and information flows to support Common API Framework for 3GPP Northbound APIs; Stage 2"". - [9] 3GPP TS 23.401: ""General Packet Radio Service (GPRS) enhancements for Evolved Universal Terrestrial Radio Access Network (E-UTRAN) access"". - [10] 3GPP TS 23.501: ""System Architecture for the 5G System; Stage 2"". - [11] 3GPP TS 23.502: ""Procedures for the 5G System; Stage 2"". - [12] 3GPP TS 23.303: ""Proximity-based services (ProSe); Stage 2"". - [13] 3GPP TS 23.682: ""Architecture enhancements to facilitate communications with packet data networks and applications"".
+
+[3] Spec: TS 23.434 | Release: 19
+- References are either specific (identified by date of publication, edition number, version number, etc.) or non-specific. - For a specific reference, subsequent revisions do not apply. - For a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document *in the same Release as the present document*. - [1] 3GPP TR 21.905: ""Vocabulary for 3GPP Specifications"". - [2] 3GPP TS 22.104: ""Service requirements for cyber-physical control applications in vertical domains"". - [3] 3GPP TS 23.379: ""Functional architecture and information flows to support Mission Critical Push To Talk (MCPTT); Stage 2"". - [4] 3GPP TS 23.280: ""Common functional architecture to support mission critical services; Stage 2"". - [5] 3GPP TS 23.281: ""Functional architecture and information flows to support Mission Critical Video (MCVideo); Stage 2"".
+
+Question: The present document specifies the functional architecture for SEAL and the procedures, information flows and APIs for each service within SEAL in order to support vertical applications over the 3GPP system. (according to 3GPP Rel-19, TS 23.434 v19.5.0)
+
+Answer with only TRUE or FALSE.",TRUE
+val-026,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+This subclause specifies the general requirements for SEAL.
+
+#### 4.1.2 Requirements
+
+[AR-4.1.2-a] The SEAL shall support applications from one or more verticals.
+
+[AR-4.1.2-b] The SEAL shall support multiple applications from the same vertical.
+
+[AR-4.1.2-c] The SEAL shall offer SEAL services as APIs to the vertical applications.
+
+[AR-4.1.2-d] The SEAL shall support notification mechanism for SEAL service events.
+
+[AR-4.1.2-e] The API interactions between the vertical application server(s) and SEAL server(s) shall conform to CAPIF as specified in 3GPP TS 23.222 [8].
+
+[AR-4.1.2-f] The SEAL server(s) shall provide a service API compliant with CAPIF as specified in 3GPP TS 23.222 [8].
+
+[AR-4.1.2-g] The SEAL shall leverage the satellite connectivity.
+
+[AR-4.1.2-h] The SEAL shall support discontinuous coverage of satellite connectivity.
+
+[AR-4.1.2-i] The SEAL shall support managing S&F operations regarding satellite connectivity in EPS.
+
+[2] Spec: TS 23.434 | Release: 19
+The interactions related to key management functions between the VAL server(s) and the key management server are supported by KM-S reference point. This reference point is an instance of CAPIF-2 reference point as specified in 3GPP TS 23.222 [8].
+
+KM-S reference point provides a means for the key management server to provide security related information (e.g. encryption keys) to the VAL server. The KM-S reference point shall use the HTTP-1 and HTTP-2 signalling control plane reference points for transport and routing of security related information to the VAL server.
+
+NOTE: KM-S is specified in subclause 5.1.1.4 of 3GPP TS 33.434 [29].
+
+The interactions related to key management functions between the key management servers in a distributed deployment are supported by KM-E reference point.
+
+#### 13.2.5.7 SEAL-X1
+
+NOTE: SEAL-X1 reference point between the key management server and the group management server is described in subclause 6.5.9.2.
+
+## 13.3 Procedures and information flows for key management
+
+NOTE: The procedure for key management is specified in subclause 5.3 of 3GPP TS 33.434 [29
+
+[3] Spec: TS 23.434 | Release: 19
+The key management functional entity acts as the application client for key management functions. It interacts with the key management server. The key management client also supports interactions with the corresponding key management client between the two UEs.
+
+NOTE: The functionality of the key management client is specified in subclause 5.3 of 3GPP TS 33.434 [29].
+
+#### 13.2.4.3 Key management server
+
+The key management server is a functional entity that stores and provides security related information (e.g. encryption keys) to the key management client, group management server and vertical application server to achieve the security goals of confidentiality and integrity of media and signalling. The key management server acts as CAPIF's API exposing function as specified in 3GPP TS 23.222 [8]. The key management server also supports interactions with the corresponding key management server in distributed SEAL deployments.
+
+NOTE: The functionality of the key management server is specified in subclause 5.3 of 3GPP TS 33.434 [29].
+
+### 13.2.5 Reference points description
+
+#### 13.2.5.1 General
+
+The reference points for the functional model for key management are described in the following subclauses.
+
+Question: The API interactions between the VAL client(s) and SEAL server(s) shall conform to CAPIF as specified in 3GPP TS 23.222 [8]. (according to 3GPP Rel-19, TS 23.434 v19.5.0)
+
+Answer with only TRUE or FALSE.",
+val-027,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+The SEAL client(s) communicates with the SEAL server(s) over the SEAL-UU reference points. SEAL-UU supports both unicast and multicast delivery modes. The SEAL client(s) provides the service enabler layer support functions to the VAL client(s) over SEAL-C reference points. The VAL server(s) communicate with the SEAL server(s) over the SEAL-S reference points. The SEAL server(s) may communicate with the underlying 3GPP network systems using the respective 3GPP interfaces specified by the 3GPP network system.
+
+NOTE 4: Non-3GPP access used by the UE is out of scope of the present document.
+
+The specific SEAL client(s) and the SEAL server(s) along with their specific SEAL-UU reference points and the specific network interfaces of 3GPP network system used are described in the respective on-network functional model for each SEAL service.
+
+Figure 6.2-2 illustrates the functional model for interconnection between SEAL servers.
+
+[2] Spec: TS 23.434 | Release: 19
+# 3GPP TS 23.434 V19.5.0 (2025-03)
+
+*Technical Specification*
+
+## **3rd Generation Partnership Project; Technical Specification Group Services and System Aspects; Service Enabler Architecture Layer for Verticals (SEAL); Functional architecture and information flows; (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G' and the word 'ADVANCED' in smaller text to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'G' has a red signal wave icon below it.
+
+[3] Spec: TS 23.434 | Release: 19
+ surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+Question: The SEAL client(s) provides the service enabler layer support functions to the VAL client(s) over SEAL-C reference points. (according to 3GPP Rel-19, TS 23.434 v19.5.0)
+
+Answer with only TRUE or FALSE.",TRUE
+val-028,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+The key management functional entity acts as the application client for key management functions. It interacts with the key management server. The key management client also supports interactions with the corresponding key management client between the two UEs.
+
+NOTE: The functionality of the key management client is specified in subclause 5.3 of 3GPP TS 33.434 [29].
+
+#### 13.2.4.3 Key management server
+
+The key management server is a functional entity that stores and provides security related information (e.g. encryption keys) to the key management client, group management server and vertical application server to achieve the security goals of confidentiality and integrity of media and signalling. The key management server acts as CAPIF's API exposing function as specified in 3GPP TS 23.222 [8]. The key management server also supports interactions with the corresponding key management server in distributed SEAL deployments.
+
+NOTE: The functionality of the key management server is specified in subclause 5.3 of 3GPP TS 33.434 [29].
+
+### 13.2.5 Reference points description
+
+#### 13.2.5.1 General
+
+The reference points for the functional model for key management are described in the following subclauses.
+
+[2] Spec: TS 23.434 | Release: 19
+**Figure 10.2.2-4: Utilization of Core Network Northbound APIs via CAPIF – service based representation**
+
+The Group management server acts as authorized API invoker to consume services from the Core Network northbound API entities like NEF which act as API Exposing Function as specified in 3GPP TS 23.222 [6].
+
+## 10.2.3 Off-network functional model description
+
+Figure 10.2.3-1 illustrates the off-network functional model for group management.
+
+[3] Spec: TS 23.434 | Release: 19
+The network resource management server functional entity provides for management of 3GPP system network resources (e.g. unicast, multicast) and monitoring events to support the VAL applications. The network resource management server acts as CAPIF's API exposing function as specified in 3GPP TS 23.222 [8]. The network resource management server also supports interactions with the corresponding network resource management server in distributed SEAL deployments. The NRM server's role may be assumed by the VAL server in some deployments, in which case, the VAL server performs the procedures for network resource management of the NRM server.
+
+### 14.2.5 Reference points description
+
+#### 14.2.5.1 General
+
+The reference points for the functional model for network resource management are described in the following subclauses.
+
+The interactions related to network resource management functions between the network resource management client and the network resource management server are supported by NRM-UU reference point. This reference point utilizes Uu reference point as described in 3GPP TS 23.401 [9] and 3GPP TS 23.501 [10].
+
+#### 14.2.5.3 NRM-PC5
+
+Question: The VAL server acts as CAPIF's API exposing function as specified in 3GPP TS 23.222 [8]. (according to 3GPP Rel-19, TS 23.434 v19.5.0)
+
+Answer with only TRUE or FALSE.",
+val-029,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+#### 6.4.3.3 HTTP entities
+
+##### 6.4.3.3.1 HTTP client
+
+This functional entity acts as the client for all hypertext transactions.
+
+##### 6.4.3.3.2 HTTP proxy
+
+This functional entity acts as a proxy for hypertext transactions between the HTTP client and one or more HTTP servers. The HTTP proxy terminates a TLS session on HTTP-1 with the HTTP client of the VAL UE allowing the HTTP client to establish a single TLS session for hypertext transactions with multiple HTTP servers that are reachable by the HTTP proxy.
+
+The HTTP proxy terminates the HTTP-3 reference point that lies between different HTTP proxies. It may provide a topology hiding function from HTTP entities outside the trust domain of the VAL system.
+
+The HTTP proxy shall be in the same trust domain as the HTTP clients and HTTP servers that are located within a VAL service provider's network. There can be multiple instances of an HTTP proxy e.g. one per trust domain.
+
+NOTE: The number of instances of the HTTP proxy is deployment specific.
+
+#### 6.4.3.3.3 HTTP server
+
+This functional entity acts as the HTTP server for all hypertext transactions.
+
+#### 6.4.3.4 LWP entities
+
+[2] Spec: TS 23.434 | Release: 19
+The LWP proxy can also terminate LWP-HTTP-3 reference point for interworking with another HTTP proxy. In this role it provides cross-protocol mapping and may provide a topology hiding function from HTTP entities outside the trust domain of the VAL system.
+
+The LWP proxy shall be in the same trust domain as the LWP clients and LWP servers that are located within a VAL service provider's network. There can be multiple instances of a LWP proxy e.g. one per trust domain.
+
+##### 6.4.3.4.3 LWP server
+
+This functional entity acts as the LWP server for all LWP transactions of the SEAL server.
+
+NOTE: A SEAL client can act as LWP server for certain transactions as required by the SEAL service.
+
+#### 6.4.3.5 LWP usage
+
+LWP is a generic representation of a light-weight protocol for use in constrained environments. Realizations of the light-weight protocol (LWP) functional entities and reference points to a particular protocol are defined in the annexes of this specification.
+
+[3] Spec: TS 23.434 | Release: 19
+##### 6.4.3.4.1 LWP client
+
+This functional entity acts as the light-weight protocol client for all transactions of the SEAL client executing in a constrained UE. A SEAL client executing in an unconstrained UE may choose to use the LWP client if it is available.
+
+##### 6.4.3.4.2 LWP proxy
+
+This functional entity acts as a proxy for transactions between the LWP client and one or more LWP servers. The LWP proxy typically terminates a secure transport protocol (e.g. DTLS, TLS or secure WebSocket) session on LWP-1 reference point with the LWP client of the VAL UE allowing the LWP client to establish a single secure session for transactions with multiple LWP servers that are reachable by the LWP proxy.
+
+The LWP proxy can act as a cross-protocol LWP-HTTP proxy to enable LWP clients to access resources on HTTP servers via the LWP-HTTP-2 reference point.
+
+The LWP proxy terminates LWP-3 reference point that lies between different LWP proxies. It may provide a topology hiding function from LWP entities outside the trust domain of the VAL system.
+
+Question: The HTTP proxy shall be in the same trust domain as the HTTP clients and HTTP servers that are located within a VAL service provider's network. (according to 3GPP Rel-19, TS 23.434 v19.5.0)
+
+Answer with only TRUE or FALSE.",TRUE
+val-030,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+The interactions between a SEAL client and the corresponding SEAL server are generically referred to as SEAL-UU reference point. The specific SEAL service reference point corresponding to SEAL-UU is specified in the specific SEAL service functional model.
+
+#### 6.5.2.5 SEAL-PC5
+
+The interactions between the SEAL clients of two VAL UEs are generically referred to as SEAL-PC5 reference point. The specific SEAL service reference point corresponding to SEAL-PC5 is specified in the specific SEAL service functional model.
+
+The interactions between the VAL client(s) and the SEAL client(s) within a VAL UE are generically referred to as SEAL-C reference point. The specific SEAL service reference point corresponding to SEAL-C is specified in the specific SEAL service functional model.
+
+The interactions between the VAL server and the SEAL server are generically referred to as SEAL-S reference point. The specific SEAL service reference point corresponding to SEAL-S is specified in the specific SEAL service functional model.
+
+The interactions between the SEAL servers of the same type are generically referred to as SEAL-E reference point. The specific SEAL service reference point corresponding to SEAL-E is specified in the specific SEAL service functional model.
+
+NOTE: The functions enabled over SEAL-E reference point are specified in each SEAL service.
+
+[2] Spec: TS 23.434 | Release: 19
+#### 6.5.2.9.1 General
+
+The interactions between the SEAL servers of different type are generically referred to as SEAL-X reference point. The specific SEAL server interactions corresponding to SEAL-X are described in the following subclauses.
+
+#### 6.5.2.9.2 Reference point SEAL-X1 (between the key management server and the group management server)
+
+The SEAL-X1 reference point, which exists between the key management server and the group management server, provides a means for the key management server to provide security related information (e.g. encryption keys) to the group management server.
+
+The SEAL-X1 reference point shall use the HTTP-1 and HTTP-2 reference points and may use the HTTP-3 reference point for transport and routing of security related information to the group management server.
+
+NOTE: SEAL-X1 is specified in subclause 5.1.1.1 of 3GPP TS 33.434 [29].
+
+#### 6.5.2.9.3 Reference point SEAL-X2 (between the group management server and the location management server)
+
+The SEAL-X2 reference point enables the group management server to interact with the location management server.
+
+The SEAL-X2 reference point supports:
+
+[3] Spec: TS 23.434 | Release: 19
+The interactions related to key management functions between the VAL server(s) and the key management server are supported by KM-S reference point. This reference point is an instance of CAPIF-2 reference point as specified in 3GPP TS 23.222 [8].
+
+KM-S reference point provides a means for the key management server to provide security related information (e.g. encryption keys) to the VAL server. The KM-S reference point shall use the HTTP-1 and HTTP-2 signalling control plane reference points for transport and routing of security related information to the VAL server.
+
+NOTE: KM-S is specified in subclause 5.1.1.4 of 3GPP TS 33.434 [29].
+
+The interactions related to key management functions between the key management servers in a distributed deployment are supported by KM-E reference point.
+
+#### 13.2.5.7 SEAL-X1
+
+NOTE: SEAL-X1 reference point between the key management server and the group management server is described in subclause 6.5.9.2.
+
+## 13.3 Procedures and information flows for key management
+
+NOTE: The procedure for key management is specified in subclause 5.3 of 3GPP TS 33.434 [29
+
+Question: The interactions between the SEAL servers of different type are generically referred to as SEAL-E reference point. (according to 3GPP Rel-19, TS 23.434 v19.5.0)
+
+Answer with only TRUE or FALSE.",FALSE

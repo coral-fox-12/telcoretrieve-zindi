@@ -1,0 +1,163 @@
+ID,input_prompt,answer
+val-014,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+ procedure of Geofencing UE(s) Information request/response                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0309 | 3 | B | Add procedure of querying for history location                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0310 | 2 | B | LMS reuse the stored UE location information                                           | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0311 | 2 | B | Exposure of value-added UE location information                                        | 19.3.0 |
+| 2024-09 | SA#105 | SP-241212 | 0312 | 1 | B | General description of application enablement of AIML services                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0313 | 3 | B | Dynamic geofencing                                                                     | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0314 | 3 | B | Target UE location provided by surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+Question: What is LWP a generic representation of, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. a light-weight protocol for use in unconstrained environments
+B. a light-weight protocol for use in constrained environments
+C. a signalling protocol for use in constrained environments
+D. a light-weight protocol for use in satellite environments
+
+Answer with only the letter of the correct option.",
+val-015,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+ procedure of Geofencing UE(s) Information request/response                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0309 | 3 | B | Add procedure of querying for history location                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0310 | 2 | B | LMS reuse the stored UE location information                                           | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0311 | 2 | B | Exposure of value-added UE location information                                        | 19.3.0 |
+| 2024-09 | SA#105 | SP-241212 | 0312 | 1 | B | General description of application enablement of AIML services                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0313 | 3 | B | Dynamic geofencing                                                                     | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0314 | 3 | B | Target UE location provided by surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+Question: Which delivery modes does the VAL-UU reference point support, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. unicast delivery mode only
+B. multicast delivery mode only
+C. both unicast and multicast delivery modes
+D. broadcast delivery mode only
+
+Answer with only the letter of the correct option.",
+val-017,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+ procedure of Geofencing UE(s) Information request/response                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0309 | 3 | B | Add procedure of querying for history location                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0310 | 2 | B | LMS reuse the stored UE location information                                           | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0311 | 2 | B | Exposure of value-added UE location information                                        | 19.3.0 |
+| 2024-09 | SA#105 | SP-241212 | 0312 | 1 | B | General description of application enablement of AIML services                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0313 | 3 | B | Dynamic geofencing                                                                     | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0314 | 3 | B | Target UE location provided by surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+Question: What is a VAL Stream ID, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. an identity used by the VAL server to identify a VAL stream
+B. a globally unique identifier representing a VAL system
+C. an identity used by the VAL client to identify a VAL stream
+D. a unique identifier within the VAL service that represents a set of VAL users or VAL UE
+
+Answer with only the letter of the correct option.",
+val-020,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+ procedure of Geofencing UE(s) Information request/response                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0309 | 3 | B | Add procedure of querying for history location                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0310 | 2 | B | LMS reuse the stored UE location information                                           | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0311 | 2 | B | Exposure of value-added UE location information                                        | 19.3.0 |
+| 2024-09 | SA#105 | SP-241212 | 0312 | 1 | B | General description of application enablement of AIML services                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0313 | 3 | B | Dynamic geofencing                                                                     | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0314 | 3 | B | Target UE location provided by surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+Question: In a location reporting trigger, what does the adaptive reporting value ""DIRECT UPDATE"" indicate, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. that the VAL Server subscribes to receive the suggested configurations from the SEAL LMS
+B. that the SEAL LMS discards the updated configuration
+C. that the VAL server directly updates the SEAL LMS
+D. the SEAL LMS to directly update the SEAL LM client once configuration is adjusted
+
+Answer with only the letter of the correct option.",
+val-021,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+ procedure of Geofencing UE(s) Information request/response                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0309 | 3 | B | Add procedure of querying for history location                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0310 | 2 | B | LMS reuse the stored UE location information                                           | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0311 | 2 | B | Exposure of value-added UE location information                                        | 19.3.0 |
+| 2024-09 | SA#105 | SP-241212 | 0312 | 1 | B | General description of application enablement of AIML services                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0313 | 3 | B | Dynamic geofencing                                                                     | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0314 | 3 | B | Target UE location provided by surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+Question: How are temporary groups formed, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. by combining two or more groups
+B. by combining exactly two groups
+C. by combining three or more groups
+D. by splitting one group into two or more groups
+
+Answer with only the letter of the correct option.",
+val-022,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 23.434 | Release: 19
+ procedure of Geofencing UE(s) Information request/response                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0309 | 3 | B | Add procedure of querying for history location                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0310 | 2 | B | LMS reuse the stored UE location information                                           | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0311 | 2 | B | Exposure of value-added UE location information                                        | 19.3.0 |
+| 2024-09 | SA#105 | SP-241212 | 0312 | 1 | B | General description of application enablement of AIML services                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0313 | 3 | B | Dynamic geofencing                                                                     | 19.3.0 |
+| 2024-09 | SA#105 | SP-241220 | 0314 | 3 | B | Target UE location provided by surrounding UEs                                         | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0315 |   | D | Editorial change for location information subscription update                          | 19.3.0 |
+| 2024-09 | SA#105 | SP-241229 | 0316 |   | F | Update clause 14.3.9.2.1                                                               | 19.3.0 |
+| 2024-12 | SA#106 | SP-241710 | 0318 | 1 | A | Remove reference for 23.545 in SEAL                                                    | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0320 | 2 | A | Solve EN in SEAL clause 9.5.1                                                          | 19.4.0 |
+| 2024-12 | SA#106 | SP-241710 | 0322 | 2 | A | TS 23.434 Rel-19 - Handling Editors Notes                                              | 19.4.0 |
+| 2024-12 | SA#106 | SP-241720 | 0323 | 1 | D |
+
+Question: Which CAPIF role does the group management server act as, according to 3GPP Rel-19, TS 23.434 v19.5.0?
+
+Options:
+A. CAPIF's API invoker
+B. CAPIF's API exposing function
+C. CAPIF's API consumer
+D. CAPIF's API publisher
+
+Answer with only the letter of the correct option.",

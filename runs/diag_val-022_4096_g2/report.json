@@ -1,0 +1,33 @@
+{
+  "n_questions": 1,
+  "n_answered": 1,
+  "per_question": [
+    {
+      "id": "val-022",
+      "raw_generator_output": "",
+      "answer": "",
+      "prompt_tokens": 636,
+      "n_passages": 1,
+      "retrieved_ids": [
+        "TS23434-c0633"
+      ],
+      "evidence_in_context": false
+    }
+  ],
+  "config": {
+    "generator": "gemma-4-26b-a4b-it",
+    "top_k": 10,
+    "rerank_top_k": 5,
+    "context_budget": 850,
+    "index": "data/mini_index.jsonl"
+  },
+  "score": {
+    "n_questions": 1,
+    "n_correct": 0,
+    "accuracy": 0.0,
+    "total_prompt_tokens": 636,
+    "token_efficiency": 57.2,
+    "overall": 17.16,
+    "passes_accuracy_gate": false
+  }
+}

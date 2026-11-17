@@ -1,0 +1,61 @@
+ID,input_prompt,answer
+val-002,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+## 5.4 Reliable Delivery of Signalling Messages
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.5 Error Handling
+
+This is performed as according to GTPv2 in 3GPP TS 29.274 [3].
+
+## 5.6 Restoration and Recovery
+
+This is performed as according to GTPv2 in 3GPP TS 23.007 [5].
+
+# --- 6 Sv Information Elements
+
+IE type value used in Sv Message is defined in TS 29.274 [3]. The IE format is coded as per GTP in TS 29.274 [3].
+
+Table 6.1 shows the IEs used for SRVCC. Within information elements, certain fields may be described as spare. These bits shall be transmitted with the value set to 0. To allow for future features, the receiver shall not evaluate these bits.
+
+**Table 6.1-1: Information Elements for SRVCC**
+
+[2] Spec: TS 29.280 | Release: 19
+| Message Type value (Decimal) | Message                              | Reference           | Initial | Triggered |
+|------------------------------|--------------------------------------|---------------------|---------|-----------|
+| 0                            | Reserved                             | 3GPP TS 29.274 [3]  |         |           |
+| 1                            | Echo Request                         | 3GPP TS 29.274 [3]  | X       |           |
+| 2                            | Echo Response                        | 3GPP TS 29.274 [3]  |         | X         |
+| 3                            | Version Not Supported Indication     | 3GPP TS 29.274 [3]  |         | X         |
+| 4-16                         | Reserved for S101 interface          | 3GPP TS 29.276 [17] |         |           |
+| 17-24                        | Reserved for S121 interface          | 3GPP TS 29.276 [17] |         |           |
+| 25                           | SRVCC PS to CS Request               | 5.2.2               | X       |           |
+| 26                           | SRVCC PS to CS Response              | 5.2.3               |
+
+[3] Spec: TS 29.280 | Release: 19
+# 3GPP TS 29.280 V19.0.0 (2025-10)
+
+Technical Specification
+
+## **3rd Generation Partnership Project; Technical Specification Group Core Network and Terminals; Evolved Packet System (EPS); 3GPP Sv interface (MME to MSC, and SGSN to MSC) for SRVCC (Release 19)**
+
+![5G Advanced logo](64662465bba247703fdec49c8f3309f9_img.jpg)
+
+The logo for 5G Advanced, featuring a stylized '5G' with a green signal wave icon above the 'G', and the word 'ADVANCED' in smaller letters to the right.
+
+![3GPP logo](5fb340ad68b0c71df0b56698b137e35b_img.jpg)
+
+The 3GPP logo, consisting of the letters '3GPP' in a bold, black, stylized font. The 'P' has a red signal wave icon at its base.
+
+Question: What does the abbreviation SRVCC stand for, according to 3GPP TS 29.280?
+
+Options:
+A. Single Radio Voice Call Continuity
+B. Single Radio Video Call Continuity
+C. Seamless Radio Voice Call Control
+D. Single RAN Voice Call Continuity
+
+Answer with only the letter of the correct option.",A

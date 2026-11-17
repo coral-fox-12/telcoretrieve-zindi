@@ -74,12 +74,25 @@ reranker keeps 5, temperature 0, seed 1234, max prompt 4096, max_tokens 8.
 
 ## 5. Experiments to run (in order)
 
-**Phase 2 (Kaggle GPU, real generator) — kernel RUNNING 2026-11-17:**
-notebook `phase2/notebook.ipynb`, kernel `coralfox12/telcoretrieve-phase-2`
+**Phase 2 (Kaggle GPU, real generator) — BLOCKED on Gemma license
+2026-11-17 ~12:15 +07:** notebook `phase2/notebook.ipynb`, kernel
+`coralfox12/telcoretrieve-phase-2`
 (https://www.kaggle.com/code/coralfox12/telcoretrieve-phase-2), T4 x2,
 internet on, model attached from the Kaggle hub
-(`google/gemma-3n/transformers/gemma-3n-e4b-it/2`) — no HF token or
-license step needed. vLLM on :8000 (`--tensor-parallel-size 2 --dtype
+(`google/gemma-3n/transformers/gemma-3n-e4b-it/2`). **Correction to the
+earlier note: a license step IS needed.** Kernel v1 (09:25 +07) and v2
+(10:45 +07) both ERRORED; v2's surviving logs prove install + the 10 GB
+index pull work, and the vLLM cell failed instantly because the model was
+never mounted (`/kaggle/input` empty). Verified: the Kaggle API returns
+HTTP 403 on the model's files for coralfox12 — the account has not
+accepted the Gemma license. **Unblock: sign in to Kaggle as coralfox12,
+accept the Gemma license at https://www.kaggle.com/models/google/gemma-3n,
+then re-run (v2 from the UI, or push the locally built v3 notebook).**
+The HF path is not a workaround: the HF account's token also gets 403
+(Gemma license not accepted there either), and the 31.5 GB fp32 weights
+don't fit Kaggle's 20 GB working disk anyway. GPU used so far ≈0.7 GPU-h
+of the ≤6 GPU-h first-pass budget. Full diagnosis:
+`phase2/PHASE2.md`. vLLM on :8000 (`--tensor-parallel-size 2 --dtype
 bfloat16 --gpu-memory-utilization 0.70 --max-model-len 8192
 --enforce-eager --served-model-name google/gemma-3n-E4B-it`). The 10 GB
 fixed index is pulled once per session (`pull-hf`, ~10.4 GB) and reused

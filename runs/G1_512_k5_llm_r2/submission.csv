@@ -1,0 +1,100 @@
+ID,input_prompt,answer
+val-060,"You answer 3GPP questions from the provided context. Reply with only the answer.
+
+Passages:
+[1] Spec: TS 29.280 | Release: 19
+| Octets   | Bits                                                       |   |   |   |             |   |   |   |  |  |  |  |
+|----------|------------------------------------------------------------|---|---|---|-------------|---|---|---|--|--|--|--|
+|          | 8                                                          | 7 | 6 | 5 | 4           | 3 | 2 | 1 |  |  |  |  |
+| 1        | Type = 61 (decimal)                                        |   |   |   |             |   |   |   |  |  |  |  |
+| 2-3      | Length = n                                                 |   |   |   |             |   |   |   |  |  |  |  |
+| 4        | Spare                                                      |   |   |   | Instance    |   |   |   |  |  |  |  |
+| 5        | MCC digit 2                                                |   |   |   | MCC digit 1 |   |   |   |  |  |  |  |
+| 6        | MNC digit 3                                                |   |   |   | MNC digit 3 |   |   |   |  |  |  |  |
+| 7        | MNC digit 2                                                |   |   |   | MNC digit 1 |   |   |   |  |  |  |  |
+| 8 to 9   | Location Area Code (LAC)                                   |   |   |   |             |   |   |   |  |  |  |  |
+| 10 to 11 | Service Area Code (SAC)                                    |   |   |   |             |   |   |   |  |  |  |  |
+| 12-(n+4) | These octet(s) is/are present only if explicitly specified |   |   |   |             |   |   |   |  |  |  |  |
+
+Figure 6.12-1: Service Area Identifier
+
+The Location Area Code (LAC) consists of 2 octets. Bit 8 of Octet 8 is the most significant bit and bit 1 of Octet 9 the least significant bit. The coding of the location area code is the responsibility of each administration. Coding using full hexadecimal representation shall be used.
+
+[2] Spec: TS 29.280 | Release: 19
+The Service Area Code (SAC) consists of 2 octets. Bit 8 of Octet 10 is the most significant bit and bit 1 of Octet 11 the least significant bit. The SAC is defined by the operator. See 3GPP TS 23.003 [4] subclause 12.5 for more information.
+
+## 6.13 MM Context for CS to PS SRVCC
+
+The MM Context for CS to PS SRVCC information element contains the security parameters that are necessary for the MME/SGSN to setup the ciphering connection and integrity protection with the target access for SRVCC. The usage of CK'ps, IK'ps, KSI'ps, Kc'ps, CKSN'ps are defined in 3GPP TS 33.102 [10].
+
+Note: Kc'ps, is called GPRS Kc in 3GPP TS 33.102 [10].
+
+CKSN'ps shall be coded as bits 1 to 8 of the CKSN IE in TS 24.008 [7]. The KSI'ps shall be coded as bits 1 to 4 of the CKSN IE in TS 24.008 [7].
+
+The source MSC Server shall send to the MME/SGSN either the KSI'ps /CK'ps /IK'ps or the CKSN'ps /Kc'ps as specified in 3GPP TS 33.102 [10] and 3GPP TS 33.401[15]:
+
+- when transferring KSI'ps /CK'ps /IK'ps, the source MSC Server shall set the key sequence value of the CKSN'ps to the value '111' and Kc'ps to all 0's in binary;
+- when transferring CKSN'ps /Kc'ps, the source MSC Server shall set the key sequence value of the KSI'ps to the value '111', and CK'ps and IK'ps to all 0's in binary.
+
+[3] Spec: TS 29.280 | Release: 19
+## 6.3 Source to Target Transparent Container
+
+The Source to Target Transparent Container contains information that shall be transferred transparently by CN entities from the source RAN to the target RAN.
+
+When the target network is GERAN, the Transparent container field contains the value part of the *Old BSS to New BSS Information* IE defined in 3GPP TS 48.008 [8], i.e. octets 3 to n, excluding octet 1 (Element ID) and octet 2 (Length).
+
+When the target network is UTRAN, this container carries the *Source RNC to Target RNC Transparent Container* IE defined in 3GPP TS 25.413 [9]. The Transparent container field contains a *transparent copy* of the corresponding ASN.1/PER IE (see subclauses 8.2.2 and 8.48 in 3GPP TS 29.274 [3]).
+
+When the target network is E-UTRAN, the container carries the *Source eNB To Target eNB Transparent Container* IE defined in 3GPP TS 36.413 [14]. The Transparent container field contains a *transparent copy* of the corresponding ASN.1/PER IE (see subclauses 8.2.2 and 8.48 in 3GPP TS 29.274 [3]).
+
+The receiver of this Information Element shall ignore the length of the transparent container encoded in octet 5 and shall derive the actual length of the container from the length encoded in octets 2 to 3 minus 1.
+
+For backward compatibility, the sender of this Information Element shall set the octet 5 to the actual length of the transparent container if the size of the container is smaller or equal to 255 octets, and to the value ""255"" otherwise.
+
+[4] Spec: TS 29.280 | Release: 19
+| Octets  | Bits                                                       |       |       |       |          |     |     |       |
+|---------|------------------------------------------------------------|-------|-------|-------|----------|-----|-----|-------|
+|         | 8                                                          | 7     | 6     | 5     | 4        | 3   | 2   | 1     |
+| 1       | Type = 60 (decimal)                                        |       |       |       |          |     |     |       |
+| 2 to 3  | Length = n                                                 |       |       |       |          |     |     |       |
+| 4       | Spare                                                      |       |       |       | Instance |     |     |       |
+| 5       | Spare                                                      | Spare | Spare | Spare | VHO      | STI | ICS | EmInd |
+| 6-(n+4) | These octet(s) is/are present only if explicitly specified |       |       |       |          |     |     |       |
+
+Figure 6.11-1: Sv Flags
+
+The following bits within Octet 5 indicate:
+
+- Bit 1 – EmInd (Emergency Indicator): This flag is used to indicate the IMS emergency session.
+
+- Bit 2 – ICS (IMS Centralized Service): This flag is used to request ICS support.
+- Bit 3 – STI (Session Transfer Indicator): This flag is used to indicate IMS session transfer has been invoked.
+- Bit 4 – VHO (vSRVCC flag): This flag is used to indicate that the vSRVCC HO is requested by the MME.
+
+## 6.12 Service Area Identifier
+
+This IE shall contain the identifier of a service area. The encoding of this IE is defined in Figure 6.12-1.
+
+[5] Spec: TS 29.280 | Release: 19
+| Octets     | Bits                                |   |   |   |          |   |   |   |  |  |  |  |
+|------------|-------------------------------------|---|---|---|----------|---|---|---|--|--|--|--|
+|            | 8                                   | 7 | 6 | 5 | 4        | 3 | 2 | 1 |  |  |  |  |
+| 1          | Type = 52 (decimal)                 |   |   |   |          |   |   |   |  |  |  |  |
+| 2 to 3     | Length = n (decimal)                |   |   |   |          |   |   |   |  |  |  |  |
+| 4          | Spare                               |   |   |   | Instance |   |   |   |  |  |  |  |
+| 5          | Length of the Transparent container |   |   |   |          |   |   |   |  |  |  |  |
+| 6 to (n+4) | Transparent container               |   |   |   |          |   |   |   |  |  |  |  |
+
+Figure 6.3-1: Source to Target Transparent Container
+
+## 6.4 Target to Source Transparent Container
+
+The Target to Source Transparent Container contains information that shall be transferred transparently by CN entities from the target RAN to the source RAN.
+
+When the target network is GERAN, the Transparent container field contains the value part of the *Layer 3 Information* IE defined in 3GPP TS 48.008 [8], i.e., octets 3 to n, excluding octet 1 (Element ID) and octet 2 (Length).
+
+When the target network is UTRAN, this container carries the *Target RNC to Source RNC Transparent Container* IE defined in 3GPP TS 25.413 [9]. The Transparent container field contains a *transparent copy* of the corresponding ASN.1/PER IE (see subclauses 8.2.2 and 8.48 in 3GPP TS 29.274 [3]).
+
+Question: The Location Area Code (LAC) consists of 2 octets. Bit 8 of Octet 8 is the least significant bit and bit 1 of Octet 9 the most significant bit. (according to 3GPP Rel-19, TS 29.280 v19.0.0)
+
+Answer with only TRUE or FALSE.",FALSE
